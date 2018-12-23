@@ -30,6 +30,17 @@ namespace Data_Types_Variables
             //Task4
             char hexadecimalChar = (char)0x2A;
             Console.WriteLine(hexadecimalChar);
+
+            //Task5
+            bool isFemale = false;
+            Console.WriteLine(isFemale);
+
+            //Task6
+            string hello = "Hello";
+            string world = "World";
+            Object helloWorld;
+            helloWorld = hello + " " + world;
+            Console.WriteLine(helloWorld);
         }
     }
 }
