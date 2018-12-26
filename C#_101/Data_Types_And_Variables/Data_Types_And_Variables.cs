@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Data_Types_Variables
 {
@@ -38,9 +39,97 @@ namespace Data_Types_Variables
             //Task6
             string hello = "Hello";
             string world = "World";
-            Object helloWorld;
-            helloWorld = hello + " " + world;
+            object helloWorldObject = hello + " " + world;
+            string helloWorld = (string)helloWorldObject;
             Console.WriteLine(helloWorld);
+
+            //Task7
+            Console.WriteLine("The \"use\" of quotations causes difficulties");
+
+            //Task8
+            Console.OutputEncoding = Encoding.UTF8;
+          
+            Console.WriteLine();
+            Console.Write("   " + (char)169);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("  " + (char)169 + " " + (char)169);
+            Console.WriteLine();
+            Console.WriteLine(" " + (char)169 + "   " + (char)169);
+            Console.WriteLine();
+            Console.WriteLine((char)169 + " " + (char)169 + " " + (char)169 + " " + (char)169);
+
+            //Task9
+            int x = 5;
+            int y = 10;
+            Console.WriteLine("X and Y before swap: ");
+            Console.WriteLine("X = " + x);
+            Console.WriteLine("Y = " + y);
+            x = x + y;
+            y = x - y;
+            x = x - y;
+            Console.WriteLine("X and Y after swap: ");
+            Console.WriteLine("X = " + x);
+            Console.WriteLine("Y = " + y);
+
+            //Task10
+            string firstName = "Joe";
+            string lastName = "King";
+            byte age = 100;
+            char gender = 'm';
+            long idNumber = 8306112507;
+            string uniqueEmployeeNumber = "275600034227569999";
+            Console.WriteLine(firstName);
+            Console.WriteLine(lastName);
+            if(age >= 0 && age <= 100)
+            {
+                Console.WriteLine(age);
+            }
+            if (gender == 'm' || gender == 'f')
+            {
+                Console.WriteLine(gender);
+            }
+            Console.WriteLine(idNumber);
+            Console.WriteLine(uniqueEmployeeNumber);
+
+            //Task11
+            string firstNameCardHolder;
+            string surname;
+            string familyName;
+            int availableAmount;
+            string bankName;
+            string IBAN;
+            byte CVC2;
+            short secure3DCode;
+
+            //Task12
+            int? emptyInteger = null;
+            double? emptyDouble = null;
+            Console.WriteLine(emptyInteger);
+            Console.WriteLine(emptyDouble);
+            Console.WriteLine(emptyInteger + 5);
+            Console.WriteLine(emptyDouble + null);
+
+            //Task13
+            double firstNumberToCompare = double.Parse(Console.ReadLine());
+            double secondNumberToCompare = double.Parse(Console.ReadLine());
+            double eps = 0.000001;
+            double difference = Math.Abs(firstNumberToCompare - secondNumberToCompare);
+            difference = Math.Round(difference, 6);
+            if (difference < eps)
+            {
+                Console.WriteLine(true);
+            }
+            else
+            {
+                Console.WriteLine(false);
+            }
+
+            //Task14
+            for (int i = 33; i <= 126; i++)
+            {
+                Console.Write((char)i + " ");
+            }
         }
     }
 }
