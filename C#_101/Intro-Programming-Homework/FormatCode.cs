@@ -1,6 +1,6 @@
 ﻿using System;
 
-class hoRRiblEcoDe
+class HorribleCode
 {
     static void Main()
     {
