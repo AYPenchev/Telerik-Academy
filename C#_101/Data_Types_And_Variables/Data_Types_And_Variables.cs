@@ -48,7 +48,7 @@ namespace Data_Types_Variables
 
             //Task8
             Console.OutputEncoding = Encoding.UTF8;
-          
+
             Console.WriteLine();
             Console.Write("   " + (char)169);
             Console.WriteLine();
@@ -58,6 +58,43 @@ namespace Data_Types_Variables
             Console.WriteLine(" " + (char)169 + "   " + (char)169);
             Console.WriteLine();
             Console.WriteLine((char)169 + " " + (char)169 + " " + (char)169 + " " + (char)169);
+
+            //Task8.2
+            Console.WriteLine("Enter height: ");
+
+            int height;
+
+            do
+            {
+                height = int.Parse(Console.ReadLine());
+            } while (height < 1);
+
+            int temp;
+            int emptySpaces = temp = height - 1;
+
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    while (temp > 0)
+                    {
+                        Console.Write(" ");
+                        temp--;
+                    }
+                    if (i > j)
+                    {
+                        Console.Write("*");
+                        Console.Write(" ");
+                    }
+                    else if (i == j)
+                    {
+                        Console.Write("*");
+                    }
+
+                }
+                temp = --emptySpaces;
+                Console.WriteLine();
+            }
 
             //Task9
             int x = 5;
@@ -81,7 +118,7 @@ namespace Data_Types_Variables
             string uniqueEmployeeNumber = "275600034227569999";
             Console.WriteLine(firstName);
             Console.WriteLine(lastName);
-            if(age >= 0 && age <= 100)
+            if (age >= 0 && age <= 100)
             {
                 Console.WriteLine(age);
             }
