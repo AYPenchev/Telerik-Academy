@@ -5,19 +5,19 @@ namespace Operators_And_Expressions
     class Operators_And_Expressions
     {
         //These functions are separate from other because of Single class responsibility principle 
-        static private int ReadOneIntegerFromConsole()
+        private static int ReadOneIntegerFromConsole()
         {
             int readNumber = int.Parse(Console.ReadLine());
             return readNumber;
         }
-        static private float ReadOneFloatFromConsole()
+        private static float ReadOneFloatFromConsole()
         {
             float readNumber = float.Parse(Console.ReadLine());
             return readNumber;
         }
         //How to make these two functions above return generic type?
 
-        static private void OddOrEven01()
+        private static void OddOrEven01()
         {
             Console.WriteLine("Enter a number to check if it is even or odd: ");
             int number = ReadOneIntegerFromConsole();
@@ -31,7 +31,7 @@ namespace Operators_And_Expressions
             }
         }
 
-        static private void MoonGravity02()
+        private static void MoonGravity02()
         {
             Console.WriteLine("Enter your weight: ");
             float weight = ReadOneFloatFromConsole();
@@ -41,7 +41,7 @@ namespace Operators_And_Expressions
             Console.WriteLine(roundWeight);
         }
 
-        static private void DivideBySevenAndFive03()
+        private static void DivideBySevenAndFive03()
         {
             Console.WriteLine("Enter a number to check if it is divisible without remainder by 7 and 5: ");
             int divisible = ReadOneIntegerFromConsole();
@@ -55,7 +55,7 @@ namespace Operators_And_Expressions
             }
         }
 
-        static private void Rectangles04()
+        private static void Rectangles04()
         {
             Console.Write("Enter rectangle width: ");
             float rectangleWidth = ReadOneFloatFromConsole();
@@ -68,7 +68,7 @@ namespace Operators_And_Expressions
             Console.WriteLine("Rectangle's area: " + roundArea + " perimeter: " + roundPerimeter);
         }
 
-        static private void ThirdDigit05()
+        private static void ThirdDigit05()
         {
             Console.WriteLine("Enter a number and check if the third digit is 7: ");
             int n = ReadOneIntegerFromConsole();
