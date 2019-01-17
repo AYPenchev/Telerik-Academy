@@ -312,9 +312,9 @@ namespace Loops
             long decimalNum = 0;
             Console.Write("Enter binary number: ");
             string binaryNum = Console.ReadLine();
-            for (int i = binaryNum.Length - 1, j = 1; i >= 0; i--,j *= 2)
+            for (int i = binaryNum.Length - 1, j = 1; i >= 0; i--, j *= 2)
             {
-                if(binaryNum[i] == '1')
+                if (binaryNum[i] == '1')
                 {
                     decimalNum += j;
                 }
@@ -328,20 +328,20 @@ namespace Loops
             Console.Write("Enter decimal number: ");
             long decimalNum = long.Parse(Console.ReadLine());
 
-            if(decimalNum == 0)
+            if (decimalNum == 0)
             {
                 binaryNum = "0";
             }
- 
+
             while (decimalNum >= 1)
             {
-                if(decimalNum % 2 == 0)
+                if (decimalNum % 2 == 0)
                 {
                     binaryNum = binaryNum.Insert(0, "0");
                 }
                 else
                 {
-                   binaryNum = binaryNum.Insert(0, "1");
+                    binaryNum = binaryNum.Insert(0, "1");
                 }
                 decimalNum /= 2;
             }
@@ -374,7 +374,7 @@ namespace Loops
                     case 13: HexNum = HexNum.Insert(0, "D"); break;
                     case 14: HexNum = HexNum.Insert(0, "E"); break;
                     case 15: HexNum = HexNum.Insert(0, "F"); break;
-                    default:  break;
+                    default: break;
                 }
                 decimalNum /= 16;
 
@@ -392,7 +392,7 @@ namespace Loops
             {
                 switch (HexNum[(int)i])
                 {
-                    case '1': decimalNum += 1 * j;  break;
+                    case '1': decimalNum += 1 * j; break;
                     case '2': decimalNum += 2 * j; break;
                     case '3': decimalNum += 3 * j; break;
                     case '4': decimalNum += 4 * j; break;
@@ -412,8 +412,103 @@ namespace Loops
             }
             Console.WriteLine(decimalNum);
         }
-            static void Main()
+
+        private static void GCD15()
         {
+            Console.WriteLine("Enter a: ");
+            int a = readIntWithConstraints(2, 500);
+            Console.WriteLine("Enter b: ");
+            int b = readIntWithConstraints(2, 500);
+            int temp;
+
+            while (b != 0)
+            {
+                temp = b;
+                b = a % b;
+                a = temp;
+            }
+            Console.WriteLine(a);
+        }
+
+        private static void Trailing0InNFactorial16()
+        {
+            Console.WriteLine("Enter n: ");
+            int n = int.Parse(Console.ReadLine());
+            int sum = 0;
+
+            for (int i = 5; i < n; i *= 5)
+            {
+                sum += n / i;
+            }
+            Console.WriteLine(sum);
+        }
+
+        private static void SpiralMatrix17()
+        {
+            Console.WriteLine("Enter n: ");
+            int n = readIntWithConstraints(1, 20);
+            int[,] matrix = new int[n, n];
+            int row = 0;
+            int col = 0;
+            string direction = "right";
+            int maxRotations = n * n;
+            for (int i = 1; i <= maxRotations; i++)
+            {
+                if ((direction == "right") && (col > n - 1 || matrix[row, col] != 0))
+                {
+                    direction = "down";
+                    col--;
+                    row++;
+                }
+                else if ((direction == "down") && (row > n - 1 || matrix[row, col] != 0))
+                {
+                    direction = "left";
+                    row--;
+                    col--;
+                }
+                else if ((direction == "left") && (col < 0 || matrix[row, col] != 0))
+                {
+                    direction = "up";
+                    col++;
+                    row--;
+                }
+                else if ((direction == "up") && (row < 0 || matrix[row, col] != 0))
+                {
+                    direction = "right";
+                    row++;
+                    col++;
+                }
+                matrix[row, col] = i;
+                if (direction == "right")
+                {
+                    col++;
+                }
+                else if (direction == "down")
+                {
+                    row++;
+                }
+                else if (direction == "left")
+                {
+                    col--;
+                }
+                else if (direction == "up")
+                {
+                    row--;
+                }
+            }
+            for (int r = 0; r < n; r++)
+            {
+                for (int c = 0; c < n; c++)
+                {
+                    Console.Write("{0, 4}", matrix[r, c]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void Main()
+        {
+
             NumbersFrom1ToN01();
             NotDivisibleNumbers02();
             MMSA03();
@@ -429,6 +524,10 @@ namespace Loops
             DecimalToBinary12();
             DecimalToHex13();
             HexToDecimal14();
+            GCD15();
+            Trailing0InNFactorial16();
+            SpiralMatrix17();
+
         }
     }
 }
