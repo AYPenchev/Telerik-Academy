@@ -307,7 +307,112 @@ namespace Loops
              }*/
         }
 
-        static void Main()
+        private static void BinaryToDecimal11()
+        {
+            long decimalNum = 0;
+            Console.Write("Enter binary number: ");
+            string binaryNum = Console.ReadLine();
+            for (int i = binaryNum.Length - 1, j = 1; i >= 0; i--,j *= 2)
+            {
+                if(binaryNum[i] == '1')
+                {
+                    decimalNum += j;
+                }
+            }
+            Console.WriteLine(decimalNum);
+        }
+
+        private static void DecimalToBinary12()
+        {
+            string binaryNum = "";
+            Console.Write("Enter decimal number: ");
+            long decimalNum = long.Parse(Console.ReadLine());
+
+            if(decimalNum == 0)
+            {
+                binaryNum = "0";
+            }
+ 
+            while (decimalNum >= 1)
+            {
+                if(decimalNum % 2 == 0)
+                {
+                    binaryNum = binaryNum.Insert(0, "0");
+                }
+                else
+                {
+                   binaryNum = binaryNum.Insert(0, "1");
+                }
+                decimalNum /= 2;
+            }
+            Console.WriteLine(binaryNum);
+        }
+
+        private static void DecimalToHex13()
+        {
+            string HexNum = "";
+            Console.Write("Enter decimal number: ");
+            long decimalNum = long.Parse(Console.ReadLine());
+
+            while (decimalNum > 0)
+            {
+                long remainder = decimalNum % 16;
+                switch (remainder)
+                {
+                    case 1: HexNum = HexNum.Insert(0, "1"); break;
+                    case 2: HexNum = HexNum.Insert(0, "2"); break;
+                    case 3: HexNum = HexNum.Insert(0, "3"); break;
+                    case 4: HexNum = HexNum.Insert(0, "4"); break;
+                    case 5: HexNum = HexNum.Insert(0, "5"); break;
+                    case 6: HexNum = HexNum.Insert(0, "6"); break;
+                    case 7: HexNum = HexNum.Insert(0, "7"); break;
+                    case 8: HexNum = HexNum.Insert(0, "8"); break;
+                    case 9: HexNum = HexNum.Insert(0, "9"); break;
+                    case 10: HexNum = HexNum.Insert(0, "A"); break;
+                    case 11: HexNum = HexNum.Insert(0, "B"); break;
+                    case 12: HexNum = HexNum.Insert(0, "C"); break;
+                    case 13: HexNum = HexNum.Insert(0, "D"); break;
+                    case 14: HexNum = HexNum.Insert(0, "E"); break;
+                    case 15: HexNum = HexNum.Insert(0, "F"); break;
+                    default:  break;
+                }
+                decimalNum /= 16;
+
+            }
+            Console.WriteLine(HexNum);
+
+        }
+
+        private static void HexToDecimal14()
+        {
+            BigInteger decimalNum = 0;
+            Console.Write("Enter Hexdecimal number: ");
+            string HexNum = Console.ReadLine();
+            for (BigInteger i = HexNum.Length - 1, j = 1; i >= 0; i--, j *= 16)
+            {
+                switch (HexNum[(int)i])
+                {
+                    case '1': decimalNum += 1 * j;  break;
+                    case '2': decimalNum += 2 * j; break;
+                    case '3': decimalNum += 3 * j; break;
+                    case '4': decimalNum += 4 * j; break;
+                    case '5': decimalNum += 5 * j; break;
+                    case '6': decimalNum += 6 * j; break;
+                    case '7': decimalNum += 7 * j; break;
+                    case '8': decimalNum += 8 * j; break;
+                    case '9': decimalNum += 9 * j; break;
+                    case 'A': decimalNum += 10 * j; break;
+                    case 'B': decimalNum += 11 * j; break;
+                    case 'C': decimalNum += 12 * j; break;
+                    case 'D': decimalNum += 13 * j; break;
+                    case 'E': decimalNum += 14 * j; break;
+                    case 'F': decimalNum += 15 * j; break;
+                    default: break;
+                }
+            }
+            Console.WriteLine(decimalNum);
+        }
+            static void Main()
         {
             NumbersFrom1ToN01();
             NotDivisibleNumbers02();
@@ -320,6 +425,10 @@ namespace Loops
             MatrixOfNumbers09();
             MatrixOfNumbersChallange09();
             OddAndEvenProduct10();
+            BinaryToDecimal11();
+            DecimalToBinary12();
+            DecimalToHex13();
+            HexToDecimal14();
         }
     }
 }
