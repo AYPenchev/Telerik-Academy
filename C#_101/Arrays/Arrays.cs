@@ -80,6 +80,7 @@ namespace Arrays
                         break;
                     }
                 }
+
                 if (areLexicographicallyEqual)
                 {
                     Console.WriteLine("Equal length and lexicographically equal");
@@ -259,6 +260,7 @@ namespace Arrays
                         maxSumArray[j] = int.MinValue;
                     }
                 }
+
                 currentMax = int.MinValue;
             }
 
@@ -267,6 +269,7 @@ namespace Arrays
                 Console.Write(maxNumsFromBigArray[i] + " ");
                 sum += maxNumsFromBigArray[i];
             }
+
             Console.WriteLine(sum);
         }
 
@@ -280,6 +283,7 @@ namespace Arrays
         private static void SelectionSort07()
         {
             int currentMin;
+
             Console.WriteLine("Enter n: ");
             int n = int.Parse(Console.ReadLine());
             int[] sortArray = new int[n];
@@ -300,6 +304,7 @@ namespace Arrays
                         currentMin = j;
                     }
                 }
+
                 if (currentMin != i)
                 {
                     Swap(ref sortArray[currentMin], ref sortArray[i]);
@@ -312,18 +317,40 @@ namespace Arrays
             }
         }
 
+        private static void MaximalSum08()
+        {
+            int maxSum = 0;
+
+            Console.WriteLine("Enter n: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] maxSumArray = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                maxSumArray[i] = int.Parse(Console.ReadLine());
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    
+                }
+            }
+        }
+
         static void Main()
         {
-            //AllocateArray01();
-            //CompareArrays02();
-            //CompareCharArrays03();
-            //MaximalSequence04();
-            //MaximalIncreasingSequence05();
-            //MaximalKSum06();
-            //MaximalKSumSecond06();
-            //SelectionSort07();
+            AllocateArray01();
+            CompareArrays02();
+            CompareCharArrays03();
+            MaximalSequence04();
+            MaximalIncreasingSequence05();
+            MaximalKSum06();
+            MaximalKSumSecond06();
+            SelectionSort07();
 
-           
+
         }
     }
 }
