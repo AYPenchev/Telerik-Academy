@@ -320,6 +320,7 @@ namespace Arrays
         private static void MaximalSum08()
         {
             int maxSum = 0;
+            int checkSum = 0;
 
             Console.WriteLine("Enter n: ");
             int n = int.Parse(Console.ReadLine());
@@ -330,13 +331,20 @@ namespace Arrays
                 maxSumArray[i] = int.Parse(Console.ReadLine());
             }
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < n - 3; i++)
             {
-                for (int j = 0; j < n; j++)
+                checkSum = maxSumArray[i] + maxSumArray[i + 1] + maxSumArray[i + 2] + maxSumArray[i + 3];
+                if(checkSum > maxSum)
                 {
-                    
+                    maxSum = checkSum;
                 }
             }
+            Console.WriteLine(maxSum);
+        }
+
+        private static void FrequentNumber09()
+        {
+
         }
 
         static void Main()
@@ -349,8 +357,8 @@ namespace Arrays
             MaximalKSum06();
             MaximalKSumSecond06();
             SelectionSort07();
-
-
+            MaximalSum08();
+            FrequentNumber09();
         }
     }
 }
