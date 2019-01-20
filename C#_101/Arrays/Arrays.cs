@@ -273,7 +273,7 @@ namespace Arrays
             Console.WriteLine(sum);
         }
 
-        private static void Swap(ref int firstNum,ref int secondNum)
+        private static void Swap(ref int firstNum, ref int secondNum)
         {
             firstNum = firstNum + secondNum;
             secondNum = firstNum - secondNum;
@@ -293,7 +293,7 @@ namespace Arrays
                 sortArray[i] = int.Parse(Console.ReadLine());
             }
 
-            for (int i = 0; i < n ; i++)
+            for (int i = 0; i < n; i++)
             {
                 currentMin = i;
 
@@ -334,7 +334,7 @@ namespace Arrays
             for (int i = 0; i < n - 3; i++)
             {
                 checkSum = maxSumArray[i] + maxSumArray[i + 1] + maxSumArray[i + 2] + maxSumArray[i + 3];
-                if(checkSum > maxSum)
+                if (checkSum > maxSum)
                 {
                     maxSum = checkSum;
                 }
@@ -344,21 +344,51 @@ namespace Arrays
 
         private static void FrequentNumber09()
         {
+            int counter = 1, countHelper = 1;
+            int? copyArrayElement = null;
 
+            Console.WriteLine("Enter n: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] sortArray = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                sortArray[i] = int.Parse(Console.ReadLine());
+            }
+            Array.Sort(sortArray);
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                if (sortArray[i] == sortArray[i + 1])
+                {
+                    counter++;
+                }
+                else if (counter > countHelper)
+                {
+                    countHelper = counter;
+                    copyArrayElement = sortArray[i];
+                    counter = 1;
+                }
+                else
+                {
+                    counter = 1;
+                }
+            }
+            Console.WriteLine("Element: " + copyArrayElement + " " + countHelper + " times.");
         }
 
         static void Main()
         {
             AllocateArray01();
-            CompareArrays02();
-            CompareCharArrays03();
-            MaximalSequence04();
-            MaximalIncreasingSequence05();
-            MaximalKSum06();
-            MaximalKSumSecond06();
-            SelectionSort07();
-            MaximalSum08();
-            FrequentNumber09();
+             CompareArrays02();
+             CompareCharArrays03();
+             MaximalSequence04();
+             MaximalIncreasingSequence05();
+             MaximalKSum06();
+             MaximalKSumSecond06();
+             SelectionSort07();
+             MaximalSum08();
+             FrequentNumber09(); 
         }
     }
 }
