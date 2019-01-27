@@ -377,18 +377,57 @@ namespace Arrays
             Console.WriteLine("Element: " + copyArrayElement + " " + countHelper + " times.");
         }
 
+        private static void FindSumInArray10()
+        {
+            Console.WriteLine("Enter Sum: ");
+            int givenSum = int.Parse(Console.ReadLine());
+            int arraySum = 0;
+            int? startInx = null, endInx = null;
+            Console.WriteLine("Enter n: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] findSumArray = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                findSumArray[i] = int.Parse(Console.ReadLine());
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                arraySum = 0;
+                for (int j = i; j < n; j++)
+                {
+                    arraySum += findSumArray[j];
+                    if (arraySum == givenSum)
+                    {
+                        startInx = i;
+                        endInx = j + 1;
+                        i = n;
+                        break;
+                    }
+                }
+            }
+
+            for (int i = (int)startInx; i < endInx; i++)
+            {
+                Console.Write(findSumArray[i] + ", ");
+            }
+            Console.Write(givenSum);
+        }
+
         static void Main()
         {
-            AllocateArray01();
-             CompareArrays02();
-             CompareCharArrays03();
-             MaximalSequence04();
-             MaximalIncreasingSequence05();
-             MaximalKSum06();
-             MaximalKSumSecond06();
-             SelectionSort07();
-             MaximalSum08();
-             FrequentNumber09(); 
+            /*AllocateArray01();
+            CompareArrays02();
+            CompareCharArrays03();
+            MaximalSequence04();
+            MaximalIncreasingSequence05();
+            MaximalKSum06();
+            MaximalKSumSecond06();
+            SelectionSort07();
+            MaximalSum08();
+            FrequentNumber09();*/
+            FindSumInArray10();
         }
     }
 }
