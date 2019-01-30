@@ -379,13 +379,17 @@ namespace Arrays
 
         private static void FindSumInArray10()
         {
-            Console.WriteLine("Enter Sum: ");
-            int givenSum = int.Parse(Console.ReadLine());
             int arraySum = 0;
             int? startInx = null, endInx = null;
-            Console.WriteLine("Enter n: ");
+
+            Console.WriteLine("Enter Sum: ");
+            int givenSum = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter array size: ");
             int n = int.Parse(Console.ReadLine());
             int[] findSumArray = new int[n];
+
+            Console.WriteLine("Enter array elements: ");
 
             for (int i = 0; i < n; i++)
             {
@@ -408,16 +412,252 @@ namespace Arrays
                 }
             }
 
-            for (int i = (int)startInx; i < endInx; i++)
+            if (startInx != null && endInx != null)
             {
-                Console.Write(findSumArray[i] + ", ");
+                for (int i = (int)startInx; i < endInx; i++)
+                {
+                    Console.Write(findSumArray[i] + ", ");
+                }
+                Console.Write("Sum = " + givenSum + "\n");
             }
-            Console.Write(givenSum);
+            else
+            {
+                Console.WriteLine("Sum not found!");
+            }
+        }
+
+        private static int[] CreateAndInitArray()
+        {
+            Console.WriteLine("Enter array size: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] createArray = new int[n];
+
+            Console.WriteLine("Enter array elements: ");
+
+            for (int i = 0; i < n; i++)
+            {
+                createArray[i] = int.Parse(Console.ReadLine());
+            }
+            return createArray;
+        }
+
+        private static void BinarySearch11()
+        {
+            int[] binarySearchArray = CreateAndInitArray();
+            Console.WriteLine("Enter a number: ");
+            int searchInxNum = int.Parse(Console.ReadLine());
+            int left = 0, right = binarySearchArray.Length - 1;
+            int middle;
+            while (left <= right)
+            {
+                middle = left + (right - left) / 2;
+
+                if (binarySearchArray[middle] == searchInxNum)
+                {
+                    Console.WriteLine("Index: " + middle);
+                    return;
+                }
+
+                if (binarySearchArray[middle] < searchInxNum)
+                {
+                    left = middle + 1;
+                }
+                else
+                {
+                    right = middle - 1;
+                }
+            }
+
+            Console.WriteLine("This element isn't in the array");
+        }
+
+        private static void IndexOfLetters12()
+        {
+            char[] alphabetArray = new char[26];
+
+            for (int i = 0; i < 26; i++)
+            {
+                alphabetArray[i] = (char)('a' + i);
+            }
+
+            Console.WriteLine("Enter word: ");
+            string readWord = Console.ReadLine();
+
+            for (int i = 0; i < readWord.Length; i++)
+            {
+                for (int j = 0; j < alphabetArray.Length; j++)
+                {
+                    if (readWord[i] == alphabetArray[j])
+                    {
+                        Console.WriteLine(readWord[i] + " " + ((int)alphabetArray[j] - 'a'));
+                    }
+                }
+            }
+        }
+
+        private static void Merge(int[] mergeTwoSubArrays, int left, int middle, int right)
+        {
+            int i, j, k;
+            int n1 = middle - left + 1;
+            int n2 = right - middle;
+
+            int[] LEFT = new int[n1];
+            int[] RIGHT = new int[n2];
+
+            for (i = 0; i < n1; i++)
+            {
+                LEFT[i] = mergeTwoSubArrays[left + i];
+            }
+
+            for (j = 0; j < n2; j++)
+            {
+                RIGHT[j] = mergeTwoSubArrays[middle + 1 + j];
+            }
+
+            i = 0;
+            j = 0;
+            k = left;
+
+            while (i < n1 && j < n2)
+            {
+                if (LEFT[i] <= RIGHT[j])
+                {
+                    mergeTwoSubArrays[k] = LEFT[i];
+                    i++;
+                }
+                else
+                {
+                    mergeTwoSubArrays[k] = RIGHT[j];
+                    j++;
+                }
+                k++;
+            }
+
+            while (i < n1)
+            {
+                mergeTwoSubArrays[k] = LEFT[i];
+                i++;
+                k++;
+            }
+
+            while (j < n2)
+            {
+                mergeTwoSubArrays[k] = RIGHT[j];
+                j++;
+                k++;
+            }
+        }
+
+        private static void MergeSort13(int[] mergeArray, int left, int right)
+        {
+            if (left < right)
+            {
+                int middle = left + (right - left) / 2;
+
+                MergeSort13(mergeArray, left, middle);
+                MergeSort13(mergeArray, middle + 1, right);
+
+                Merge(mergeArray, left, middle, right);
+            }
+        }
+
+        private static int Partition(int[] arrayToBeSorted, int low, int high)
+        {
+            int pivot = arrayToBeSorted[high];
+            int i = low - 1;
+
+            for (int j = low; j < high; j++)
+            {
+                if (arrayToBeSorted[j] <= pivot)
+                {
+                    i++;
+
+                    int helpSwapingTwoNumbers = arrayToBeSorted[i];
+                    arrayToBeSorted[i] = arrayToBeSorted[j];
+                    arrayToBeSorted[j] = helpSwapingTwoNumbers;
+                }
+            }
+
+            int helpSwapingTwoNumbers2 = arrayToBeSorted[i + 1];
+            arrayToBeSorted[i + 1] = arrayToBeSorted[high];
+            arrayToBeSorted[high] = helpSwapingTwoNumbers2;
+
+            return i + 1;
+        }
+
+        private static void QuickSort(int[] arrayToBeSorted, int low, int high)
+        {
+            if (low < high)
+            {
+                int partitionIndex = Partition(arrayToBeSorted, low, high);
+
+                QuickSort(arrayToBeSorted, low, partitionIndex - 1);
+                QuickSort(arrayToBeSorted, partitionIndex + 1, high);
+            }
+        }
+
+        private static int[] ReadArrayFromUser()
+        {
+            Console.WriteLine("Enter array size: ");
+            int n = int.Parse(Console.ReadLine());
+            int[] arrayToBeSorted = new int[n];
+
+            Console.WriteLine("Enter array elements: ");
+
+            for (int i = 0; i < n; i++)
+            {
+                arrayToBeSorted[i] = int.Parse(Console.ReadLine());
+            }
+
+            return arrayToBeSorted;
+        }
+
+        private static void PrintArray(int[] arrayToBePrinted)
+        {
+            for (int i = 0; i < arrayToBePrinted.Length; i++)
+            {
+                Console.Write(arrayToBePrinted[i] + " ");
+            }
+        }
+
+        private static void SieveOfEratosthenes15()
+        {
+            Console.WriteLine("Enter n: ");
+            int n = int.Parse(Console.ReadLine());
+
+
+            bool[] prime = new bool[n + 1];
+
+            for (int i = 0; i < n + 1; i++)
+            {
+                prime[i] = true;
+            }
+
+            for (int p = 2; p * p < n; p++)
+            {
+                if(prime[p] == true)
+                {
+                    for (int i = p*p; i <= n; i += p)
+                    {
+                        prime[i] = false;
+                    }
+                }
+            }
+
+            for (int i = n; i >= 2; i--)
+            {
+                if(prime[i] == true)
+                {
+                    Console.WriteLine(i);
+                    break;
+                }
+            }
         }
 
         static void Main()
         {
-            /*AllocateArray01();
+            /*
+            AllocateArray01();
             CompareArrays02();
             CompareCharArrays03();
             MaximalSequence04();
@@ -426,8 +666,44 @@ namespace Arrays
             MaximalKSumSecond06();
             SelectionSort07();
             MaximalSum08();
-            FrequentNumber09();*/
-            FindSumInArray10();
+            FrequentNumber09();
+            FindSumInArray10(); 
+            BinarySearch11();
+            IndexOfLetters12();
+            */
+
+            /* Task 13
+            int[] arrayToBeSorted = ReadArrayFromUser();
+
+            Console.Write("Not Sorted: ");
+
+            PrintArray(arrayToBeSorted);
+
+            MergeSort13(arrayToBeSorted, 0, arrayToBeSorted.Length - 1);
+
+            Console.WriteLine();
+            Console.Write("Sorted: ");
+
+            PrintArray(arrayToBeSorted);
+            */
+
+            /* Task 14
+            int[] arrayToBeSorted = ReadArrayFromUser();
+
+            Console.Write("Not Sorted: ");
+
+            PrintArray(arrayToBeSorted);
+
+            QuickSort(arrayToBeSorted, 0, arrayToBeSorted.Length - 1);
+
+            Console.WriteLine();
+            Console.Write("Sorted: ");
+
+            PrintArray(arrayToBeSorted);
+            */
+
+            //SieveOfEratosthenes15();
+
         }
     }
 }
