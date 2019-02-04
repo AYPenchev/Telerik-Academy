@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Arrays
 {
@@ -339,6 +340,7 @@ namespace Arrays
                     maxSum = checkSum;
                 }
             }
+
             Console.WriteLine(maxSum);
         }
 
@@ -355,6 +357,7 @@ namespace Arrays
             {
                 sortArray[i] = int.Parse(Console.ReadLine());
             }
+
             Array.Sort(sortArray);
 
             for (int i = 0; i < n - 1; i++)
@@ -374,6 +377,7 @@ namespace Arrays
                     counter = 1;
                 }
             }
+
             Console.WriteLine("Element: " + copyArrayElement + " " + countHelper + " times.");
         }
 
@@ -399,6 +403,7 @@ namespace Arrays
             for (int i = 0; i < n; i++)
             {
                 arraySum = 0;
+
                 for (int j = i; j < n; j++)
                 {
                     arraySum += findSumArray[j];
@@ -418,6 +423,7 @@ namespace Arrays
                 {
                     Console.Write(findSumArray[i] + ", ");
                 }
+
                 Console.Write("Sum = " + givenSum + "\n");
             }
             else
@@ -438,16 +444,20 @@ namespace Arrays
             {
                 createArray[i] = int.Parse(Console.ReadLine());
             }
+
             return createArray;
         }
 
         private static void BinarySearch11()
         {
             int[] binarySearchArray = CreateAndInitArray();
+
             Console.WriteLine("Enter a number: ");
             int searchInxNum = int.Parse(Console.ReadLine());
+
             int left = 0, right = binarySearchArray.Length - 1;
             int middle;
+
             while (left <= right)
             {
                 middle = left + (right - left) / 2;
@@ -625,7 +635,6 @@ namespace Arrays
             Console.WriteLine("Enter n: ");
             int n = int.Parse(Console.ReadLine());
 
-
             bool[] prime = new bool[n + 1];
 
             for (int i = 0; i < n + 1; i++)
@@ -635,9 +644,9 @@ namespace Arrays
 
             for (int p = 2; p * p < n; p++)
             {
-                if(prime[p] == true)
+                if (prime[p] == true)
                 {
-                    for (int i = p*p; i <= n; i += p)
+                    for (int i = p * p; i <= n; i += p)
                     {
                         prime[i] = false;
                     }
@@ -646,12 +655,259 @@ namespace Arrays
 
             for (int i = n; i >= 2; i--)
             {
-                if(prime[i] == true)
+                if (prime[i] == true)
                 {
                     Console.WriteLine(i);
                     break;
                 }
             }
+        }
+
+        private static bool SubsetWithSumS16(int[] subsetArray, int sum, int counter)
+        {
+            if (sum == 0)
+            {
+                return true;
+            }
+
+            if (counter == 0 && sum != 0)
+            {
+                return false;
+            }
+
+            if (subsetArray[counter - 1] > sum)
+            {
+                return SubsetWithSumS16(subsetArray, sum, counter - 1);
+            }
+            else
+            {
+                return SubsetWithSumS16(subsetArray, sum, counter - 1) ||
+                       SubsetWithSumS16(subsetArray, sum - subsetArray[counter - 1], counter - 1);
+            }
+        }
+
+        private static bool SubsetKWithSumS17(int[] subsetArray, int sum, int k)
+        {
+            int subSum = 0;
+            int counter = 0;
+            bool isSubsetSumExist = false;
+
+            for (int i = 0; i < (2 << (subsetArray.Length - 1)); i++) //bitwise pow
+            {
+
+                int[] combination = new int[subsetArray.Length];
+
+                for (int j = 0; j < subsetArray.Length; j++)
+                {
+                    if ((i & (1 << (subsetArray.Length - j - 1))) != 0)
+                    {
+                        combination[j] = subsetArray[j];
+                    }
+                }
+
+                for (int j = 0; j < subsetArray.Length; j++)
+                {
+                    subSum += combination[j];
+                    if (combination[j] != 0)
+                    {
+                        counter++;
+                    }
+                }
+
+                if (subSum == sum && counter == k)
+                {
+                    isSubsetSumExist = true;
+                    break;
+                }
+                subSum = 0;
+                counter = 0;
+            }
+
+            return isSubsetSumExist;
+        }
+
+        private static bool IsSorted(int[] arr) //this function ignor all zeros
+        {
+            var numbersList = arr.ToList();
+            numbersList.RemoveAll(i => i == 0);
+            arr = numbersList.ToArray();
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i - 1] > arr[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private static void RemoveElementsFromArray18()
+        {
+            int[] removeElementsArray = ReadArrayFromUser();
+            int minRemoveElements = int.MaxValue;
+            int countRemovedElements = 0;
+
+            for (int i = 0; i < (2 << (removeElementsArray.Length - 1)); i++) //bitwise pow
+            {
+                int[] combination = new int[removeElementsArray.Length];
+
+                for (int j = 0; j < removeElementsArray.Length; j++)
+                {
+                    if ((i & (1 << (removeElementsArray.Length - j - 1))) != 0)
+                    {
+                        combination[j] = removeElementsArray[j];
+                    }
+                }
+
+                if (IsSorted(combination))
+                {
+                    for (int j = 0; j < removeElementsArray.Length; j++)
+                    {
+                        if (combination[j] == 0)
+                        {
+                            countRemovedElements++;
+                        }
+                    }
+
+                    if (countRemovedElements < minRemoveElements)
+                    {
+                        minRemoveElements = countRemovedElements;
+                    }
+
+                    countRemovedElements = 0;
+                }
+            }
+
+            Console.WriteLine(minRemoveElements);
+        }
+
+        private static void PermutationsOfSet19(int[] permutationArray, int l, int r)
+        {
+            if (l == r)
+            {
+                for (int i = 0; i < permutationArray.Length; i++)
+                {
+                    Console.Write(permutationArray[i] + " ");
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                for (int i = l; i <= r; i++)
+                {
+                    permutationArray = SwapArr(permutationArray, l, i);
+                    PermutationsOfSet19(permutationArray, l + 1, r);
+                    permutationArray = SwapArr(permutationArray, l, i);
+                }
+            }
+        }
+
+        public static int[] SwapArr(int[] a, int i, int j)
+        {
+            int swapInt = a[i];
+            a[i] = a[j];
+            a[j] = swapInt;
+
+            return a;
+        }
+
+        private static void VariationsOfSet21()
+        {
+            Console.Write("Enter a number N: ");
+            int n = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter a number K: ");
+            int k = int.Parse(Console.ReadLine());
+
+            int[] elem = Enumerable.Repeat(1, k).ToArray();
+
+            int c;
+
+            do
+            {
+                c = 1;
+                PrintElements(elem);
+
+                for (int i = 0; i < k; i++)
+                {
+                    elem[i] += c;
+
+                    if (elem[i] <= n)
+                    {
+                        c = 0; break;
+                    }
+                    else
+                    {
+                        elem[i] = c = 1;
+                    }
+                }
+            }
+            while (c != 1);
+        }
+
+
+        private static void PrintElements(int[] arr)
+        {
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void CombinationsOfSet22()
+        {
+            Console.Write("Enter a number N: ");
+            int n = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter a number K: ");
+            int k = int.Parse(Console.ReadLine());
+
+            int[] elem = Enumerable.Repeat(1, k).ToArray();
+
+            int c;
+
+            do
+            {
+                c = 1;
+
+                if (IsElementsInIncreasingOrder(elem))
+                    PrintElements(elem);
+
+                for (int i = 0; i < k; i++)
+                {
+                    elem[i] += c;
+
+                    if (elem[i] <= n)
+                    {
+                        c = 0; break;
+                    }
+                    else
+                    {
+                        elem[i] = c = 1;
+                    }
+                }
+            }
+            while (c != 1);
+        }
+
+        private static bool IsElementsInIncreasingOrder(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] <= arr[j])
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
         static void Main()
@@ -704,6 +960,37 @@ namespace Arrays
 
             //SieveOfEratosthenes15();
 
+            /* Task 16
+            int[] subsetArray = ReadArrayFromUser();//{ 2, 1, 2, 4, 3, 5, 2, 6 };
+            Console.WriteLine("Enter sum: ");
+            int sum = int.Parse(Console.ReadLine()); //14;
+            Console.WriteLine(SubsetWithSumS16(subsetArray, sum, subsetArray.Length) ? "Yes" : "No");
+            */
+
+            /* Task 17
+            int[] subsetArray = ReadArrayFromUser();  //{ 2, 1, 2, 4, 3, 5, 2, 6 };
+            Console.WriteLine("Enter sum: ");
+            int sum = int.Parse(Console.ReadLine());  //14;
+            Console.WriteLine("Enter k: ");
+            int k = int.Parse(Console.ReadLine()); // 4; 
+            Console.WriteLine(SubsetKWithSumS17(subsetArray, sum, k) ? "Yes" : "No");
+            */
+
+            //RemoveElementsFromArray18();
+
+            /*
+            int n = int.Parse(Console.ReadLine());
+            int[] permutationArray = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                permutationArray[i] = i + 1;
+            }
+            PermutationsOfSet19(permutationArray, 0, n - 1);
+            */
+
+            //VariationsOfSet21();
+
+            //CombinationsOfSet22();
         }
     }
 }
