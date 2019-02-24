@@ -134,11 +134,11 @@ namespace CSharp_Advanced
             PrintMatrix(matrix, n, n);
         }
 
-        private static void PrintMatrix(int[,] matrix, int n, int m)
+        private static void PrintMatrix(int[,] matrix, int rows, int columns)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < m; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     if (matrix[i, j] > 9)
                     {
@@ -153,11 +153,11 @@ namespace CSharp_Advanced
             }
         }
 
-        private static void FillMatrix(int[,] matrix, int n, int m)
+        private static void FillMatrix(int[,] matrix, int rows, int columns)
         {
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < m; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     matrix[i, j] = int.Parse(Console.ReadLine());
                 }
@@ -174,21 +174,21 @@ namespace CSharp_Advanced
 
             int n = numbers[0];
             int m = numbers[1];
-            
+
             int[,] matrix = new int[n, m];
             Console.WriteLine("Enter elements:");
 
             FillMatrix(matrix, n, m);
             PrintMatrix(matrix, n, m);
 
-            if(n >= 3 && m >= 3)
+            if (n >= 3 && m >= 3)
             {
                 int row = 0;
                 int column = 0;
                 int maxSum = 0;
                 int currentSum = 0;
 
-                while(row + 2 < n && column + 2 < m)
+                while (row + 2 < n && column + 2 < m)
                 {
                     for (int i = row; i <= row + 2; i++)
                     {
@@ -213,7 +213,106 @@ namespace CSharp_Advanced
                 }
                 Console.WriteLine(maxSum);
             }
-            
+
+        }
+
+        private static void SequenceInMatrix03()
+        {
+            Console.WriteLine("Enter size n - rows of the matrix and size m - columns of the matrix: ");
+            int[] numbers = Console.ReadLine()
+                    .Split(' ')
+                    .Select(item => int.Parse(item))
+                    .ToArray();
+
+            int n = numbers[0];
+            int m = numbers[1];
+
+            int[,] matrix = { { 92, 11, 23, 42, 59, 48 },
+                              { 92, 11, 23, 42, 59, 48 },
+                              { 92, 11, 23, 42, 59, 48 },
+                              { 92, 11, 23, 42, 59, 48 },
+                              { 92, 11, 23, 42, 59, 48 },
+                              { 92, 11, 23, 42, 59, 48 }
+                            };//new int[n, m];
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    int[] eachRow = Console.ReadLine()
+            //            .Split(' ')
+            //            .Select(item => int.Parse(item))
+            //            .ToArray();
+
+            //    for (int j = 0; j < m; j++)
+            //    {
+            //        matrix[i, j] = eachRow[j];
+            //    }
+            //}
+            //PrintMatrix(matrix, n, m);
+
+            int maxSequence = 0;
+            int currentSequence = 0;
+
+            //Check each row
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m - 1; j++)
+                {
+                    if (matrix[i, j] == matrix[i, j + 1])
+                    {
+                        currentSequence++;
+                    }
+                }
+                if (currentSequence > maxSequence)
+                {
+                    maxSequence = currentSequence;
+                }
+                currentSequence = 0;
+            }
+
+            //Check each column
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m - 1; j++)
+                {
+                    if (matrix[j, i] == matrix[j + 1, i])
+                    {
+                        currentSequence++;
+                    }
+                }
+                if (currentSequence > maxSequence)
+                {
+                    maxSequence = currentSequence;
+                }
+                currentSequence = 0;
+            }
+
+            //Check main diagonal
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    if(i == j)
+                    {
+                        if (matrix[i, j] == matrix[i + 1, j + 1])
+                        {
+                            currentSequence++;
+                        }
+                    }
+                }
+                if (currentSequence > maxSequence)
+                {
+                    maxSequence = currentSequence;
+                }
+                currentSequence = 0;
+            }
+
+            //for (int i = 0; i < n; i++)//The first index increases
+            //{
+            //    for (int j = m - 1; j >= 0; j--)//The second index decreases
+            //    {
+            //        matrix[i, j];              //cout << a[i][j] << endl;//Printing the element
+            //    }
+            //}
         }
 
 
@@ -221,6 +320,7 @@ namespace CSharp_Advanced
         {
             //FillTheMatrix01();
             //MaximalSum02();
+            SequenceInMatrix03();
         }
     }
 }
