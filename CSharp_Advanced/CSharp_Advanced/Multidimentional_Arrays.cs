@@ -188,7 +188,7 @@ namespace CSharp_Advanced
                 int maxSum = 0;
                 int currentSum = 0;
 
-                while(row + 2 <= n && column + 2 <= m)
+                while(row + 2 < n && column + 2 < m)
                 {
                     for (int i = row; i <= row + 2; i++)
                     {
@@ -202,10 +202,10 @@ namespace CSharp_Advanced
                     if (currentSum > maxSum)
                     {
                         maxSum = currentSum;
-                        currentSum = 0;
                     }
+                    currentSum = 0;
 
-                    if (row + 2 > n)
+                    if (row + 2 >= n)
                     {
                         row = 0;
                         column++;
@@ -220,7 +220,7 @@ namespace CSharp_Advanced
         static void Main()
         {
             //FillTheMatrix01();
-            MaximalSum02();
+            //MaximalSum02();
         }
     }
 }
