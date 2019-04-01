@@ -227,30 +227,30 @@ namespace CSharp_Advanced
             int n = numbers[0];
             int m = numbers[1];
 
-            int[,] matrix = { { 92, 11, 23, 42, 59, 48 },
-                              { 92, 11, 23, 42, 59, 48 },
-                              { 92, 11, 23, 42, 59, 48 },
-                              { 92, 11, 23, 42, 59, 48 },
-                              { 92, 11, 23, 42, 59, 48 },
-                              { 92, 11, 23, 42, 59, 48 }
-                            };//new int[n, m];
+            string[,] matrix = new string[n, m];
+            /*{ { 92, 11, 23, 42, 59, 48 },
+              { 09, 92, 23, 72, 48, 14 },
+              { 17, 63, 92, 48, 85, 95 },
+              { 34, 12, 48, 92, 23, 95 },
+              { 26, 48, 78, 71, 92, 95 },
+              { 48, 34, 16, 63, 39, 95 }
+            };*/
 
-            //for (int i = 0; i < n; i++)
-            //{
-            //    int[] eachRow = Console.ReadLine()
-            //            .Split(' ')
-            //            .Select(item => int.Parse(item))
-            //            .ToArray();
+            for (int i = 0; i < n; i++)
+            {
+                string[] eachRow = Console.ReadLine()
+                        .Split(' ')
+                        .Select(item => item)
+                        .ToArray();
 
-            //    for (int j = 0; j < m; j++)
-            //    {
-            //        matrix[i, j] = eachRow[j];
-            //    }
-            //}
-            //PrintMatrix(matrix, n, m);
+                for (int j = 0; j < m; j++)
+                {
+                    matrix[i, j] = eachRow[j];
+                }
+            }
 
-            int maxSequence = 0;
-            int currentSequence = 0;
+            int maxSequence = 1;
+            int currentSequence = 1;
 
             //Check each row
             for (int i = 0; i < n; i++)
@@ -266,7 +266,7 @@ namespace CSharp_Advanced
                 {
                     maxSequence = currentSequence;
                 }
-                currentSequence = 0;
+                currentSequence = 1;
             }
 
             //Check each column
@@ -283,44 +283,130 @@ namespace CSharp_Advanced
                 {
                     maxSequence = currentSequence;
                 }
-                currentSequence = 0;
+                currentSequence = 1;
             }
 
             //Check main diagonal
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < m - 1; i++)
             {
-                for (int j = 0; j < m; j++)
-                {
-                    if(i == j)
-                    {
-                        if (matrix[i, j] == matrix[i + 1, j + 1])
-                        {
-                            currentSequence++;
-                        }
-                    }
-                }
-                if (currentSequence > maxSequence)
-                {
-                    maxSequence = currentSequence;
-                }
-                currentSequence = 0;
-            }
 
-            //for (int i = 0; i < n; i++)//The first index increases
-            //{
-            //    for (int j = m - 1; j >= 0; j--)//The second index decreases
-            //    {
-            //        matrix[i, j];              //cout << a[i][j] << endl;//Printing the element
-            //    }
-            //}
+                if (matrix[i, i] == matrix[i + 1, i + 1])
+                {
+                    currentSequence++;
+                }
+
+            }
+            if (currentSequence > maxSequence)
+            {
+                maxSequence = currentSequence;
+            }
+            currentSequence = 1;
+
+            //Check secondary diagonal
+            for (int i = 0, j = m - 1; i < n - 1 && j >= 1; i++, j--)
+            {
+                if (matrix[i, j] == matrix[i + 1, j - 1])
+                {
+                    currentSequence++;
+                }
+            }
+            if (currentSequence > maxSequence)
+            {
+                maxSequence = currentSequence;
+            }
+            Console.WriteLine(maxSequence);
         }
 
+        //this function returns the index of the largest number in the array which is <= k
+        private static void BinarySearch04()
+        {
+            Console.Write("Enter length for array: ");
+            int n = int.Parse(Console.ReadLine());
+
+            int[] binSearchArray = new int[n];
+
+            Console.WriteLine("Enter elements for the created array: ");
+            for (int i = 0; i < n; i++)
+            {
+                binSearchArray[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.Write("Enter k: ");
+            int k = int.Parse(Console.ReadLine());
+
+            Array.Sort(binSearchArray);
+            int indexOfNumBeingSearched = Array.BinarySearch(binSearchArray, k);
+
+            if (indexOfNumBeingSearched >= 0)
+            {
+                Console.WriteLine(indexOfNumBeingSearched);
+            }
+            else if (binSearchArray[n - 1] < k)
+            {
+                Console.WriteLine(n - 1);
+            }
+            else
+            {
+                Console.WriteLine("There is no such element.");
+            }
+        }
+
+        private static void SortByStringLength05()
+        {
+            string[] matrix = { "9266", "11", "237" };
+            int matrixLength = matrix.Length;
+            //Array.Sort(matrix); also works
+
+            Console.WriteLine("Not sorted");
+            for (int i = 0; i < matrixLength; i++)
+            {
+                Console.WriteLine(matrix[i]);
+            }
+
+            for (int i = 0; i < matrixLength - 1; i++)
+            {
+                int min_idx = i;
+                for (int j = i + 1; j < matrixLength; j++)
+                {
+                    if (matrix[j].Length < matrix[min_idx].Length)
+                    {
+                        min_idx = j;
+                    }
+                }
+
+                string temp = matrix[min_idx];
+                matrix[min_idx] = matrix[i];
+                matrix[i] = temp;
+            }
+
+            Console.WriteLine("Sorted");
+            for (int i = 0; i < matrixLength; i++)
+            {
+                Console.WriteLine(matrix[i]);
+            }
+
+        }
+
+        //Description Write a class Matrix, to hold a matrix of integers. Overload the operators for adding, subtracting and multiplying of matrices, indexer for accessing the matrix content and ToString().
+        private static void MatrixClass06()
+        {
+
+        }
+
+        private static void LargestAreaInMatrix07()
+        {
+
+        }
 
         static void Main()
         {
-            //FillTheMatrix01();
-            //MaximalSum02();
+            /*
+            FillTheMatrix01();
+            MaximalSum02();
             SequenceInMatrix03();
+            BinarySearch04();
+            SortByStringLength05();
+            */
         }
     }
 }
