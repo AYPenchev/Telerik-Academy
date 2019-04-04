@@ -388,9 +388,16 @@ namespace CSharp_Advanced
         }
 
         //Description Write a class Matrix, to hold a matrix of integers. Overload the operators for adding, subtracting and multiplying of matrices, indexer for accessing the matrix content and ToString().
-        private static void MatrixClass06()
+        class MatrixClass06
         {
+            private int[,] matrix;   // matr
 
+            public static MatrixClass06 operator +(MatrixClass06 addend1, MatrixClass06 addend2)
+            {
+                MatrixClass06 matrixSum = new MatrixClass06();
+                
+                return matrixSum;
+            }
         }
 
         private static void LargestAreaInMatrix07()
@@ -407,6 +414,7 @@ namespace CSharp_Advanced
             BinarySearch04();
             SortByStringLength05();
             */
+            MatrixClass06 matr1;
         }
     }
 }
