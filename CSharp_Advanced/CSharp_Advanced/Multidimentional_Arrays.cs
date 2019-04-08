@@ -572,7 +572,6 @@ namespace CSharp_Advanced
                 {4, 3, 3, 3, 1, 1}
             };
 
-            // logic
             static bool[,] visited = new bool[matrix.GetLength(0), matrix.GetLength(1)];
 
             static int DepthFirstSearch(int row, int col, int value)
