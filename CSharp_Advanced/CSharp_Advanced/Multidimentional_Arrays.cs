@@ -560,33 +560,6 @@ namespace CSharp_Advanced
             }
         }
 
-        private static void LargestAreaInMatrix07()
-        {
-            Console.WriteLine("Enter size n - rows of the matrix and size m - columns of the matrix: ");
-            int[] numbers = Console.ReadLine()
-                    .Split(' ')
-                    .Select(item => int.Parse(item))
-                    .ToArray();
-
-            int n = numbers[0];
-            int m = numbers[1];
-
-            string[,] matrix = new string[n, m];
-
-            for (int i = 0; i < n; i++)
-            {
-                string[] eachRow = Console.ReadLine()
-                        .Split(' ')
-                        .Select(item => item)
-                        .ToArray();
-
-                for (int j = 0; j < m; j++)
-                {
-                    matrix[i, j] = eachRow[j];
-                }
-            }
-        }
-
         class LargestAreaInMatrix
         {
             //LargestAreaInMatrix07();
