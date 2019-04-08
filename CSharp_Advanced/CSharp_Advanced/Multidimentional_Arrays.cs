@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CSharp_Advanced
@@ -387,22 +388,265 @@ namespace CSharp_Advanced
 
         }
 
-        //Description Write a class Matrix, to hold a matrix of integers. Overload the operators for adding, subtracting and multiplying of matrices, indexer for accessing the matrix content and ToString().
         class MatrixClass06
         {
-            private int[,] matrix;   // matr
+            private int rows;
+            private int cols;
+            private int[,] matrix;
+
+            public MatrixClass06(int numberOfRows, int numberOfCols)
+            {
+                SetRows(numberOfRows);
+                SetCols(numberOfCols);
+                matrix = new int[rows, cols];
+                int fillingMatrix = 1;
+
+                for (int i = 0; i < GetRows(); i++)
+                {
+                    for (int j = 0; j < GetCols(); j++)
+                    {
+                        matrix[i, j] = fillingMatrix;
+                        fillingMatrix++;
+                    }
+                }
+            }
 
             public static MatrixClass06 operator +(MatrixClass06 addend1, MatrixClass06 addend2)
             {
-                MatrixClass06 matrixSum = new MatrixClass06();
-                
-                return matrixSum;
+                MatrixClass06 matrixSumm = new MatrixClass06(3, 3);
+
+                for (int i = 0; i < matrixSumm.GetRows(); i++)
+                {
+                    for (int j = 0; j < matrixSumm.GetCols(); j++)
+                    {
+                        matrixSumm.matrix[i, j] = addend1.matrix[i, j] + addend2.matrix[i, j];
+                    }
+                }
+
+                return matrixSumm;
+            }
+
+            public static MatrixClass06 operator -(MatrixClass06 minuend, MatrixClass06 subtrahend)
+            {
+                MatrixClass06 matrixDifference = new MatrixClass06(3, 3);
+
+                for (int i = 0; i < matrixDifference.GetRows(); i++)
+                {
+                    for (int j = 0; j < matrixDifference.GetCols(); j++)
+                    {
+                        matrixDifference.matrix[i, j] = minuend.matrix[i, j] - subtrahend.matrix[i, j];
+                    }
+                }
+
+                return matrixDifference;
+            }
+
+            public static MatrixClass06 operator *(MatrixClass06 multiplyable1, MatrixClass06 multiplyable2)
+            {
+                MatrixClass06 matrixProduct = new MatrixClass06(3, 3);
+
+                for (int i = 0; i < matrixProduct.GetRows(); i++)
+                {
+                    for (int j = 0; j < matrixProduct.GetCols(); j++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                if (j == 0)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j] * multiplyable2.matrix[i, j] + multiplyable1.matrix[i, j + 1] * multiplyable2.matrix[i + 1, j] +
+                                                        multiplyable1.matrix[i, j + 2] * multiplyable2.matrix[i + 2, j];
+                                }
+                                else if (j == 1)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j - 1] * multiplyable2.matrix[i, j] + multiplyable1.matrix[i, j] * multiplyable2.matrix[i + 1, j] +
+                                                        multiplyable1.matrix[i, j + 1] * multiplyable2.matrix[i + 2, j];
+                                }
+                                else if (j == 2)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j - 2] * multiplyable2.matrix[i, j] + multiplyable1.matrix[i, j - 1] * multiplyable2.matrix[i + 1, j] +
+                                                        multiplyable1.matrix[i, j] * multiplyable2.matrix[i + 2, j];
+                                }
+                                break;
+                            case 1:
+                                if (j == 0)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j] * multiplyable2.matrix[i - 1, j] + multiplyable1.matrix[i, j + 1] * multiplyable2.matrix[i, j] +
+                                                       multiplyable1.matrix[i, j + 2] * multiplyable2.matrix[i + 1, j];
+                                }
+                                else if (j == 1)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j - 1] * multiplyable2.matrix[i - 1, j] + multiplyable1.matrix[i, j] * multiplyable2.matrix[i, j] +
+                                                      multiplyable1.matrix[i, j + 1] * multiplyable2.matrix[i + 1, j];
+                                }
+                                else if (j == 2)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j - 2] * multiplyable2.matrix[i - 1, j] + multiplyable1.matrix[i, j - 1] * multiplyable2.matrix[i, j] +
+                                                multiplyable1.matrix[i, j] * multiplyable2.matrix[i + 1, j];
+                                }
+                                break;
+                            case 2:
+                                if (j == 0)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j] * multiplyable2.matrix[i - 2, j] + multiplyable1.matrix[i, j + 1] * multiplyable2.matrix[i - 1, j] +
+                                                       multiplyable1.matrix[i, j + 2] * multiplyable2.matrix[i, j];
+                                }
+                                else if (j == 1)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j - 1] * multiplyable2.matrix[i - 2, j] + multiplyable1.matrix[i, j] * multiplyable2.matrix[i - 1, j] +
+                                                      multiplyable1.matrix[i, j + 1] * multiplyable2.matrix[i, j];
+                                }
+                                else if (j == 2)
+                                {
+                                    matrixProduct.matrix[i, j] = multiplyable1.matrix[i, j - 2] * multiplyable2.matrix[i - 2, j] + multiplyable1.matrix[i, j - 1] * multiplyable2.matrix[i - 1, j] +
+                                                multiplyable1.matrix[i, j] * multiplyable2.matrix[i, j];
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+
+                    }
+                }
+
+                return matrixProduct;
+            }
+
+            public override string ToString()
+            {
+                string matrixToString = "";
+
+                for (int i = 0; i < GetRows(); i++)
+                {
+                    for (int j = 0; j < GetCols(); j++)
+                    {
+                        matrixToString += GetMatrix()[i, j] + " ";
+                    }
+                }
+
+                return matrixToString;
+            }
+
+            public int GetRows()
+            {
+                return this.rows;
+            }
+
+            public void SetRows(int rows)
+            {
+                this.rows = rows;
+            }
+
+            public int GetCols()
+            {
+                return this.cols;
+            }
+
+            public void SetCols(int cols)
+            {
+                this.cols = cols;
+            }
+
+            public int[,] GetMatrix()
+            {
+                return this.matrix;
+            }
+
+            public void SetMatrix(int[,] matrix)
+            {
+                this.matrix = matrix;
             }
         }
 
         private static void LargestAreaInMatrix07()
         {
+            Console.WriteLine("Enter size n - rows of the matrix and size m - columns of the matrix: ");
+            int[] numbers = Console.ReadLine()
+                    .Split(' ')
+                    .Select(item => int.Parse(item))
+                    .ToArray();
 
+            int n = numbers[0];
+            int m = numbers[1];
+
+            string[,] matrix = new string[n, m];
+
+            for (int i = 0; i < n; i++)
+            {
+                string[] eachRow = Console.ReadLine()
+                        .Split(' ')
+                        .Select(item => item)
+                        .ToArray();
+
+                for (int j = 0; j < m; j++)
+                {
+                    matrix[i, j] = eachRow[j];
+                }
+            }
+        }
+
+        class LargestAreaInMatrix
+        {
+            //LargestAreaInMatrix07();
+            static int[,] matrix = new int[,]
+            {
+                {1, 3, 2, 2, 2, 4},
+                {3, 3, 3, 2, 4, 4},
+                {4, 3, 1, 2, 3, 3},
+                {4, 3, 1, 3, 3, 1},
+                {4, 3, 3, 3, 1, 1}
+            };
+
+            // logic
+            static bool[,] visited = new bool[matrix.GetLength(0), matrix.GetLength(1)];
+
+            static int DepthFirstSearch(int row, int col, int value)
+            {
+                if (row < 0 || col < 0 || row >= matrix.GetLength(0) || col >= matrix.GetLength(1))
+                {
+                    return 0;
+                }
+                if (visited[row, col])
+                {
+                    return 0;
+                }
+                if (matrix[row, col] != value)
+                {
+                    return 0;
+                }
+                visited[row, col] = true;
+                return DepthFirstSearch(row, col + 1, value) + DepthFirstSearch(row, col - 1, value) +
+                DepthFirstSearch(row + 1, col, value) + DepthFirstSearch(row - 1, col, value) + 1;
+            }
+
+            public static void PrintResult()
+            {
+                int result = 0;
+
+                for (int row = 0; row < matrix.GetLength(0); row++)
+                {
+                    for (int col = 0; col < matrix.GetLength(1); col++)
+                    {
+                        result = Math.Max(result, DepthFirstSearch(row, col, matrix[row, col]));
+                    }
+                }
+                Console.WriteLine("\n{0} equal neighbour elements.\n", result);
+
+                for (int rows = 0; rows < matrix.GetLength(0); rows++)
+                {
+                    for (int cols = 0; cols < matrix.GetLength(1); cols++)
+                    {
+                        if (matrix[rows, cols] == 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                        }
+                        Console.Write("{0,2}", matrix[rows, cols]);
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
         }
 
         static void Main()
@@ -413,8 +657,33 @@ namespace CSharp_Advanced
             SequenceInMatrix03();
             BinarySearch04();
             SortByStringLength05();
+           
+            //Task 6:
+ 
+            MatrixClass06 matrixTest1 = new MatrixClass06(3, 3);
+ 
+            MatrixClass06 matrixTest2 = new MatrixClass06(3, 3);
+ 
+            Console.WriteLine("Sum: ");
+            MatrixClass06 matrixSum = new MatrixClass06(3, 3);
+            matrixSum = matrixTest1 + matrixTest2;
+            PrintMatrix(matrixSum.GetMatrix(), matrixSum.GetRows(), matrixSum.GetCols());
+ 
+            Console.WriteLine("\nSubstraction: ");
+            MatrixClass06 matrixDifference = new MatrixClass06(3, 3);
+            matrixDifference = matrixTest1 - matrixTest2;
+            PrintMatrix(matrixDifference.GetMatrix(), matrixDifference.GetRows(), matrixDifference.GetCols());
+ 
+            Console.WriteLine("\nToString function \n" + matrixSum.ToString());
+ 
+            Console.WriteLine("\nProduct: ");
+            MatrixClass06 matrixProduct = new MatrixClass06(3, 3);
+            matrixProduct = matrixTest1 * matrixTest2;
+            PrintMatrix(matrixProduct.GetMatrix(), matrixProduct.GetRows(), matrixProduct.GetCols());
             */
-            MatrixClass06 matr1;
+
+            //Task 7:
+            //LargestAreaInMatrix.PrintResult();
         }
     }
 }
