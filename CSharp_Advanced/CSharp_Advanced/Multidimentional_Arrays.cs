@@ -359,6 +359,7 @@ namespace CSharp_Advanced
             //Array.Sort(matrix); also works
 
             Console.WriteLine("Not sorted");
+
             for (int i = 0; i < matrixLength; i++)
             {
                 Console.WriteLine(matrix[i]);
@@ -381,6 +382,7 @@ namespace CSharp_Advanced
             }
 
             Console.WriteLine("Sorted");
+
             for (int i = 0; i < matrixLength; i++)
             {
                 Console.WriteLine(matrix[i]);
