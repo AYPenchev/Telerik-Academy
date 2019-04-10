@@ -653,10 +653,11 @@ namespace CSharp_Advanced
             MatrixClass06 matrixProduct = new MatrixClass06(3, 3);
             matrixProduct = matrixTest1 * matrixTest2;
             PrintMatrix(matrixProduct.GetMatrix(), matrixProduct.GetRows(), matrixProduct.GetCols());
-            */
+            
 
             //Task 7:
-            //LargestAreaInMatrix.PrintResult();
+            LargestAreaInMatrix.PrintResult();
+            */
         }
     }
 }
