@@ -103,6 +103,43 @@ namespace Methods
             return countLargerThanNeighbours;
         }
 
+        public static int FirstLargerThanNeighbours06(int[] largerThanNeighbourArray)
+        {
+            for (int i = 0; i < largerThanNeighbourArray.GetLongLength(0); i++)
+            {
+                if (i != 0 && i != largerThanNeighbourArray.GetLongLength(0) - 1)
+                {
+                    if (largerThanNeighbourArray[i] > largerThanNeighbourArray[i - 1] && largerThanNeighbourArray[i] > largerThanNeighbourArray[i + 1])
+                    {
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+
+        public static double ReverseDecimalNumber(double numberToBeReversed)
+        {
+            int wholeNumberPart = (int)numberToBeReversed;
+            int decimalNumberPart;
+
+            string input_decimal_number = numberToBeReversed.ToString();
+
+            var regex = new System.Text.RegularExpressions.Regex("(?<=[\\.])[0-9]+");
+            if (regex.IsMatch(input_decimal_number))
+            {
+                string decimal_places = regex.Match(input_decimal_number).Value;
+                decimalNumberPart = int.Parse(decimal_places);
+            }
+            return 1;
+        }
+
+        //public static int ReverseIntNumber(int numberToBeReversed)
+        //{
+        //    int reversedNumber = 0;
+        //    numberToBeReversed.ToString().Length;
+        //}
+
         static void Main()
         {
             /* Task 1
@@ -147,7 +184,16 @@ namespace Methods
             Console.WriteLine(LargerThanNeighbours05(largerThanNeighbourArray));
             */
 
-            /* Task 6 */
+            /* Task 6 
+            int[] firstLargerThanNeighbourArray = { };
+
+            FillArray(ref firstLargerThanNeighbourArray);
+
+            Console.WriteLine(FirstLargerThanNeighbours06(firstLargerThanNeighbourArray));
+            */
+
+            /* Task 7 */
+
         }
     }
 }
