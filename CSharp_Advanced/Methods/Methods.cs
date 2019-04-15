@@ -336,7 +336,7 @@ namespace Methods
             MultiplyDigitsOfNumberByAnother(numberToBeRepresentedAsArray, multiplier);
                        - Part2*/
             int number = int.Parse(Console.ReadLine());
-            Factorial10(number);
+            Console.WriteLine(Factorial10(number));
         }
     }
 }
