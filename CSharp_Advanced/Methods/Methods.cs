@@ -118,27 +118,103 @@ namespace Methods
             return -1;
         }
 
-        public static double ReverseDecimalNumber(double numberToBeReversed)
+        public static decimal ReverseDecimalNumber07(string numberToBeReversed)
         {
-            int wholeNumberPart = (int)numberToBeReversed;
-            int decimalNumberPart;
+            string[] parts = numberToBeReversed.Split('.');
+            int wholeNumberPart = int.Parse(parts[0]);
+            int decimalNumberPart = int.Parse(parts[1]);
 
-            string input_decimal_number = numberToBeReversed.ToString();
+            string reversedNumber = ReverseIntNumber(decimalNumberPart).ToString() + "." + ReverseIntNumber(wholeNumberPart).ToString();
 
-            var regex = new System.Text.RegularExpressions.Regex("(?<=[\\.])[0-9]+");
-            if (regex.IsMatch(input_decimal_number))
-            {
-                string decimal_places = regex.Match(input_decimal_number).Value;
-                decimalNumberPart = int.Parse(decimal_places);
-            }
-            return 1;
+            return decimal.Parse(reversedNumber);
         }
 
-        //public static int ReverseIntNumber(int numberToBeReversed)
-        //{
-        //    int reversedNumber = 0;
-        //    numberToBeReversed.ToString().Length;
-        //}
+        public static int ReverseIntNumber(int numberToBeReversed)
+        {
+            int reversedNumber = 0;
+
+            for (int i = numberToBeReversed.ToString().Length - 1; i >= 0; i--)
+            {
+                reversedNumber += (int)((numberToBeReversed % 10) * Math.Pow(10, i));
+                numberToBeReversed /= 10;
+            }
+            return reversedNumber;
+        }
+
+        public static int CountZerosInBeggining(string number)
+        {
+            int zeroCount = 0;
+
+            for (int i = 0; i < number.Length; i++)
+            {
+                if (number[i] != '0')
+                {
+                    return zeroCount;
+                }
+
+                zeroCount++;
+            }
+            return 0;
+        }
+
+        public static void NumberAsArray08()
+        {
+            int[] arrayLengths = Console.ReadLine()
+                                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                                .Select(item => int.Parse(item))
+                                .ToArray();
+
+            int firstArrayLength = arrayLengths[0];
+            int secondArrayLegth = arrayLengths[1];
+
+            int[] firstArray = new int[firstArrayLength];
+            firstArray = Console.ReadLine()
+                           .Split(new char[] { ' ' }, firstArrayLength, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            int[] secondArray = new int[secondArrayLegth];
+            secondArray = Console.ReadLine()
+                           .Split(new char[] { ' ' }, secondArrayLegth, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            string concatFirstArray= "";
+            for (int i = 0; i < firstArray.Length; i++)
+            {
+                concatFirstArray += firstArray[i]; 
+            }
+
+            int firstAddend = int.Parse(concatFirstArray);
+            firstAddend = ReverseIntNumber(firstAddend);
+
+            if (CountZerosInBeggining(concatFirstArray) > 0)
+            {
+                firstAddend *= (int)Math.Pow(10, CountZerosInBeggining(concatFirstArray));
+            }
+
+            string concatSecondArray = "";
+            for (int i = 0; i < secondArray.Length; i++)
+            {
+                concatSecondArray += secondArray[i];
+            }
+
+            int secondAddend = int.Parse(concatSecondArray);
+            secondAddend = ReverseIntNumber(secondAddend);
+
+            if (CountZerosInBeggining(concatSecondArray) > 0)
+            {
+                secondAddend *= (int)Math.Pow(10, CountZerosInBeggining(concatSecondArray));
+            }
+
+            int arraysSum = firstAddend + secondAddend;
+            string sumArray = ReverseIntNumber(arraysSum).ToString();
+
+            for (int i = 0; i < sumArray.Length; i++)
+            {
+                Console.Write("{0,2}", sumArray[i]);
+            }
+        }
 
         static void Main()
         {
@@ -192,7 +268,16 @@ namespace Methods
             Console.WriteLine(FirstLargerThanNeighbours06(firstLargerThanNeighbourArray));
             */
 
-            /* Task 7 */
+            /* Task 7 
+            string numberToBeReversed = Console.ReadLine();
+            Console.WriteLine(ReverseDecimalNumber07(numberToBeReversed));
+            */
+
+            /* Task 8 
+            NumberAsArray08();
+            */
+
+            /* Task 9 */
 
         }
     }
