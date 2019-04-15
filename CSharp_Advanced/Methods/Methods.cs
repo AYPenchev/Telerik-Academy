@@ -216,6 +216,54 @@ namespace Methods
             }
         }
 
+        public static int MaxElementFromArray(int[] arrayToBeSorted, int startingIndex = 0)
+        {
+            int maximalElement = int.MinValue;
+
+            for (int i = startingIndex; i < arrayToBeSorted.Length; i++)
+            {
+                if(arrayToBeSorted[i] > maximalElement)
+                {
+                    maximalElement = arrayToBeSorted[i];
+                }
+            }
+            return maximalElement;
+        }
+
+        public static void SortinArray09()
+        {
+
+        }
+
+        public static void MultiplyDigitsOfNumberByAnother(int numberToBeRepresentedAsArray, int multiplier)
+        {
+            int numberLength = numberToBeRepresentedAsArray.ToString().Length;
+            int[] numberAsArray = new int[numberLength];
+
+            for (int i = numberLength - 1; i >= 0; i--)
+            {
+                numberAsArray[i] = (numberToBeRepresentedAsArray % 10) * multiplier;
+                numberToBeRepresentedAsArray /= 10;
+            }
+
+            for (int i = 0; i < numberAsArray.Length; i++)
+            {
+                Console.Write("{0,3}", numberAsArray[i]);
+            }
+        }
+
+        public static int Factorial10(int number)
+        {
+            int factorial = number;
+
+            for (int i = number - 1; i >= 1; i--)
+            {
+                factorial *= i;
+            }
+
+            return factorial;
+        }
+
         static void Main()
         {
             /* Task 1
@@ -278,7 +326,17 @@ namespace Methods
             */
 
             /* Task 9 */
+            //int[] maxot3 = new int[] { 500, 18, 14, 16, 19, 203, -2, 432, 45 };
+            //Console.WriteLine(MaxElementFromArray(maxot3));
+            //Console.WriteLine(MaxElementFromArray(maxot3, 3));
 
+            /* Task 10 - Part1
+            int numberToBeRepresentedAsArray = int.Parse(Console.ReadLine());
+            int multiplier = int.Parse(Console.ReadLine());
+            MultiplyDigitsOfNumberByAnother(numberToBeRepresentedAsArray, multiplier);
+                       - Part2*/
+            int number = int.Parse(Console.ReadLine());
+            Factorial10(number);
         }
     }
 }
