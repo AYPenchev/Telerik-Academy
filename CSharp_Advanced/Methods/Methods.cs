@@ -179,10 +179,10 @@ namespace Methods
                            .Select(item => int.Parse(item))
                            .ToArray();
 
-            string concatFirstArray= "";
+            string concatFirstArray = "";
             for (int i = 0; i < firstArray.Length; i++)
             {
-                concatFirstArray += firstArray[i]; 
+                concatFirstArray += firstArray[i];
             }
 
             int firstAddend = int.Parse(concatFirstArray);
@@ -222,7 +222,7 @@ namespace Methods
 
             for (int i = startingIndex; i < arrayToBeSorted.Length; i++)
             {
-                if(arrayToBeSorted[i] > maximalElement)
+                if (arrayToBeSorted[i] > maximalElement)
                 {
                     maximalElement = arrayToBeSorted[i];
                 }
@@ -263,6 +263,76 @@ namespace Methods
 
             return factorial;
         }
+
+        public static int FactorialRecursion10(int number)
+        {
+            if (number == 1)
+            {
+                return number;
+            }
+
+            return number * FactorialRecursion10(--number);
+        }
+
+        public static void AddingPolynomials11()
+        {
+            int arraySize = int.Parse(Console.ReadLine());
+
+            int[] firstPolinom = Console.ReadLine()
+                           .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            int[] seconPolinom = Console.ReadLine()
+                           .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            for (int i = 0; i < arraySize; i++)
+            {
+                Console.Write("{0, -3}", firstPolinom[i] + seconPolinom[i]);
+            }
+        }
+
+        public static void SubtractPolynomials12()
+        {
+            int arraySize = int.Parse(Console.ReadLine());
+
+            int[] firstPolinom = Console.ReadLine()
+                           .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            int[] seconPolinom = Console.ReadLine()
+                           .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            for (int i = 0; i < arraySize; i++)
+            {
+                Console.Write("{0, -3}", firstPolinom[i] - seconPolinom[i]);
+            }
+        }
+
+        //public static void MultiplyPolynomials12()
+        //{
+        //    int arraySize = int.Parse(Console.ReadLine());
+
+        //    int[] firstPolinom = Console.ReadLine()
+        //                   .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
+        //                   .Select(item => int.Parse(item))
+        //                   .ToArray();
+
+        //    int[] seconPolinom = Console.ReadLine()
+        //                   .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
+        //                   .Select(item => int.Parse(item))
+        //                   .ToArray();
+
+        //    int[] productPolinom = new int[(arraySize - 1) * 2];
+
+        //    productPolinom[i] = firstPolinom[arraySize - 1] * seconPolinom[arraySize - 1];
+
+        //}
 
         static void Main()
         {
@@ -334,9 +404,18 @@ namespace Methods
             int numberToBeRepresentedAsArray = int.Parse(Console.ReadLine());
             int multiplier = int.Parse(Console.ReadLine());
             MultiplyDigitsOfNumberByAnother(numberToBeRepresentedAsArray, multiplier);
-                       - Part2*/
+                       - Part2
             int number = int.Parse(Console.ReadLine());
             Console.WriteLine(Factorial10(number));
+            Console.WriteLine(FactorialRecursion10(number));
+            */
+
+            /* Task 11 
+            AddingPolynomials11();
+            */
+
+            /* Task 12 */
+            SubtractPolynomials12();
         }
     }
 }
