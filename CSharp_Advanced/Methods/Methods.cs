@@ -314,25 +314,41 @@ namespace Methods
             }
         }
 
-        //public static void MultiplyPolynomials12()
-        //{
-        //    int arraySize = int.Parse(Console.ReadLine());
+        public static int[] MultiplyPolynomials12(int[] polyOne, int[] polyTwo, int polyOneLen, int polyTwoLen)
+        {
+            int[] prod = new int[polyOneLen + polyTwoLen - 1];
 
-        //    int[] firstPolinom = Console.ReadLine()
-        //                   .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
-        //                   .Select(item => int.Parse(item))
-        //                   .ToArray();
+            for (int i = 0; i < polyOneLen + polyTwoLen - 1; i++)
+            {
+                prod[i] = 0;
+            }
 
-        //    int[] seconPolinom = Console.ReadLine()
-        //                   .Split(new char[] { ' ' }, arraySize, StringSplitOptions.RemoveEmptyEntries)
-        //                   .Select(item => int.Parse(item))
-        //                   .ToArray();
+            for (int i = 0; i < polyOneLen; i++)
+            {
+                for (int j = 0; j < polyTwoLen; j++)
+                {
+                    prod[i + j] += polyOne[i] * polyTwo[j];
+                }
+            }
 
-        //    int[] productPolinom = new int[(arraySize - 1) * 2];
+            return prod;            
+        }
 
-        //    productPolinom[i] = firstPolinom[arraySize - 1] * seconPolinom[arraySize - 1];
-
-        //}
+        public static void PrintPolinom12(int[] poly, int polyLen)
+        {
+            for (int i = polyLen - 1; i >= 0; i--)
+            {
+                Console.Write(poly[i]);
+                if (i != 0)
+                {
+                    Console.Write("x^" + i);
+                }
+                if (i != 0)
+                {
+                    Console.Write(" + ");
+                }
+            }
+        }
 
         static void Main()
         {
@@ -414,8 +430,30 @@ namespace Methods
             AddingPolynomials11();
             */
 
-            /* Task 12 */
+            /* Task 12 
             SubtractPolynomials12();
+           
+            // Task 2 - part 2    
+            int[] firstPolinom = Console.ReadLine()
+                           .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            int[] secondPolinom = Console.ReadLine()
+                           .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+            Console.Write("(");
+            PrintPolinom12(firstPolinom, firstPolinom.Length);
+            Console.Write(") * (");
+            PrintPolinom12(secondPolinom, secondPolinom.Length);
+            Console.Write(") = ");
+
+            int[] prod = MultiplyPolynomials12(firstPolinom, secondPolinom, firstPolinom.Length, secondPolinom.Length);
+
+            PrintPolinom12(prod, firstPolinom.Length + secondPolinom.Length - 1);
+            */
         }
     }
 }
