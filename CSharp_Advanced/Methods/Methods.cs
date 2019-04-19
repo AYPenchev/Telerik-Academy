@@ -218,6 +218,7 @@ namespace Methods
 
         public static int MaxElementFromArray(int[] arrayToBeSorted, int startingIndex = 0)
         {
+            //arrayToBeSorted.Max();
             int maximalElement = int.MinValue;
 
             for (int i = startingIndex; i < arrayToBeSorted.Length; i++)
@@ -331,7 +332,7 @@ namespace Methods
                 }
             }
 
-            return prod;            
+            return prod;
         }
 
         public static void PrintPolinom12(int[] poly, int polyLen)
@@ -350,6 +351,166 @@ namespace Methods
             }
         }
 
+        public static void SolveTasks13(int choice)
+        {
+            switch (choice)
+            {
+                case 1:
+                    Console.Write("Enter decimal number: ");
+                    decimal numberToBeReversed = decimal.Parse(Console.ReadLine());
+
+                    if (numberToBeReversed < 0)
+                    {
+                        break;
+                    }
+
+                    Console.WriteLine(ReverseDecimalNumber07(numberToBeReversed.ToString()));
+                    break;
+                case 2:
+                    Console.Write("Enter sequence of numbers separated by a space: ");
+                    int[] numbersSequence = Console.ReadLine()
+                           .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+
+                    decimal average = 0;
+
+                    foreach (var number in numbersSequence)
+                    {
+                        average += number;
+                    }
+
+                    average /= numbersSequence.Length;
+                    Console.WriteLine(average);
+                    break;
+                case 3:
+                    Console.Write("Enter parameter a (a should not be equal to 0): ");
+                    int paramA = int.Parse(Console.ReadLine());
+
+                    Console.Write("Enter parameter b: ");
+                    int paramB = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine(paramA + " * x + " + paramB + " = 0");
+
+                    int x;
+                    if (paramB % paramA == 0)
+                    {
+                        x = -paramB / paramA;
+                        Console.WriteLine("x = " + x);
+                    }
+                    else
+                    {
+                        Console.WriteLine("x = -" + paramB + "/" + paramA);
+                    }
+                    break;
+                default:
+                    Console.WriteLine("You should choose between 1, 2 or 3");
+                    break;
+            }
+        }
+
+        public static void IntegerCalculations14()
+        {
+            int[] numbersSequence = Console.ReadLine()
+                                    .Split(new char[] { ' ' }, 5, StringSplitOptions.RemoveEmptyEntries)
+                                    .Select(item => int.Parse(item))
+                                    .ToArray();
+
+            int minNum = int.MaxValue;
+            int maxNum = int.MinValue;
+            double average;
+            int sum = 0;
+            int product = 1;
+
+            for (int i = 0; i < 5; i++)
+            {
+                sum += numbersSequence[i];
+
+                product *= numbersSequence[i];
+
+                if (numbersSequence[i] < minNum)
+                {
+                    minNum = numbersSequence[i];
+                }
+
+                if (numbersSequence[i] > maxNum)
+                {
+                    maxNum = numbersSequence[i];
+                }
+            }
+
+            average = sum / 5d;
+            Console.WriteLine(minNum + "\n" + maxNum);
+            Console.WriteLine("{0:0.00}", average);
+            Console.WriteLine(sum + "\n" + product);
+        }
+
+        //public static T TonumericValue<T>(string input)
+        //{
+        //    return (T)Convert.ChangeType(input, typeof(T));
+        //}
+
+        //public static void NumberCalculations15<T>()
+        //{
+        //    string[] numericsAsStrings = Console.ReadLine()
+        //                 .Split(new char[] { ' ' }, 5, StringSplitOptions.RemoveEmptyEntries)
+        //                 .ToArray();
+
+        //    T[] convertedNums = new T[numericsAsStrings.Length];
+
+        //    for (int i = 0; i < numericsAsStrings.Length; i++)
+        //    {
+        //        convertedNums[i] = TonumericValue<T>(numericsAsStrings[i]);
+        //    }
+
+        //    T minNum;
+        //    T maxNum;
+        //    decimal average;
+        //    decimal sum = 0;
+        //    decimal product = 1;
+        //}
+
+
+        class NumberSequence<T> where T : IComparable
+        {
+            private T[] numbers;
+
+            public NumberSequence(T[] numbers)
+            {
+                this.numbers = numbers;
+                GetResults();
+            }
+
+            public T Min { get; private set; }
+            public T Max { get; private set; }
+            public T Sum { get; private set; }
+            public T Product { get; private set; }
+            public decimal Average { get; private set; }
+
+            private void GetResults()
+            {
+                this.Min = this.numbers.Min();
+                this.Max = this.numbers.Max();
+                dynamic product = 1;
+                dynamic sum = 0;
+
+                foreach (var number in numbers)
+                {
+                    product *= number;
+                    sum += number;
+                }
+
+                this.Product = (T)product;
+                this.Sum = (T)sum;
+                this.Average = decimal.Parse(Sum.ToString()) / this.numbers.Length;
+            }
+
+            public override string ToString()
+            {
+                return string.Format(" MIN:  {0} \n MAX:  {1} \n SUM:  {2} \n PROD: {3} \n AVG:  {4:0.00}"
+                                    , this.Min, this.Max, this.Sum, this.Product, this.Average);
+            }
+        }
         static void Main()
         {
             /* Task 1
@@ -378,7 +539,7 @@ namespace Methods
 
             /* Task 4
             int[] numbers = { };
-            
+
             FillArray(ref numbers);
 
             int numberCheckedForAppearance = int.Parse(Console.ReadLine());
@@ -402,7 +563,7 @@ namespace Methods
             Console.WriteLine(FirstLargerThanNeighbours06(firstLargerThanNeighbourArray));
             */
 
-            /* Task 7 
+            /* Task 7
             string numberToBeReversed = Console.ReadLine();
             Console.WriteLine(ReverseDecimalNumber07(numberToBeReversed));
             */
@@ -432,7 +593,7 @@ namespace Methods
 
             /* Task 12 
             SubtractPolynomials12();
-           
+
             // Task 2 - part 2    
             int[] firstPolinom = Console.ReadLine()
                            .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
@@ -453,6 +614,41 @@ namespace Methods
             int[] prod = MultiplyPolynomials12(firstPolinom, secondPolinom, firstPolinom.Length, secondPolinom.Length);
 
             PrintPolinom12(prod, firstPolinom.Length + secondPolinom.Length - 1);
+            */
+
+            /* Task 13 
+            Console.WriteLine("Which task you want to solve? \n Enter 1 to Reverses the digits of a number" + 
+                                                            "\n Enter 2 to Calculates the average of a sequence of integers" +
+                                                            "\n Enter 3 to Solves a linear equation a * x + b = 0");
+            int choice = int.Parse(Console.ReadLine());
+
+            SolveTasks13(choice);
+            */
+
+            /* Task 14 
+            IntegerCalculations14();
+            */
+            /* Task 15
+            int[] integerArr = Console.ReadLine()
+                              .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                              .Select(item => int.Parse(item))
+                              .ToArray();
+            NumberSequence<int> integerSequence = new NumberSequence<int>(integerArr);
+            Console.WriteLine(integerSequence);
+
+            double[] doubleArr = Console.ReadLine()
+                                .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                                .Select(item => double.Parse(item))
+                                .ToArray();
+            NumberSequence<double> doubleSequence = new NumberSequence<double>(doubleArr);
+            Console.WriteLine(doubleSequence);
+
+            short[] shortArr = Console.ReadLine()
+                              .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                              .Select(item => short.Parse(item))
+                              .ToArray();
+            NumberSequence<short> shortSequence = new NumberSequence<short>(shortArr);
+            Console.WriteLine(shortSequence);
             */
         }
     }
