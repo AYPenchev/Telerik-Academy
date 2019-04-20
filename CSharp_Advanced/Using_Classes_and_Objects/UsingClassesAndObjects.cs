@@ -25,6 +25,12 @@ namespace UsingClassesAndObjects
             }
         }
 
+        public static void GetDayOfWeek03()
+        {
+            DateTime today = DateTime.Today;
+            Console.WriteLine(today.DayOfWeek);
+        }
+
         static void Main()
         {
             /* Task 1
@@ -33,6 +39,9 @@ namespace UsingClassesAndObjects
             */
             /* Task 2 
             PrintTenRandomNumbers02();
+            */
+            /* Task 3
+            GetDayOfWeek03();
             */
         }
     }
