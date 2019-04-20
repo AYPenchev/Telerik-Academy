@@ -36,6 +36,12 @@ namespace UsingClassesAndObjects
             return (sideOfTriangle * altitudeOfTriangle) / 2;
         }
 
+        public static double GetTriangleArea05(double sideA, double sideB, double sideC)
+        {
+            double semipermeter = (sideA + sideB + sideC) / 2;
+            return Math.Sqrt(semipermeter * (semipermeter - sideA) * (semipermeter - sideB) * (semipermeter - sideC));
+        }
+
         static void Main()
         {
             /* Task 1
@@ -52,6 +58,12 @@ namespace UsingClassesAndObjects
             double sideOfTriangle = double.Parse(Console.ReadLine());
             double altitudeOfTriangle = double.Parse(Console.ReadLine());
             Console.WriteLine("{0:0.00}", GetTriangleArea04(sideOfTriangle, altitudeOfTriangle));
+            */
+            /* Task 5
+            double sideA = double.Parse(Console.ReadLine());
+            double sideB = double.Parse(Console.ReadLine());
+            double sideC = double.Parse(Console.ReadLine());
+            Console.WriteLine("{0:0.00}", GetTriangleArea05(sideA, sideB, sideC));
             */
         }
     }
