@@ -31,6 +31,11 @@ namespace UsingClassesAndObjects
             Console.WriteLine(today.DayOfWeek);
         }
 
+        public static double GetTriangleArea04(double sideOfTriangle, double altitudeOfTriangle)
+        {
+            return (sideOfTriangle * altitudeOfTriangle) / 2;
+        }
+
         static void Main()
         {
             /* Task 1
@@ -42,6 +47,11 @@ namespace UsingClassesAndObjects
             */
             /* Task 3
             GetDayOfWeek03();
+            */
+            /* Task 4
+            double sideOfTriangle = double.Parse(Console.ReadLine());
+            double altitudeOfTriangle = double.Parse(Console.ReadLine());
+            Console.WriteLine("{0:0.00}", GetTriangleArea04(sideOfTriangle, altitudeOfTriangle));
             */
         }
     }
