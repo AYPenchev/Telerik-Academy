@@ -41,6 +41,12 @@ namespace UsingClassesAndObjects
             double semipermeter = (sideA + sideB + sideC) / 2;
             return Math.Sqrt(semipermeter * (semipermeter - sideA) * (semipermeter - sideB) * (semipermeter - sideC));
         }
+        
+        public static double GetTriangleArea06(double sideA, double sideB, double angleBetween)
+        {
+            double angleInRadians = angleBetween * Math.PI / 180;
+            return (sideA * sideB * Math.Sin(angleInRadians)) / 2;
+        }
 
         static void Main()
         {
@@ -64,6 +70,12 @@ namespace UsingClassesAndObjects
             double sideB = double.Parse(Console.ReadLine());
             double sideC = double.Parse(Console.ReadLine());
             Console.WriteLine("{0:0.00}", GetTriangleArea05(sideA, sideB, sideC));
+            */
+            /* Task 6
+            double sideA = double.Parse(Console.ReadLine());
+            double sideB = double.Parse(Console.ReadLine());
+            double angleBetween = double.Parse(Console.ReadLine());
+            Console.WriteLine("{0:0.00}", GetTriangleArea06(sideA, sideB, angleBetween));
             */
         }
     }
