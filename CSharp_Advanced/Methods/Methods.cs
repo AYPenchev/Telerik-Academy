@@ -5,7 +5,6 @@ namespace Methods
 {
     class Methods
     {
-
         public static void SayHello01(string userName)
         {
             Console.WriteLine("Hello, " + userName + "!");
@@ -41,6 +40,7 @@ namespace Methods
             }
 
         }
+
         public static int GetLastDigit03(int number)
         {
             return number % 10;
@@ -74,9 +74,9 @@ namespace Methods
         {
             int countLargerThanNeighbours = 0;
 
-            for (int i = 0; i < largerThanNeighbourArray.GetLongLength(0); i++)
+            for (int i = 0; i < largerThanNeighbourArray.GetLength(0); i++)
             {
-                if (i != 0 && i != largerThanNeighbourArray.GetLongLength(0) - 1)
+                if (i != 0 && i != largerThanNeighbourArray.GetLength(0) - 1)
                 {
                     if (largerThanNeighbourArray[i] > largerThanNeighbourArray[i - 1] && largerThanNeighbourArray[i] > largerThanNeighbourArray[i + 1])
                     {
@@ -91,7 +91,7 @@ namespace Methods
                         countLargerThanNeighbours++;
                     }
                 }
-                else if (i == largerThanNeighbourArray.GetLongLength(0) - 1)
+                else if (i == largerThanNeighbourArray.GetLength(0) - 1)
                 {
                     if (largerThanNeighbourArray[i] > largerThanNeighbourArray[i - 1])
                     {
@@ -105,9 +105,9 @@ namespace Methods
 
         public static int FirstLargerThanNeighbours06(int[] largerThanNeighbourArray)
         {
-            for (int i = 0; i < largerThanNeighbourArray.GetLongLength(0); i++)
+            for (int i = 0; i < largerThanNeighbourArray.GetLength(0); i++)
             {
-                if (i != 0 && i != largerThanNeighbourArray.GetLongLength(0) - 1)
+                if (i != 0 && i != largerThanNeighbourArray.GetLength(0) - 1)
                 {
                     if (largerThanNeighbourArray[i] > largerThanNeighbourArray[i - 1] && largerThanNeighbourArray[i] > largerThanNeighbourArray[i + 1])
                     {
@@ -216,12 +216,12 @@ namespace Methods
             }
         }
 
-        public static int MaxElementFromArray(int[] arrayToBeSorted, int startingIndex = 0)
+        public static int MaxElementFromArray(int[] arrayToBeSorted, int startingIndex/* = 0*/, int endIndex/* = arrayToBeSorted.Length*/)
         {
             //arrayToBeSorted.Max();
             int maximalElement = int.MinValue;
 
-            for (int i = startingIndex; i < arrayToBeSorted.Length; i++)
+            for (int i = startingIndex; i < endIndex; i++)
             {
                 if (arrayToBeSorted[i] > maximalElement)
                 {
@@ -231,59 +231,60 @@ namespace Methods
             return maximalElement;
         }
 
+        public static int GetIndex(int[] array, int numIdxSeeked)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == numIdxSeeked)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
         public static int Partition(int[] arr, int low, int high)
         {
-            int pivot = arr[high];
+            int pivot = MaxElementFromArray(arr, low, high + 1);
+            int pivotIdx = GetIndex(arr, pivot);
 
-            // index of smaller element 
             int i = (low - 1);
             for (int j = low; j < high; j++)
             {
-                // If current element is smaller  
-                // than or equal to pivot 
                 if (arr[j] <= pivot)
                 {
                     i++;
 
-                    // swap arr[i] and arr[j] 
                     int temp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = temp;
                 }
             }
 
-            // swap arr[i+1] and arr[high] (or pivot) 
             int temp1 = arr[i + 1];
-            arr[i + 1] = arr[high];
-            arr[high] = temp1;
+            arr[i + 1] = arr[pivotIdx];
+            arr[pivotIdx] = temp1;
 
             return i + 1;
         }
 
-
-        /* The main function that implements QuickSort() 
-        arr[] --> Array to be sorted, 
-        low --> Starting index, 
-        high --> Ending index */
-        static void QuickSort(int[] arr, int low, int high)
+        public static void QuickSort(int[] arr, int low, int high)
         {
             if (low < high)
             {
-
-                /* pi is partitioning index, arr[pi] is  
-                now at right place */
                 int pi = Partition(arr, low, high);
 
-                // Recursively sort elements before 
-                // partition and after partition 
                 QuickSort(arr, low, pi - 1);
-                QuickSort(arr, pi + 1, high);
+                //QuickSort(arr, pi + 1, high);  Don't need that
             }
         }
 
-        public static void SortinArray09()
+        public static void PrintArray(int[] array)
         {
-
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
         }
 
         public static void MultiplyDigitsOfNumberByAnother(int numberToBeRepresentedAsArray, int multiplier)
@@ -311,7 +312,6 @@ namespace Methods
             {
                 factorial *= i;
             }
-
             return factorial;
         }
 
@@ -321,7 +321,6 @@ namespace Methods
             {
                 return number;
             }
-
             return number * FactorialRecursion10(--number);
         }
 
@@ -367,22 +366,21 @@ namespace Methods
 
         public static int[] MultiplyPolynomials12(int[] polyOne, int[] polyTwo, int polyOneLen, int polyTwoLen)
         {
-            int[] prod = new int[polyOneLen + polyTwoLen - 1];
+            int[] product = new int[polyOneLen + polyTwoLen - 1];
 
             for (int i = 0; i < polyOneLen + polyTwoLen - 1; i++)
             {
-                prod[i] = 0;
+                product[i] = 0;
             }
 
             for (int i = 0; i < polyOneLen; i++)
             {
                 for (int j = 0; j < polyTwoLen; j++)
                 {
-                    prod[i + j] += polyOne[i] * polyTwo[j];
+                    product[i + j] += polyOne[i] * polyTwo[j];
                 }
             }
-
-            return prod;
+            return product;
         }
 
         public static void PrintPolinom12(int[] poly, int polyLen)
@@ -495,32 +493,6 @@ namespace Methods
             Console.WriteLine(sum + "\n" + product);
         }
 
-        //public static T TonumericValue<T>(string input)
-        //{
-        //    return (T)Convert.ChangeType(input, typeof(T));
-        //}
-
-        //public static void NumberCalculations15<T>()
-        //{
-        //    string[] numericsAsStrings = Console.ReadLine()
-        //                 .Split(new char[] { ' ' }, 5, StringSplitOptions.RemoveEmptyEntries)
-        //                 .ToArray();
-
-        //    T[] convertedNums = new T[numericsAsStrings.Length];
-
-        //    for (int i = 0; i < numericsAsStrings.Length; i++)
-        //    {
-        //        convertedNums[i] = TonumericValue<T>(numericsAsStrings[i]);
-        //    }
-
-        //    T minNum;
-        //    T maxNum;
-        //    decimal average;
-        //    decimal sum = 0;
-        //    decimal product = 1;
-        //}
-
-
         class NumberSequence<T> where T : IComparable
         {
             private T[] numbers;
@@ -557,7 +529,7 @@ namespace Methods
 
             public override string ToString()
             {
-                return string.Format(" MIN:  {0} \n MAX:  {1} \n SUM:  {2} \n PROD: {3} \n AVG:  {4:0.00}"
+                return string.Format(" MIN:  {0} \n MAX:  {1}  \n AVG:  {4:0.00} \n SUM:  {2} \n PROD: {3}"
                                     , this.Min, this.Max, this.Sum, this.Product, this.Average);
             }
         }
@@ -622,10 +594,22 @@ namespace Methods
             NumberAsArray08();
             */
 
-            /* Task 9 */
-            //int[] maxot3 = new int[] { 500, 18, 14, 16, 19, 203, -2, 432, 45 };
-            //Console.WriteLine(MaxElementFromArray(maxot3));
-            //Console.WriteLine(MaxElementFromArray(maxot3, 3));
+            /* Task 9 
+            int[] max = new int[] { 500, 18, 14, 16, 19, 203, -2, 432, 45 };
+            Console.WriteLine(MaxElementFromArray(max, 0, max.Length));
+            Console.WriteLine(MaxElementFromArray(max, 3, max.Length));
+
+            int arrayLen = int.Parse(Console.ReadLine());
+            int[] arrayToBeSorted = Console.ReadLine()
+                                    .Split(new char[] { ' ' }, arrayLen, StringSplitOptions.RemoveEmptyEntries)
+                                    .Select(item => int.Parse(item))
+                                    .ToArray();
+            arrayLen = arrayToBeSorted.Length;
+
+            QuickSort(arrayToBeSorted, 0, arrayLen - 1);
+
+            PrintArray(arrayToBeSorted);
+            */
 
             /* Task 10 - Part1
             int numberToBeRepresentedAsArray = int.Parse(Console.ReadLine());
@@ -678,7 +662,7 @@ namespace Methods
             /* Task 14 
             IntegerCalculations14();
             */
-            /* Task 15
+            /* Task 15 
             int[] integerArr = Console.ReadLine()
                               .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                               .Select(item => int.Parse(item))
