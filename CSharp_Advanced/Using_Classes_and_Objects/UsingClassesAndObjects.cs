@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Methods;
 
 namespace UsingClassesAndObjects
 {
@@ -88,6 +89,27 @@ namespace UsingClassesAndObjects
             return NumOfWorkDays;
         }
 
+        public static void FillArray(ref int[] numbers)
+        {
+            numbers = Console.ReadLine()
+                           .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                           .Select(item => int.Parse(item))
+                           .ToArray();
+        }
+
+        public static int SumIntegers08()
+        {
+            int[] sumArray = Array.Empty<int>();
+            FillArray(ref sumArray);
+
+            int sum = 0;
+            foreach (var num in sumArray)
+            {
+                sum += num;
+            }
+            return sum;
+        }
+
         static void Main()
         {
             /* Task 1
@@ -129,6 +151,10 @@ namespace UsingClassesAndObjects
             {
                 Console.WriteLine("You have entered an incorrect value.");
             }
+            */
+
+            /* Task 8 
+            Console.WriteLine(SumIntegers08());
             */
         }
     }
