@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 
 namespace UsingClassesAndObjects
@@ -46,30 +45,47 @@ namespace UsingClassesAndObjects
             double semipermeter = (sideA + sideB + sideC) / 2;
             return Math.Sqrt(semipermeter * (semipermeter - sideA) * (semipermeter - sideB) * (semipermeter - sideC));
         }
-        
+
         public static double GetTriangleArea06(double sideA, double sideB, double angleBetween)
         {
             double angleInRadians = angleBetween * Math.PI / 180;
             return (sideA * sideB * Math.Sin(angleInRadians)) / 2;
         }
 
-        public static double GetWorkdays07(DateTime date)
+        public static int GetWorkdays07(DateTime date)
         {
             int year = DateTime.Today.Year;
             DateTime[] holidays = { new DateTime(year, 1, 1), new DateTime(year, 3, 3), new DateTime(year, 4, 28), new DateTime(year, 5, 1),
                                     new DateTime(year, 5, 6), new DateTime(year, 5, 24), new DateTime(year, 9, 6), new DateTime(year, 9, 22),
-                                    new DateTime(year, 12, 24), new DateTime(year, 12, 25), new DateTime(year, 12, 26) };
-            //int countWorkdays = 0;
+                                    new DateTime(year, 12, 24), new DateTime(year, 12, 25), new DateTime(year, 12, 26)
+                                  };
 
-            DateTime startDate = DateTime.Today;//.AddDays(-365);
-            //TimeSpan elapsed = date.Subtract(startDate);
-            double NumOfWorkDays = Model.Where(x =>  x >= startDate &&
-                                                     x.DayOfWeek != DayOfWeek.Saturday &&
-                                                     x.DayOfWeek != DayOfWeek.Sunday &&
-                                                     !holidays.Contains(x)).Count();
-            //NumOfWorkDays = elapsed.TotalDays;
+            DateTime startDate = DateTime.Today;
 
-            return NumOfWorkDays;//elapsed.TotalDays;
+            TimeSpan rangeTimeSpan = date.Subtract(startDate);
+            DateTime[] rangeTimeArray = new DateTime[rangeTimeSpan.Days];
+
+            DateTime currentDate = startDate;
+            for (int i = 0; i < rangeTimeSpan.Days; i++)
+            {
+                currentDate = currentDate.AddDays(1);
+                rangeTimeArray[i] = currentDate;
+            }
+
+            int NumOfWorkDays = rangeTimeArray.Where(x => x >= startDate &&
+                                                    x.DayOfWeek != DayOfWeek.Saturday &&
+                                                    x.DayOfWeek != DayOfWeek.Sunday &&
+                                                    !holidays.Contains(x)).Count();
+
+            for (int i = 0; i < rangeTimeArray.Length; i++)
+            {
+                if ((rangeTimeArray[i].DayOfWeek == DayOfWeek.Saturday || rangeTimeArray[i].DayOfWeek == DayOfWeek.Sunday) &&
+                    holidays.Contains(rangeTimeArray[i]))
+                {
+                    NumOfWorkDays--;
+                }
+            }
+            return NumOfWorkDays;
         }
 
         static void Main()
@@ -101,10 +117,9 @@ namespace UsingClassesAndObjects
             double angleBetween = double.Parse(Console.ReadLine());
             Console.WriteLine("{0:0.00}", GetTriangleArea06(sideA, sideB, angleBetween));
             */
-            /* Task 7 */
+            /* Task 7
             Console.WriteLine("Enter due date in this format: dd/mm/yyyy");
-            //DateTime dueDate = DateTime.Parse(Console.ReadLine(), new CultureInfo("fr-FR", false));
-            
+
             DateTime dueDate;
             if (DateTime.TryParse(Console.ReadLine(), out dueDate))
             {
@@ -114,8 +129,7 @@ namespace UsingClassesAndObjects
             {
                 Console.WriteLine("You have entered an incorrect value.");
             }
-            
-
+            */
         }
     }
 }
