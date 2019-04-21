@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-
-namespace CSharp_Advanced
+﻿namespace CSharp_Advanced
 {
+    using System;
+    using System.Linq;
+
     class Multidimentional_Arrays
     {
         private static void FillTheMatrix01()

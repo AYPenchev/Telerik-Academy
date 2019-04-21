@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
-
-namespace Methods
+﻿namespace Methods
 {
+    using System;
+    using System.Linq;
+
     class Methods
     {
         public static void SayHello01(string userName)
@@ -560,7 +560,7 @@ namespace Methods
             */
 
             /* Task 4
-            int[] numbers = { };
+            int[] numbers = Array.Empty<int>();
 
             FillArray(ref numbers);
 
@@ -570,7 +570,7 @@ namespace Methods
             */
 
             /* Task 5
-            int[] largerThanNeighbourArray = { };
+            int[] largerThanNeighbourArray = Array.Empty<int>();
 
             FillArray(ref largerThanNeighbourArray);
 
@@ -578,7 +578,7 @@ namespace Methods
             */
 
             /* Task 6 
-            int[] firstLargerThanNeighbourArray = { };
+            int[] firstLargerThanNeighbourArray = Array.Empty<int>();
 
             FillArray(ref firstLargerThanNeighbourArray);
 

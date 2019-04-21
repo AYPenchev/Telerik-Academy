@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Methods;
-
-namespace UsingClassesAndObjects
+﻿namespace UsingClassesAndObjects
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Methods;
+
     class UsingClassesAndObjects
     {
         public static IEnumerable<DateTime> Model { get; private set; }
