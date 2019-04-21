@@ -287,6 +287,141 @@
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
         }
+        public static double GetResultFromRPN(Queue<string> queue)
+        {
+            Stack<double> stack = new Stack<double>();
+
+            while (queue.Count != 0)
+            {
+                string currentTocken = queue.Dequeue();
+
+                double number;
+                if (double.TryParse(currentTocken, out number))
+                {
+                    stack.Push(number);
+                }
+                else if (arithmeticOperations.Contains(currentTocken[0]) || functions.Contains(currentTocken))
+                {
+                    if(currentTocken == "+")
+                    {
+                        if(stack.Count < 2)
+                        {
+                            throw new ArgumentException("Invalid expression");
+                        }
+
+                        double firstValue = stack.Pop();
+                        double secondValue = stack.Pop();
+
+                        stack.Push(firstValue + secondValue);
+                    }
+                    else if(currentTocken == "-")
+                    {
+                        if (stack.Count < 2)
+                        {
+                            throw new ArgumentException("Invalid expression");
+                        }
+
+                        double firstValue = stack.Pop();
+                        double secondValue = stack.Pop();
+
+                        stack.Push(secondValue - firstValue);
+                    }
+                    else if (currentTocken == "*")
+                    {
+                        if (stack.Count < 2)
+                        {
+                            throw new ArgumentException("Invalid expression");
+                        }
+
+                        double firstValue = stack.Pop();
+                        double secondValue = stack.Pop();
+
+                        stack.Push(secondValue * firstValue);
+                    }
+                    else if (currentTocken == "/")
+                    {
+                        if (stack.Count < 2)
+                        {
+                            throw new ArgumentException("Invalid expression");
+                        }
+
+                        double firstValue = stack.Pop();
+                        double secondValue = stack.Pop();
+
+                        stack.Push(secondValue / firstValue);
+                    }
+                    else if (currentTocken == "pow")
+                    {
+                        if (stack.Count < 2)
+                        {
+                            throw new ArgumentException("Invalid expression");
+                        }
+
+                        double firstValue = stack.Pop();
+                        double secondValue = stack.Pop();
+
+                        stack.Push(Math.Pow(secondValue, firstValue));
+                    }
+                    else if (currentTocken == "sqrt")
+                    {
+                        if (stack.Count < 1)
+                        {
+                            throw new ArgumentException("Invalid expression");
+                        }
+
+                        double value = stack.Pop();
+
+                        stack.Push(Math.Sqrt(value));
+                    }
+                    else if (currentTocken == "ln")
+                    {
+                        if (stack.Count < 1)
+                        {
+                            throw new ArgumentException("Invalid expression");
+                        }
+
+                        double value = stack.Pop();
+
+                        stack.Push(Math.Log(value));
+                    }
+                }
+            }
+            if (stack.Count == 1)
+            {
+                return stack.Pop();
+            }
+            else
+            {
+                throw new ArgumentException("Invalid expression");
+            }
+        }
+
+        public static void ArithmeticalExpressions09()
+        {
+            string input = Console.ReadLine().Trim();
+            while (input.ToLower() != "end")
+            {
+                try
+                {
+                    string trimmedInput = TrimInput(input); // Replace function can be used
+
+                    var separatedTonkens = SeparateTokens(trimmedInput);
+
+                    var reversePolishNotation = ConvertToReversePolishNotation(separatedTonkens);
+
+                    var finalResult = GetResultFromRPN(reversePolishNotation);
+
+                    Console.WriteLine(finalResult);
+                }
+                catch (ArgumentException exception)
+                {
+
+                    Console.WriteLine(exception.Message); ;
+                }
+
+                input = Console.ReadLine().Trim();
+            }
+        }
 
         static void Main()
         {
@@ -334,15 +469,10 @@
             /* Task 8 
             Console.WriteLine(SumIntegers08());
             */
-            /* Task 9 */
+            /* Task 9 
             PutInvariantCulture();
-
-            string input = Console.ReadLine().Trim();
-            string trimmedInput = TrimInput(input); // Replace function can be used
-
-            var separatedTonkens = SeparateTokens(trimmedInput);
-
-            var reversePolishNotation = ConvertToReversePolishNotation(separatedTonkens);
+            ArithmeticalExpressions09();
+            */
         }
     }
 }
