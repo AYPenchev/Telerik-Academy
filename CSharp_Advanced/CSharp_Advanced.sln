@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Using_Classes_and_Objects",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strings_in_CSharp", "Strings_in_CSharp\Strings_in_CSharp.csproj", "{64926159-2AFF-4D8F-8916-11CFD2AF53CF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Strings", "Strings", "{2053134E-03D2-47B2-8C55-455B14C3BA1A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Strings", "Strings", "{D528F76D-D265-4323-A2C3-A5B140754F17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,7 +40,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{64926159-2AFF-4D8F-8916-11CFD2AF53CF} = {2053134E-03D2-47B2-8C55-455B14C3BA1A}
+		{64926159-2AFF-4D8F-8916-11CFD2AF53CF} = {D528F76D-D265-4323-A2C3-A5B140754F17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42A17AE1-2B53-49F3-898B-55E1EFB83209}
