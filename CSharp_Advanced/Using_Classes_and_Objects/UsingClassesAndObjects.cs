@@ -233,12 +233,10 @@
                     while (stack.Peek() != "(")
                     {
                         queue.Enqueue(stack.Pop());
-                        //greshkata da go mahna posle za orientir
                     }
                 }
                 else if (arithmeticOperations.Contains(currentToken[0]))
                 {
-                    //tva otgore moje da ne bachka
                     while (stack.Count != 0 && arithmeticOperations.Contains(stack.Peek()[0]) && Precedence(currentToken) <= Precedence(stack.Peek()))
                     {
                         queue.Enqueue(stack.Pop());
