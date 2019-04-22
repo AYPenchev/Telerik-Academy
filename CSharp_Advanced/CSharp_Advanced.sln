@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Methods", "Methods\Methods.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Using_Classes_and_Objects", "Using_Classes_and_Objects\Using_Classes_and_Objects.csproj", "{98C777AF-2AA9-48D0-9762-31D9C60CE0D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Strings", "Strings", "{766D16E9-AFF3-4A45-9737-12C3B9067D40}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strings_in_CSharp", "Strings_in_CSharp\Strings_in_CSharp.csproj", "{64926159-2AFF-4D8F-8916-11CFD2AF53CF}"
 EndProject
 Global
@@ -38,9 +36,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{64926159-2AFF-4D8F-8916-11CFD2AF53CF} = {766D16E9-AFF3-4A45-9737-12C3B9067D40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {42A17AE1-2B53-49F3-898B-55E1EFB83209}
