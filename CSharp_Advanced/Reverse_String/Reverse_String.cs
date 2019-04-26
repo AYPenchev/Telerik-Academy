@@ -11,7 +11,7 @@
             return new string(inputAsCharArray);
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             string inputToBeReversed = Console.ReadLine();
             string reversedInput = StringReverse(inputToBeReversed);
