@@ -662,7 +662,7 @@
             /* Task 14 
             IntegerCalculations14();
             */
-            /* Task 15 
+            /* Task 15 */
             int[] integerArr = Console.ReadLine()
                               .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
                               .Select(item => int.Parse(item))
@@ -683,7 +683,7 @@
                               .ToArray();
             NumberSequence<short> shortSequence = new NumberSequence<short>(shortArr);
             Console.WriteLine(shortSequence);
-            */
+            
         }
     }
 }

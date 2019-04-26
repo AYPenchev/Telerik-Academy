@@ -1,47 +1,23 @@
 ﻿namespace Task7
 {
     using System;
+    using System.Text;
 
     class EncodeDecode
     {
         public static string EncodeString(string cryptKey, string stringToBeEncoded)
         {
-            string encodedString = string.Empty;
-            for (int i = 0, j = 0; i < stringToBeEncoded.Length; i++, j++)
+            StringBuilder cipher = new StringBuilder();
+            for (int i = 0; i < stringToBeEncoded.Length; i++)
             {
-                if (cryptKey.Length - 1 == j)
-                {
-                    j = 0;
-                }
-
-                encodedString += stringToBeEncoded[i] ^ cryptKey[j];
+                cipher.Append((char)(stringToBeEncoded[i] ^ cryptKey[i % cryptKey.Length]));
             }
-            return encodedString;
+            return cipher.ToString();
         }
 
         public static string DecodeString(string cryptKey, string stringToBeDecoded)
         {
-            string decodedString = string.Empty;
-            for (int i = 0, j = 0; i < stringToBeDecoded.Length; i++, j++)
-            {
-                if (cryptKey.Length - 1 == j)
-                {
-                    j = 0;
-                }
-
-                decodedString += stringToBeDecoded[i] ^ cryptKey[j];
-            }
-            
-            for (int i = 0, j = 0; i < stringToBeDecoded.Length; i++, j++)
-            {
-                if (cryptKey.Length - 1 == j)
-                {
-                    j = 0;
-                }
-
-                decodedString += stringToBeDecoded[i] ^ cryptKey[j];
-            }
-            return decodedString;
+            return EncodeString(cryptKey, stringToBeDecoded);
         }
 
         static void Main()
@@ -51,7 +27,10 @@
             string stringToBeEncoded = Console.ReadLine();
             string encodedString = EncodeString(cryptKey, stringToBeEncoded);
             Console.WriteLine(encodedString);
-            //string
+
+            string decodedString = DecodeString(cryptKey, encodedString);
+            Console.WriteLine(decodedString);
+
         }
     }
 }
