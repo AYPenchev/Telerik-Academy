@@ -16,7 +16,7 @@
     /// Important properties:
     /// Length -      It is a string property that returns length of string.
     /// </summary>
-    class Task1
+    class StringsInCSharp
     {
         static void Main()
         {
