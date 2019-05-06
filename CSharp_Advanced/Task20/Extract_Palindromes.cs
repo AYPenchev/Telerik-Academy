@@ -19,7 +19,6 @@
                 i++;
                 j--;
             }
-
             return true;
         }
 
