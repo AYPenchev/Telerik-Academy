@@ -36,7 +36,6 @@
                     Console.Write(palindrome + "\n");
                 }
             }
-
         }
     }
 }
