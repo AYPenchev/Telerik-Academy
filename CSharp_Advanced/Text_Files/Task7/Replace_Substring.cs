@@ -17,11 +17,11 @@
                     int randNum = randNumGenerator.Next(1, 4);
                     switch (randNum)
                     {
-                        case 1: writer.WriteLine("start");
+                        case 1: writer.Write("start");
                                 break;
-                        case 2: writer.WriteLine("begin");
+                        case 2: writer.Write("begin");
                                 break;
-                        case 3: writer.WriteLine("last");
+                        case 3: writer.Write("last");
                                 break;
                     }
                 }
