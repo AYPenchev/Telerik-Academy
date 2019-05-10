@@ -16,6 +16,7 @@
                 writerToInputFile.WriteLine("Maria");
                 writerToInputFile.WriteLine("George");
             }
+
             string[] arrayNames = File.ReadAllText("input.txt")
                                 .Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries)
                                 .Select(item => item)
