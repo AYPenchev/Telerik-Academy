@@ -8,7 +8,7 @@
         static void Main()
         {
             StreamWriter writerFirstFile = new StreamWriter("firstTextFile.txt");
-            writerFirstFile.WriteLine("Lorem Ipsum is simply dummy text of the printing and typesetting industry.\nLorem Ipsum has been the industry's standard dummy text ever since the 1500s,\nwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.");
+            writerFirstFile.WriteLine("Lorem Ipsum is simply dummy text of typesetting industry.\nLorem Ipsum has been the industry's standard dummy text ever since the 1500s,\nwhen an unknown printer took a galley of type and scrambled it to make a type specimen book.");
             writerFirstFile.Close();
 
             StreamWriter writerSecondFile = new StreamWriter("secondTextFile.txt");
