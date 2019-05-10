@@ -11,6 +11,7 @@
             try
             {
                 int rowCounter = 1;
+
                 while (!reader.EndOfStream)
                 {
                     if(rowCounter % 2 != 0)
