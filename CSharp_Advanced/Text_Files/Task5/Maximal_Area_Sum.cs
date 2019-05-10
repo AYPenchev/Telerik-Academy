@@ -62,7 +62,7 @@
         {
             using (var readerMatrixFromFile = new StreamReader(path))
             {
-                int[,] matrix /*= new int[0,0]*/;
+                int[,] matrix;
                 int countSizeOfMatrix = 0;
                 while (!readerMatrixFromFile.EndOfStream)
                 {
