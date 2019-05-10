@@ -15,10 +15,12 @@
             {
                 var readerHelper = new StreamReader("Helper.txt");
                 int rowCounter = 1;
+
                 while (!readerHelper.EndOfStream)
                 {
                     writerLineNumber.WriteLine(rowCounter++ + ". " + readerHelper.ReadLine());
                 }
+
                 readerHelper.Close();
                 File.Delete("Helper.txt");
             }
