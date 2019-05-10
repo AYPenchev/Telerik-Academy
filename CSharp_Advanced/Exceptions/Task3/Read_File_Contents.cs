@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+
     class ReadFileContents
     {
         static void Main()

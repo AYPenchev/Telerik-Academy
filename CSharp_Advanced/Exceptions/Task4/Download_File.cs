@@ -2,6 +2,7 @@
 {
     using System;
     using System.Net;
+
     class InvalidAnswerException : Exception
     {
         public InvalidAnswerException()
