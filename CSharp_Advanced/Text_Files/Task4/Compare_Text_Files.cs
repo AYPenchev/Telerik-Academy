@@ -40,7 +40,6 @@
             readerSecondFile.Close();
 
             Console.WriteLine("Equal lines: {0}" + Environment.NewLine + "Different lines: {1}", countEqualLines, countDiffLines);
-
         }
     }
 }
