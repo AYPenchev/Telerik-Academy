@@ -2,8 +2,6 @@
 {
     using System;
     using System.IO;
-    using System.Text;
-    using System.Threading;
 
     class ReplaceSubstring
     {
@@ -26,23 +24,6 @@
                     }
                 }
             }
-
-            //StringBuilder content = new StringBuilder();
-
-
-            //using (var reader = new StreamReader("largeFile.txt"))
-            //{
-            //    while (!reader.EndOfStream)
-            //    {
-            //        content.Append(reader.ReadLine() + Environment.NewLine);
-            //    }
-            //    //Console.WriteLine(content);
-            //    if (content.ToString().Contains("start"))
-            //    {
-            //        content.Replace("start", "finish");
-            //    }
-            //}
-            //File.WriteAllText("largeFile.txt", content.ToString());
             
             using (var reader = new StreamReader("largeFile.txt"))
             {
