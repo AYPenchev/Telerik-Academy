@@ -92,7 +92,6 @@
                 {
                     writerResult.WriteLine("word = {0}, Count = {1}", keyValuePair.Key, keyValuePair.Value);
                 }
-
             }
         }
     }
