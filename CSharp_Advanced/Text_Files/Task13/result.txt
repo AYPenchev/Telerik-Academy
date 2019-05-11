@@ -1,0 +1,3 @@
+word = for, Count = 4
+word = mice, Count = 3
+word = nice, Count = 1
