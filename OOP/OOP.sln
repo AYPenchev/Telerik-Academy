@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Defining_Classes_P1", "Defining_Classes_P1", "{7677CAD5-92A6-4DDC-863D-26D1DB15C9E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Defining_Classes_P1\Task1\Task1.csproj", "{F7B75D8E-03C4-47AB-8F87-A42EC61608FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7B75D8E-03C4-47AB-8F87-A42EC61608FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B75D8E-03C4-47AB-8F87-A42EC61608FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B75D8E-03C4-47AB-8F87-A42EC61608FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B75D8E-03C4-47AB-8F87-A42EC61608FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F7B75D8E-03C4-47AB-8F87-A42EC61608FC} = {7677CAD5-92A6-4DDC-863D-26D1DB15C9E2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD17232D-488E-4440-8C0D-7269B5717EB7}
+	EndGlobalSection
+EndGlobal
