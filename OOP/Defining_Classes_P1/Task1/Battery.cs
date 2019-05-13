@@ -22,6 +22,12 @@
         public double? IdleHours { get; private set; }
         public double? TalkHours { get; private set; }      
         public BatteryType? BatteryType { get; private set; }
+
+        public override string ToString()
+        {
+            return string.Format("\n    1.Battery model:  {0} \n    2.Idle hours:  {1}  \n    3.Talk hours:  {2} \n    4.Battery type:  {3} \n"
+                                , this.Model, this.IdleHours, this.TalkHours, this.BatteryType);
+        }
     }
 
     public enum BatteryType

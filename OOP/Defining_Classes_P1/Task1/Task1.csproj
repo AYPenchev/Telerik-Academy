@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battery.cs" />
-    <Compile Include="Define_Class.cs" />
+    <Compile Include="GSMTest.cs" />
     <Compile Include="Display.cs" />
     <Compile Include="GSM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
