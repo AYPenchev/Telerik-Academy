@@ -1,10 +1,11 @@
 ﻿namespace Task1
 {
     using System;
+    using System.Collections.Generic;
 
     class GSM
     {
-        private double? price;
+        private const decimal CallPricePerSecond = 0.26m;
         public static string iPhone4S = "info";
 
         public GSM()
@@ -32,35 +33,51 @@
         public string Model { get; private set; }
         public string Manufacturer { get; private set; }
         public double? Price { get; private set; }
-       /* public double? Price
-        {
-            get { return this.price; }
-            set
-            {
-                if (value != null)
-                {
-                    //GetPasswordFromUser();
-                    if (this.ManufacturerPassword == this.InputPassword)
-                    {
-                        this.price = value;
-                    }
-                }
-                else
-                {
-                    this.price = value;
-                }
-            }
-        }*/
         public string Owner { get; private set; }
-       /* private string ManufacturerPassword { get; set; } = "qwerty";
-        private string InputPassword { get; set; }
+        private List<Call> CallHistory { get; set; } = new List<Call>();
 
-        private string GetPasswordFromUser()
+        public void AddCall(string currPhoneNumber, ulong currDuaration)
         {
-            Console.Write("Enter manufacturer's password to change the price of the phone: ");
-            this.InputPassword = Console.ReadLine();
-            return this.InputPassword;
-        }*/
+            this.CallHistory.Add(new Call(currPhoneNumber, currDuaration));
+        }
+
+        public void DeleteCall(int position)
+        {
+            if ((this.CallHistory.Count <= position - 1) || (position - 1 < 0))
+            {
+                throw new ApplicationException("Such call history log does not exist!");
+            }
+            this.CallHistory.RemoveAt(position - 1);
+        }
+
+        public void ShowCallHistory()
+        {
+            Console.WriteLine("Current call history:");
+            int indexer = 1;
+            foreach (var call in this.CallHistory)
+            {
+                Console.Write(indexer++);
+                Console.Write(" ---> ");
+                Console.WriteLine(call);
+            }
+        }
+
+        public void ClearCallHistory()
+        {
+            this.CallHistory.Clear();
+        }
+
+        public decimal TotalCallPrice()
+        {
+            ulong allDuaration = 0;
+
+            foreach (var call in this.CallHistory)
+            {
+                allDuaration += call.Duaration;
+            }
+
+            return allDuaration * CallPricePerSecond;
+        }
 
         public override string ToString()
         {

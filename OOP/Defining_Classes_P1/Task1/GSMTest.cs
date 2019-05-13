@@ -5,7 +5,7 @@
 
     class GSMTest
     {
-        static void Main()
+        public void TestingGSM()
         {
             Battery phoneOneBattery = new Battery("Samsung Batery", 48, 12, BatteryType.Li_lon);
             Display phoneOneDisplay = new Display(5.7, 12000);
@@ -17,7 +17,7 @@
 
             //Console.WriteLine(phoneOne.Price);
             //phoneOne.Price = 20;
-            
+
             List<GSM> phones = new List<GSM>();
             phones.Add(phoneOne);
             phones.Add(phoneTwo);
@@ -26,6 +26,7 @@
             {
                 Console.WriteLine($"{i + 1}." + Environment.NewLine + phones[i] + Environment.NewLine);
             }
+
             Console.WriteLine(GSM.iPhone4S);
         }
     }
