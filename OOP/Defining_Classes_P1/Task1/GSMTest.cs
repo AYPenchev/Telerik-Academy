@@ -15,9 +15,6 @@
             Display phoneTwoDisplay = new Display(4.5, 154000000);
             GSM phoneTwo = new GSM("4S", "iPhone", phoneTwoBattery, phoneTwoDisplay, owner: "Gosho", price: 1100);
 
-            //Console.WriteLine(phoneOne.Price);
-            //phoneOne.Price = 20;
-
             List<GSM> phones = new List<GSM>();
             phones.Add(phoneOne);
             phones.Add(phoneTwo);
