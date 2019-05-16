@@ -3,6 +3,7 @@
     using System;
     struct Point3D
     {
+        private readonly Point3D O = new Point3D(0, 0, 0);
         public Point3D(int x, int y, int z)
         {
             this.X = x;
