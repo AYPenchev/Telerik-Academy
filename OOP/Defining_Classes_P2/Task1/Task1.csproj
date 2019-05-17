@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Defining_Clases_Part2.cs" />
     <Compile Include="DistanceToPoint.cs" />
+    <Compile Include="GenericList.cs" />
     <Compile Include="Path.cs" />
     <Compile Include="PathStorage.cs" />
     <Compile Include="Point3D.cs" />
