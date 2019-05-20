@@ -57,6 +57,13 @@
 
             list.Clear();
             Console.WriteLine(list.ToString());
+
+            Matrix<int> firstMatrix = new Matrix<int>(3, 3, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+            Matrix<int> secondMatrix = new Matrix<int>(3, 3, 9, 8, 7, 6, 5, 4, 3, 2, 1);
+
+            Matrix<int> product = firstMatrix * secondMatrix;
+
+            Console.WriteLine(product.ToString());
         }
     }
 }
