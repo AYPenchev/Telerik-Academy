@@ -4,7 +4,7 @@
     using System.Text;
 
     class GenericList<T>
-        where T : IComparable
+        where T : IComparable<T>
     {
         private T[] elements;
         private int capacity;
@@ -22,7 +22,7 @@
 
         public void AddAtEnd(T element)
         {
-            if(this.Capacity == this.Count)
+            if (this.Capacity == this.Count)
             {
                 this.Expand();
             }
@@ -50,7 +50,7 @@
 
             for (int i = 0; i < this.Count; i++)
             {
-                if(this.elements[i].Equals(item))
+                if (this.elements[i].Equals(item))
                 {
                     index = i;
                     break;
@@ -106,6 +106,32 @@
                 }
             }
             return -1;
+        }
+
+        public T Max()
+        {
+            T max = this.elements[0];
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (elements[i].CompareTo(max) == 1)
+                {
+                    max = elements[i];
+                }
+            }
+            return max;
+        }
+
+        public T Min()
+        {
+            T min = this.elements[0];
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (elements[i].CompareTo(min) == -1)
+                {
+                    min = elements[i];
+                }
+            }
+            return min;
         }
 
         public override string ToString()
