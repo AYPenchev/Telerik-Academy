@@ -8,7 +8,7 @@
     {
         static void Main()
         {
-            /* Task 1-4
+            /*Task 1-4
             Point3D firstPoint = new Point3D(1, 2, 3);
             Console.WriteLine(firstPoint.ToString());
 
