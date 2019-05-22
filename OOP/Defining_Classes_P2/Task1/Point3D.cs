@@ -1,6 +1,7 @@
 ﻿namespace Task1
 {
     using System;
+
     struct Point3D
     {
         private static readonly Point3D o = new Point3D(0, 0, 0);

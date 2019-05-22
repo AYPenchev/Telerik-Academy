@@ -3,13 +3,17 @@
     using System;
     using System.Runtime.InteropServices;
 
+    [Version(Version = "v2")]
     class Matrix<T>
     {
+        [Version(Version = "v1.1.2")]
         public int Rows { get; private set; }
+        [Version(Version = "v1.0.2")]
         public int Cols { get; private set; }
+
         public T[,] MatrixArray { get; private set; }
 
-        public Matrix(int numberOfRows, int numberOfCols, params T[] elements)
+         public Matrix(int numberOfRows, int numberOfCols, params T[] elements)
         {
             if (numberOfRows * numberOfCols != elements.Length && elements.Length != 0)
             {

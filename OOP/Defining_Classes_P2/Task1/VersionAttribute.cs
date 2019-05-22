@@ -2,8 +2,14 @@
 {
     using System;
 
-    class VersionAttribute : Attribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
+    public class VersionAttribute : Attribute
     {
-        public int lenght { get; private set; }
+        public VersionAttribute()
+        {
+            this.Version = string.Empty;
+        }
+
+        public string Version { get; set; }
     }
 }
