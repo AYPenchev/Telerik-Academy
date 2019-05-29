@@ -9,7 +9,6 @@
 
         }
 
-
         protected int Age { get; set; }
         protected string Name { get; set; }
         public abstract Sex Sex { get; set; }
