@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OOP_Principles_P1", "OOP_Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "OOP_Principles_P1\Task1\Task1.csproj", "{820440AA-6FA6-48A2-89E0-32E4CC00AC47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Task2\Task2.csproj", "{CE89733E-321A-4C48-9DB8-76D6B0BEEF7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "OOP_Principles_P1\Task2\Task2.csproj", "{CE89733E-321A-4C48-9DB8-76D6B0BEEF7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
