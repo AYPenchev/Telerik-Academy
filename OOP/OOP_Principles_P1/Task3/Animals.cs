@@ -9,16 +9,19 @@
 
         }
 
-        protected enum sex
-        {
-            Male,
-            Female
-        }
 
         protected int Age { get; set; }
         protected string Name { get; set; }
-        public abstract enum Sex { }
+        public abstract Sex Sex { get; set; }
 
         public abstract void MakeSound();
     }
+
+    public enum Sex
+    {
+        Male,
+        Female
+    }
 }
+
+
