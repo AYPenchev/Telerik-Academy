@@ -1,7 +1,6 @@
 ﻿namespace Task1
 {
     using System;
-    using System.Collections.Generic;
 
     public class Teacher : Human
     {
@@ -10,8 +9,6 @@
 
         }
 
-        public new List<Discipline> Disciplines { get; set; }
-        public new string Name { get; set; }
         public override int Age
         {
             get
