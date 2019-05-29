@@ -59,7 +59,6 @@
             School mgRuse = new School();
 
             mgRuse.SchoolClasses = schoolClasses;
-
         }
     }
 }

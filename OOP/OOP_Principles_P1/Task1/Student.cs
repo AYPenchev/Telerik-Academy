@@ -19,6 +19,5 @@
         {
             Console.WriteLine(discipline.ToString());
         }
-
     }
 }
