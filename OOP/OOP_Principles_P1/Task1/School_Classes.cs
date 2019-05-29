@@ -38,10 +38,12 @@
 
             List<Teacher> teachersAClass = new List<Teacher>();
             teachersAClass.Add(firstTeacher);
+            firstTeacher.Teach(Math);
 
             List<Student> studentsClassA = new List<Student>();
             studentsClassA.Add(firstStudent);
             studentsClassA.Add(secondStudent);
+            firstStudent.Learn(History);
 
             SchoolClass aClass = new SchoolClass();
             aClass.Students = studentsClassA;

@@ -10,8 +10,8 @@
 
         }
 
-        public override List<Discipline> Disciplines { get; set; }
-        public override string Name { get; set; }
+        public new List<Discipline> Disciplines { get; set; }
+        public new string Name { get; set; }
         public override int Age
         {
             get

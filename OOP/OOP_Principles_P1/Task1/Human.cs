@@ -5,9 +5,7 @@
 
     public abstract class Human
     {
-        protected string name;
         protected int age;
-        protected List<Discipline> disciplines;
 
         protected Human()
         {
@@ -16,8 +14,8 @@
             this.Disciplines = default(List<Discipline>);
         }
 
-        public abstract string Name { get; set; }
+        protected string Name { get; set; }
         public abstract int Age { get; set; }
-        public abstract List<Discipline> Disciplines { get;  set; }
+        protected List<Discipline> Disciplines { get;  set; }
     }
 }

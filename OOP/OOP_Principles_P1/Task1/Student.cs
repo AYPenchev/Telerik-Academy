@@ -9,15 +9,15 @@
         {
 
         }
-        public int ClassNumber { get;  set; }
 
-        public override List<Discipline> Disciplines { get; set; }
-        public override string Name { get; set; }
+        public int ClassNumber { get;  set; }
+        public new List<Discipline> Disciplines { get; set; }
+        public new string Name { get; set; }
         public override int Age { get; set; }
 
         public void Learn(Discipline discipline)
         {
-            Console.WriteLine(discipline.ToString());
+            Console.WriteLine(discipline.Name);
         }
     }
 }
