@@ -44,35 +44,16 @@
 
             tom.MakeSound();
 
-            List<Dog> dogs = new List<Dog>()
-            {
-                new Dog("rex", 5, Sex.Male),
-                new Dog("gosho", 11, Sex.Male),
-                new Dog("pesho", 15, Sex.Male)
-            };
-
-            double averageDogYears = dogs.Select(x => x.Age).Sum() / (double)dogs.Count;
-            Console.WriteLine("{0:0.00}", averageDogYears);
-
-            List<Frog> frogs = new List<Frog>()
-            {
-                new Frog("rado", 2, Sex.Male),
-                new Frog("denislav", 3, Sex.Male),
-                new Frog("ivan", 4, Sex.Female)
-            };
-
-            double averageFrogYears = frogs.Select(x => x.Age).Sum() / (double)dogs.Count;
-            Console.WriteLine("{0:0.00}", averageFrogYears);
-
-            List<Kitten> kittens = new List<Kitten>()
+            List<Animal> animals = new List<Animal>()
             {
                 new Kitten("rado", 2),
-                new Kitten("denislav", 5),
-                new Kitten("ivan", 4)
+                new Frog("denislav", 3, Sex.Male),
+                new Dog("pesho", 15, Sex.Male),
+                new Tomcat("kiro", 7)
             };
 
-            double averageKittenYears = kittens.Select(x => x.Age).Sum() / (double)dogs.Count;
-            Console.WriteLine("{0:0.00}", averageKittenYears);
+            double averageAnimalsYears = animals.Select(x => x.Age).Sum() / (double)animals.Count;
+            Console.WriteLine("{0:0.00}", averageAnimalsYears);
         }
     }
 }
