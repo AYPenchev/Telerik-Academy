@@ -4,7 +4,7 @@
 
     public class Student : Human
     {
-        public float? grade;
+        private float? grade;
 
         public Student() : base()
         {
