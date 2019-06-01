@@ -2,7 +2,7 @@
 {
     using System;
 
-    class Customer
+    public class Customer : IDeposit, IWithdraw
     {
     }
 }
