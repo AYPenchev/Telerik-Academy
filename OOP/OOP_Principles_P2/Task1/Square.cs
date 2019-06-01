@@ -13,10 +13,10 @@ namespace Task1
 
         public Square(double side)
         {
-            this.Height = side;
-            this.Width = side;
+            this.height = side;
+            this.width = side;
         }
-        public virtual double Height
+        public double Height
         {
             get
             {
@@ -33,7 +33,7 @@ namespace Task1
                 this.width = value;
             }
         }
-        public virtual double Width
+        public double Width
         {
             get
             {
@@ -53,7 +53,7 @@ namespace Task1
 
         public override double CalculateSurface()
         {
-            double surface = this.Height * this.Width;
+            double surface = this.height * this.width;
             return surface;
         }
     }

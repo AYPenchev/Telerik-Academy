@@ -8,47 +8,17 @@
         protected double height;
         protected Shape()
         {
-            this.Height = 1;
-            this.Width = 1;
+            this.height = 1;
+            this.width = 1;
         }
         protected Shape(double height, double width)
         {
-            this.Height = height;
-            this.Width = width;
+            this.height = height;
+            this.width = width;
         }
-
-        public virtual double Height
-        {
-            get
-            {
-                return this.height;
-            }
-            set
-            {
-                if (this.height <= 0)
-                {
-                    throw new Exception("Height can't 0 or less!");
-                }
-
-                this.height = value;
-            }
-        }
-        public virtual double Width
-        {
-            get
-            {
-                return this.width;
-            }
-            set
-            {
-                if (this.width <= 0)
-                {
-                    throw new ArgumentOutOfRangeException("Height can't 0 or less!");
-                }
-
-                this.width = value;
-            }
-        }
+        
+        public virtual double Height { get; set; }
+        public virtual double Width { get; set; }
 
         public abstract double CalculateSurface();
     }
