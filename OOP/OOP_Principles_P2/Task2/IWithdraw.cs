@@ -4,6 +4,6 @@
 
     public interface IWithdraw
     {
-        void Withdraw(double withdrawAmount);
+        void Withdraw(decimal withdrawAmount);
     }
 }

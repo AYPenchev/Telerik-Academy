@@ -4,19 +4,24 @@
 
     public class Deposit : BankAccount, IDeposit, IWithdraw
     {
+        public const string DEPOSIT = "Deposit";
+
+
         public Deposit() : base()
         {
 
         }
 
-        public Deposit(Customer customer, double balance, double interestRate) : base(customer, balance, interestRate)
+        public Deposit(Customer customer, double interestRate, decimal currentAmount = 0) : base(customer, interestRate, currentAmount)
         {
 
         }
 
+        public override string Name => DEPOSIT;
+
         public override double GetInterestAmount(int numberOfMonths)
         {
-            if (this.Balance > 0 && this.Balance < 1000)
+            if (this.Customer.GetBalance() > 0 && this.Customer.GetBalance() < 1000)
             {
                 return 0;
             }
@@ -25,22 +30,22 @@
             return interestAmount;
         }
 
-        public void MakeDeposit(double depositAmount)
+        public void MakeDeposit(decimal depositAmount)
         {
-            this.Balance += depositAmount;
+            this.CurrentAmount += depositAmount;
 
             if (depositAmount > DEPOSIT_LIMIT_WITHOUT_TAX)
             {
-                this.Balance = this.Balance - (depositAmount * DEPOSIT_PERCENT_TAX);
+                this.CurrentAmount = this.CurrentAmount - (depositAmount * DEPOSIT_PERCENT_TAX);
             }
         }
 
-        public void Withdraw(double withdrawAmount)
+        public void Withdraw(decimal withdrawAmount)
         {
-            this.Balance = this.Balance - (withdrawAmount +  this.CalculatePercentageOf(withdrawAmount, WITHDRAW_PERCENT_TAX));
+            this.CurrentAmount = this.CurrentAmount - (withdrawAmount +  this.CalculatePercentageOf(withdrawAmount, WITHDRAW_PERCENT_TAX));
         }
 
-        private double CalculatePercentageOf(double amount, double percent)
+        private decimal CalculatePercentageOf(decimal amount, decimal percent)
         {
             return amount * percent / 100;
         }

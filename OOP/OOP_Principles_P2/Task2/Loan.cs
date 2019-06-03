@@ -1,22 +1,22 @@
 ﻿namespace Task2
 {
-    using System;
-
     public class Loan : BankAccount, IDeposit
     {
+        public const string LOAN = "Loan";
         private const int MONTHS_WITHOUT_INTEREST_INDIVIDUAL = 3;
         private const int MONTHS_WITHOUT_INTEREST_COMPANY = 2;
-
 
         public Loan() : base()
         {
 
         }
 
-        public Loan(Customer customer, double balance, double interestRate) : base(customer, balance, interestRate)
+        public Loan(Customer customer, double interestRate, decimal dueAmount) : base(customer, interestRate)
         {
-
+            this.DueAmount = dueAmount;
         }
+
+        public override string Name => LOAN;
 
         public override double GetInterestAmount(int numberOfMonths)
         {
@@ -39,9 +39,9 @@
             return interestAmount;
         }
 
-        public void MakeDeposit(double depositAmount)
+        public void MakeDeposit(decimal depositAmount)
         {
-            this.Balance += depositAmount;
+            this.CurrentAmount += depositAmount;
         }
     }
 }

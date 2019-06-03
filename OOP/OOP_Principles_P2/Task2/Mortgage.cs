@@ -4,6 +4,7 @@
 
     public class Mortgage : BankAccount, IDeposit
     {
+        public const string MORTGAGE = "Mortgage";
         private const int MONTHS_WITH_HALF_INTEREST = 12;
         private const double HALF_INTEREST = 0.5;
 
@@ -12,10 +13,12 @@
 
         }
 
-        public Mortgage(Customer customer, double balance, double interestRate) : base(customer, balance, interestRate)
+        public Mortgage(Customer customer, double interestRate, decimal dueAmount) : base(customer, interestRate)
         {
-
+            this.DueAmount = dueAmount;
         }
+
+        public override string Name => MORTGAGE;
 
         public override double GetInterestAmount(int numberOfMonths)
         {
@@ -30,9 +33,9 @@
             return interestAmount;
         }
 
-        public void MakeDeposit(double depositAmount)
+        public void MakeDeposit(decimal depositAmount)
         {
-            this.Balance += depositAmount;
+            this.CurrentAmount += depositAmount;
         }
     }
 }

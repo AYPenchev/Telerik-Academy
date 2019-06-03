@@ -4,6 +4,6 @@
 
     public interface IDeposit
     {
-        void MakeDeposit(double depositAmount);
+        void MakeDeposit(decimal depositAmount);
     }
 }

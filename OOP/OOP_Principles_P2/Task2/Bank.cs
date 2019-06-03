@@ -1,6 +1,5 @@
 ﻿namespace Task2
 {
-    using System;
     using System.Collections.Generic;
 
     public class Bank
@@ -16,6 +15,5 @@
         }
 
         public List<BankAccount> AccountTypes { get; set; }
-
     }
 }

@@ -14,8 +14,8 @@
             this.Disciplines = default(List<Discipline>);
         }
 
-        protected string Name { get; set; }
+        public string Name { get; set; }
         public abstract int Age { get; set; }
-        protected List<Discipline> Disciplines { get;  set; }
+        public List<Discipline> Disciplines { get;  set; }
     }
 }
