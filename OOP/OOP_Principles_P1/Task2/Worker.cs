@@ -22,6 +22,7 @@
         }
 
         public double WeekSalary { get; set; }
+
         public float WorkHoursPerDay
         {
             get
@@ -63,11 +64,9 @@
 
         public override string ToString()
         {
-            string stringify = "First name: " + this.FirstName + "\nLast name: " + this.LastName + "\nWeek salary: " + this.WeekSalary +
+            return "First name: " + this.FirstName + "\nLast name: " + this.LastName + "\nWeek salary: " + this.WeekSalary +
                             "\nWork hours per days: " + this.WorkHoursPerDay + "\nWork days in week: " + this.WorkDaysInWeek +
                             "\nMoney per hour: " + string.Format("{0:F2}\n", this.MoneyPerHour());
- 
-            return stringify;
         }
     }
 }

@@ -8,10 +8,10 @@
         private string phoneNumber;
         private ulong duaration;
 
-        public Call(string phonenumber, ulong duaration)
+        public Call(string phoneNumber, ulong duaration)
         {
             this.DateTime = DateTime.Now;
-            this.PhoneNumber = phonenumber;
+            this.PhoneNumber = phoneNumber;
             this.Duaration = duaration;
         }
 
@@ -59,8 +59,10 @@
         public override string ToString()
         {
             StringBuilder stringCreator = new StringBuilder();
+
             stringCreator.AppendFormat("{0} : Duaration - {1} , made on {2}", this.PhoneNumber, this.Duaration, this.DateTime);
             stringCreator.AppendLine();
+
             return stringCreator.ToString();
         }
     }

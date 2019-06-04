@@ -1,7 +1,5 @@
 ﻿namespace Task1
 {
-    using System;
-
     public class Discipline
     {
         public string Name { get; set; }

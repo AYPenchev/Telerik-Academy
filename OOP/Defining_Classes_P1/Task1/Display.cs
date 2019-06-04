@@ -1,7 +1,5 @@
 ﻿namespace Task1
 {
-    using System;
-
     class Display
     {
         public Display()
@@ -9,6 +7,7 @@
             this.InchSize = null;
             this.NumberColors = null;
         }
+
         public Display(double? inchSize = null, int? numberColors = null)
         {
             this.InchSize = inchSize;

@@ -1,11 +1,9 @@
-﻿using System.Linq;
-
-namespace Task2
+﻿namespace Task2
 {
     using System;
     using System.Collections.Generic;
 
-    class BankAccounts
+    public class BankAccounts
     {
         static void Main()
         {

@@ -8,10 +8,12 @@
         {
             this.Sex = Sex.Female;
         }
+
         public Kitten(string name, int age) : base(name, age)
         {
             this.Sex = Sex.Female;
         }
+
         public override void MakeSound()
         {
             Console.WriteLine("Kitten");

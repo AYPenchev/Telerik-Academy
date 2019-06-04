@@ -30,6 +30,7 @@
                 this.height = value;
             }
         }
+
         public double Width
         {
             get

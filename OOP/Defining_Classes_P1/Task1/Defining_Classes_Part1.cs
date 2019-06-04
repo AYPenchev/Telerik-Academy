@@ -1,7 +1,5 @@
 ﻿namespace Task1
 {
-    using System;
-
     class DefiningClasesPart1
     {
         static void Main()

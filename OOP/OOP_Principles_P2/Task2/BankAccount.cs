@@ -1,7 +1,5 @@
 ﻿namespace Task2
 {
-    using System;
-
     public abstract class BankAccount : IGetInterestAmount
     {
         protected const int DEPOSIT_LIMIT_WITHOUT_TAX = 5000;

@@ -15,6 +15,7 @@
             max.MakeSound();
 
             Kitten bob = new Kitten("Bob", 2);
+
             try
             {
                 bob.Sex = Sex.Female;

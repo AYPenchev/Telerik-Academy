@@ -8,10 +8,12 @@
         {
             this.Sex = Sex.Male;
         }
+
         public Tomcat(string name, int age) : base(name, age)
         {
             this.Sex = Sex.Male;
         }
+
         public override void MakeSound()
         {
             Console.WriteLine("Tomcat");

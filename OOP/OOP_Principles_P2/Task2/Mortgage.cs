@@ -1,7 +1,5 @@
 ﻿namespace Task2
 {
-    using System;
-
     public class Mortgage : BankAccount, IDeposit
     {
         public const string MORTGAGE = "Mortgage";

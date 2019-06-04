@@ -1,7 +1,5 @@
 ﻿namespace Task3
 {
-    using System;
-
     public abstract class Animal : ISound
     {
         protected Animal()

@@ -1,6 +1,5 @@
 ﻿namespace Task1
 {
-    using System;
     using System.Collections.Generic;
 
     public class SchoolClasses

@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task3
+﻿namespace Task3
 {
-    class InvalidRangeException
+    using System;
+
+    public class InvalidRangeException<T> : Exception
     {
+        public readonly T Start;
+        public readonly T End;
+
+        public InvalidRangeException(T start, T end, string message) : base(message)
+        {
+            this.Start = start;
+            this.End = end;
+        }
+
+        public override string Message { get; }
     }
 }

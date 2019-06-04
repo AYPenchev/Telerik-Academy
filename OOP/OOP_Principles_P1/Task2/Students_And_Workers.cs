@@ -57,7 +57,6 @@
             mergedList = mergedList.OrderBy(x => x.FirstName).ThenBy(x => x.LastName).ToList();
 
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Yellow;
 
             foreach (Human human in mergedList)
             {

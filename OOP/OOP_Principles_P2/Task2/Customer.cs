@@ -35,12 +35,13 @@
         public override string ToString()
         {
             string typesOfBankAccounts = GetAccountsType(this.CustomerBankAccounts);
-           return "Name: " + this.Name + "\nBalance: " + this.GetBalance() + "\nCustomer Bank Accounts: " + typesOfBankAccounts;
+
+            return "Name: " + this.Name + "\nBalance: " + this.GetBalance() + "\nCustomer Bank Accounts: " + typesOfBankAccounts;
         }
 
         private string GetAccountsType(List<BankAccount> accountsList)
         {
-            string typesOfBankAccounts = String.Empty;
+            string typesOfBankAccounts = string.Empty;
 
             foreach (BankAccount type in accountsList)
             {

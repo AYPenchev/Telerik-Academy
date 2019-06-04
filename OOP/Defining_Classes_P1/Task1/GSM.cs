@@ -17,6 +17,7 @@
             this.Price = 0;
             this.Owner = string.Empty;
         }
+
         public GSM(string model, string manufacturer, Battery phoneBattery = null, Display phoneDisplay = null,
                                                                      double? price = null, string owner = null)
         {

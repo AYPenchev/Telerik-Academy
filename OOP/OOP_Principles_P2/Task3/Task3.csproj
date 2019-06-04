@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InvalidRangeException.cs" />
     <Compile Include="RangeException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

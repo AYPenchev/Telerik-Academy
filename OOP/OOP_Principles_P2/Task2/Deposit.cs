@@ -1,12 +1,9 @@
 ﻿namespace Task2
 {
-    using System;
-
     public class Deposit : BankAccount, IDeposit, IWithdraw
     {
         public const string DEPOSIT = "Deposit";
-
-
+    
         public Deposit() : base()
         {
 

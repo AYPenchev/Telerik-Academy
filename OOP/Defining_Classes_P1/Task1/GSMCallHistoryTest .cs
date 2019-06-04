@@ -20,10 +20,12 @@
 
             testGsm.DeleteCall(5);
             Console.WriteLine("Removed Longest call!");
+
             Console.WriteLine("Total call price: " + testGsm.TotalCallPrice());
 
             testGsm.ClearCallHistory();
             Console.WriteLine("Cleared call history!");
+
             testGsm.ShowCallHistory();
         }
     }

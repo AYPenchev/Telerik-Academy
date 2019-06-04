@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace Task1
+﻿namespace Task1
 {
     using System;
 
@@ -16,6 +14,7 @@ namespace Task1
             this.height = side;
             this.width = side;
         }
+
         public double Height
         {
             get
@@ -33,6 +32,7 @@ namespace Task1
                 this.width = value;
             }
         }
+
         public double Width
         {
             get

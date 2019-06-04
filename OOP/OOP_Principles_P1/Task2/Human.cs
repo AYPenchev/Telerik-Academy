@@ -1,7 +1,5 @@
 ﻿namespace Task2
 {
-    using System;
-
     public abstract class Human
     {
         protected Human()
