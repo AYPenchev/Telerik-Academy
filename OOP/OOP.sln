@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3", "OOP_Principles_P2\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common_Type_System", "Common_Type_System", "{D12CCE67-9BAD-4DFB-8853-5CF778917BDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentClass", "Common_Type_System\StudentClass\StudentClass.csproj", "{F16321DC-D8BD-449A-A147-A24B03EFFE85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Common_Type_System\StudentClass\Task1.csproj", "{F16321DC-D8BD-449A-A147-A24B03EFFE85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
