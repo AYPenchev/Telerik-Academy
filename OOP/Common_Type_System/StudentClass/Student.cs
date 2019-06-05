@@ -1,7 +1,5 @@
 ﻿namespace StudentClass
 {
-    using System;
-
     public class Student
     {
         Student()
