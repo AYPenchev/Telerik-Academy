@@ -1,8 +1,10 @@
 ﻿namespace Task6
 {
     using System;
+    using System.Collections.Generic;
 
-    public class BTree<T>
+    public class BTree<T> : Comparer<T>
+        where T : IComparable
     {
         public BTree()
         {
@@ -188,5 +190,24 @@
             Console.WriteLine(root.Value + " ");
         }
 
+        public override int Compare(T x, T y)
+        {
+            if (x.CompareTo(y) != 0)
+            {
+                return x.Length.CompareTo(y.Length);
+            }
+            else if (x.Height.CompareTo(y.Height) != 0)
+            {
+                return x.Height.CompareTo(y.Height);
+            }
+            else if (x.Width.CompareTo(y.Width) != 0)
+            {
+                return x.Width.CompareTo(y.Width);
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

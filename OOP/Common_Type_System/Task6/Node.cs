@@ -1,6 +1,9 @@
 ﻿namespace Task6
 {
+    using System;
+
     public class Node<T>
+        where T : IComparable
     {
         public Node() { }
 
