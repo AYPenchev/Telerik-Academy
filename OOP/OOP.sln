@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common_Type_System", "Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Common_Type_System\StudentClass\Task1.csproj", "{F16321DC-D8BD-449A-A147-A24B03EFFE85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Common_Type_System\Task2\Task2.csproj", "{C740CC0E-32C5-4565-8A34-462435E21C03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4", "Common_Type_System\Task2\Task4.csproj", "{C740CC0E-32C5-4565-8A34-462435E21C03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
