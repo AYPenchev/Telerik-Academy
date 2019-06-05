@@ -1,8 +1,10 @@
-﻿namespace StudentClass
+﻿using System;
+
+namespace StudentClass
 {
-    public class Student
+    public class Student : ICloneable
     {
-        Student()
+        public Student()
         {
             this.FirstName = null;
             this.MiddleName = null;
@@ -11,11 +13,11 @@
             this.PermanentAddress = null;
             this.PhoneNumber = null;
             this.Email = null;
-            this.Course = null;
+            this.Course = default(int);
         }
 
-        Student(string firstName = null, string middleName = null, string lastName = null, string ssn = null, string permanentAddress = null,
-                string phoneNumber = null, string email = null, string course = null)
+        public Student(string firstName = null, string middleName = null, string lastName = null, string ssn = null, string permanentAddress = null,
+                string phoneNumber = null, string email = null, int course = default(int))
         {
             this.FirstName = firstName;
             this.MiddleName = middleName;
@@ -37,7 +39,7 @@
         public string PermanentAddress { get; private set; }
         public string PhoneNumber { get; private set; }
         public string Email { get; private set; }
-        public string Course { get; private set; }
+        public int Course { get; private set; }
 
         public static bool operator ==(Student firstStudent, Student secondStudent)
         {
@@ -54,10 +56,27 @@
             var otherStudent = (Student) obj;
             return (this.SSN == otherStudent.SSN) && (this.PermanentAddress == otherStudent.PermanentAddress);
         }
-
+    
         public override int GetHashCode()
         {
             return SSN.GetHashCode() ^ PermanentAddress.GetHashCode();
+        }
+
+        public object Clone()
+        {
+            var clonedStudent = new Student()
+            {
+                FirstName = this.FirstName,
+                MiddleName = this.MiddleName,
+                LastName = this.LastName,
+                SSN = this.SSN,
+                PermanentAddress = this.PermanentAddress,
+                PhoneNumber = this.PhoneNumber,
+                Email = this.Email,
+                Course = this.Course
+            };
+
+            return clonedStudent;
         }
 
         public override string ToString()
