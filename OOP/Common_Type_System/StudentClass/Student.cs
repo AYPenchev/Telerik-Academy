@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Runtime.Remoting;
 
 namespace StudentClass
 {
-    public class Student : ICloneable
+    public class Student : ICloneable, IComparable<Student>
     {
         public Student()
         {
@@ -77,6 +78,29 @@ namespace StudentClass
             };
 
             return clonedStudent;
+        }
+
+        public int CompareTo(Student other)
+        {
+
+            int compareResult = this.FirstName.CompareTo(other.FirstName);
+
+            if (compareResult == 0)
+            {
+                compareResult = this.MiddleName.CompareTo(other.MiddleName);
+            }
+
+            if (compareResult == 0)
+            {
+                compareResult = this.LastName.CompareTo(other.LastName);
+            }
+
+            if (compareResult == 0)
+            {
+                compareResult = this.SSN.CompareTo(other.SSN);
+            }
+
+            return compareResult;
         }
 
         public override string ToString()
