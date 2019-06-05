@@ -9,8 +9,6 @@
 
         public BSTree(T value, BSTree<T> leftTree, BSTree<T> rightTree) : base(value, leftTree, rightTree) {}
 
-   
-
         public bool Find(T value)
         {
             return Find(this.Root, value);
