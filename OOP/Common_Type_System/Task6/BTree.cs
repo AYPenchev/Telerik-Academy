@@ -1,9 +1,8 @@
 ﻿namespace Task6
 {
     using System;
-    using System.Collections.Generic;
 
-    public class BTree<T> : Comparer<T>
+    public class BTree<T>
         where T : IComparable
     {
         public BTree()
@@ -34,12 +33,6 @@
         }
 
         protected Node<T> Root { get; set; }
-
-        public override bool Equals(object obj)
-        {
-            var otherTree = (BTree<T>)obj;
-            return this.Root == otherTree.Root;
-        }
 
         public static bool operator ==(BTree<T> firstTree, BTree<T> secondTree)
         {
@@ -111,13 +104,13 @@
             return this.Root == null;
         }
 
-        public bool IsLeaf()
+        public bool IsLeaf(Node<T> isLeafNode)
         {
             bool isLeaf = false;
 
-            if (this.Root != null)
+            if (isLeafNode != null)
             {
-                isLeaf = (this.Root.Left == null) && (this.Root.Right == null);
+                isLeaf = (isLeafNode.Left == null) && (isLeafNode.Right == null);
             }
 
             return isLeaf;
@@ -156,7 +149,7 @@
         }
 
         private void Inorder(Node<T> root)
-        {
+        { 
             if (root != null)
             {
                 Inorder(root.Left);
@@ -188,26 +181,6 @@
         private void Process(Node<T> root)
         {
             Console.WriteLine(root.Value + " ");
-        }
-
-        public override int Compare(T x, T y)
-        {
-            if (x.CompareTo(y) != 0)
-            {
-                return x.Length.CompareTo(y.Length);
-            }
-            else if (x.Height.CompareTo(y.Height) != 0)
-            {
-                return x.Height.CompareTo(y.Height);
-            }
-            else if (x.Width.CompareTo(y.Width) != 0)
-            {
-                return x.Width.CompareTo(y.Width);
-            }
-            else
-            {
-                return 0;
-            }
         }
     }
 }
