@@ -19,7 +19,7 @@
             }
             else
             {
-                Output.AppendFormat("{0} events deleted\n", x);
+                Output.AppendFormat("{0} events deleted\n", numberDeletedEvents);
             }
         }
 
