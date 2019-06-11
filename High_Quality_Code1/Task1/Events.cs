@@ -16,10 +16,10 @@
 
         private static bool ExecuteNextCommand()
         {
-            //string testAdd = "AddEvent 02/16/2008 12:15:12 |Beach party|Plodiv";
-            //string testDelete = "DeleteEvent House party";
-            //string testList = "ListEvents 02/16/2008 12:15:12 |2";
-            //string testExit = "Exit";
+            // string testAdd = "AddEvent 02/16/2008 12:15:12 |Beach party|Plodiv";
+            // string testDelete = "DeleteEvent House party";
+            // string testList = "ListEvents 02/16/2008 12:15:12 |2";
+            // string testExit = "Exit";
 
             string command = Console.ReadLine();
 

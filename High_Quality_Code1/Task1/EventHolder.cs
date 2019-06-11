@@ -13,8 +13,8 @@
             Event newEvent = new Event(date, title, location);
 
             byTitle.Add(title.ToLower(), newEvent);
-            byDate.Add(newEvent);
-
+            this.byDate.Add(newEvent);
+            
             Messages.EventAdded();
         }
 
@@ -26,7 +26,7 @@
             foreach (var eventToRemove in byTitle[title])
             {
                 removed++;
-                byDate.Remove(eventToRemove);
+                this.byDate.Remove(eventToRemove);
             }
 
             byTitle.Remove(title);
