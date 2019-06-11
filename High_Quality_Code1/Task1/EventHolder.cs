@@ -14,6 +14,7 @@
 
             byTitle.Add(title.ToLower(), newEvent);
             byDate.Add(newEvent);
+
             Messages.EventAdded();
         }
 
@@ -29,6 +30,7 @@
             }
 
             byTitle.Remove(title);
+
             Messages.EventDeleted(removed);
         }
 

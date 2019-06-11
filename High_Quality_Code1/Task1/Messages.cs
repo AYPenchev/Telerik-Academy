@@ -1,39 +1,39 @@
 ﻿namespace Task1
 {
     using System.Text;
+
     public static class Messages
     {
-        public static StringBuilder output = new StringBuilder();
+        public static StringBuilder Output { get; set; } = new StringBuilder();
 
         public static void EventAdded()
         {
-            output.Append("Event added\n");
+            Output.Append("Event added\n");
         }
 
-        public static void EventDeleted(int x)
+        public static void EventDeleted(int numberDeletedEvents)
         {
-            if (x == 0)
+            if (numberDeletedEvents == 0)
             {
                 NoEventsFound();
             }
             else
             {
-                output.AppendFormat("{0} events deleted\n", x);
+                Output.AppendFormat("{0} events deleted\n", x);
             }
         }
 
         public static void NoEventsFound()
         {
-            output.Append("No events found\n");
+            Output.Append("No events found\n");
         }
 
         public static void PrintEvent(Event eventToPrint)
         {
             if (eventToPrint != null)
             {
-                output.Append(eventToPrint + "\n");
+                Output.Append(eventToPrint + "\n");
             }
         }
     }
-
 }

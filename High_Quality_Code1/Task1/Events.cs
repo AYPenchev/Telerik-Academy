@@ -4,76 +4,73 @@
   
     public class Program
     {
-        static EventHolder events = new EventHolder();
+        public static EventHolder Events { get; set; } = new EventHolder();
 
         static void Main()
         {
-            while (ExecuteNextCommand())
+            while (ExecuteNextCommand() == true)
             {
-                Console.WriteLine(Messages.output);
+                Console.WriteLine(Messages.Output);
             }
         }
 
         private static bool ExecuteNextCommand()
         {
-            string testAdd = "AddEvent 02/16/2008 12:15:12";
-            string testDelete = "";
-            string command = testAdd;//Console.ReadLine();
+            //string testAdd = "AddEvent 02/16/2008 12:15:12 |Beach party|Plodiv";
+            //string testDelete = "DeleteEvent House party";
+            //string testList = "ListEvents 02/16/2008 12:15:12 |2";
+            //string testExit = "Exit";
 
-            if (command[0] == 'A')
+            string command = Console.ReadLine();
+
+            switch (command[0])
             {
-                AddEvent(command);
-                return true;
-            }
+                case 'A':
+                    AddEvent(command);
+                    return true;
 
-            if (command[0] == 'D')
-            {
-                DeleteEvents(command);
-                return true;
-            }
+                case 'D':
+                    DeleteEvents(command);
+                    return true;
 
-            if (command[0] == 'L')
-            {
-                ListEvents(command);
-                return true;
-            }
+                case 'L':
+                    ListEvents(command);
+                    return true;
 
-            if (command[0] == 'E')
-            {
-                return false;
-            }
+                case 'E':
+                    return false;
 
-            return false;
+                default:
+                    return false;
+            }
         }
 
         private static void ListEvents(string command)
         {
-            int pipeIndex = command.IndexOf('|');
             DateTime date = GetDate(command, "ListEvents");
+
+            int pipeIndex = command.IndexOf('|');
             string countString = command.Substring(pipeIndex + 1);
             int count = int.Parse(countString);
 
-            events.ListEvents(date, count);
+            Events.ListEvents(date, count);
         }
 
         private static void DeleteEvents(string command)
         {
-            string title = command.Substring("DeleteEvents".Length + 1);
-            events.DeleteEvents(title);
+            string title = command.Substring("DeleteEvents".Length);
+            Events.DeleteEvents(title);
         }
 
         private static void AddEvent(string command)
         {
-            DateTime date; string title; string location;
-
-            GetParameters(command, "AddEvent", out date, out title, out location);
-
-            events.AddEvent(date, title, location);
+            GetParameters(command, "AddEvent");
         }
-        private static void GetParameters(string commandForExecution, string commandType, out DateTime dateAndTime,
-                                          out string eventTitle, out string eventLocation)
+        private static void GetParameters(string commandForExecution, string commandType)
         {
-            dateAndTime = GetDate(commandForExecution, commandType);
+            DateTime dateAndTime = GetDate(commandForExecution, commandType);
+            string eventTitle;
+            string eventLocation;
 
             int firstPipeIndex = commandForExecution.IndexOf('|');
             int lastPipeIndex = commandForExecution.LastIndexOf('|');
@@ -88,11 +85,14 @@
                 eventTitle = commandForExecution.Substring(firstPipeIndex + 1, lastPipeIndex - firstPipeIndex - 1).Trim();
                 eventLocation = commandForExecution.Substring(lastPipeIndex + 1).Trim();
             }
+
+            Events.AddEvent(dateAndTime, eventTitle, eventLocation);
         }
 
         private static DateTime GetDate(string command, string commandType)
         {
-            return DateTime.Parse(command.Substring(commandType.Length + 1, 19));
+            int dateLenght = 19;
+            return DateTime.Parse(command.Substring(commandType.Length + 1, dateLenght));
         }
     }
 }
