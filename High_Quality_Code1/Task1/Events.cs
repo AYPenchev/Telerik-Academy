@@ -2,7 +2,7 @@
 {
     using System;
   
-    public class Program
+    public class EventOrganizer
     {
         public static EventHolder Events { get; set; } = new EventHolder();
 
