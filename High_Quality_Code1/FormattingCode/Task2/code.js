@@ -19,8 +19,7 @@ document.onmousemove = mouseMove;
   if (b == "Netscape") {	
     pX = evn.pageX - 5;	
     pY = evn.pageY;	
-  } 	
-  else {	
+  } else {	
     pX = event.x - 5;	
     pY = event.y;	
   }	
@@ -29,8 +28,7 @@ document.onmousemove = mouseMove;
     if (document.layers["ToolTip"].visibility == "show") {	
       PopTip();	
     }	
-  } 	
-  else {	
+  } else {	
     if (document.all["ToolTip"].style.visibility == "visible") {	
       PopTip();	
     }	
@@ -48,8 +46,7 @@ document.onmousemove = mouseMove;
      theLayer.left = pX + 10;	
     theLayer.top = pY + 15;	
     theLayer.visibility = "show";	
-  } 	
-  else {	
+  } else {	
     theLayer = eval("document.all['ToolTip']");	
 
      if (theLayer) {	
@@ -77,8 +74,7 @@ document.onmousemove = mouseMove;
 
    if (b == "Netscape") {	
     document.layers["ToolTip"].visibility = "hide";	
-  } 	
-  else {	
+  } else {	
     document.all["ToolTip"].style.visibility = "hidden";	
   }	
 }	
@@ -86,8 +82,7 @@ document.onmousemove = mouseMove;
  function HideMenu1() {	
   if (b == "Netscape") {	
     document.layers["menu1"].visibility = "hide";	
-  }	
-  else {	
+  }	else {	
     document.all["menu1"].style.visibility = "hidden";	
   }	
 }	
@@ -96,8 +91,7 @@ document.onmousemove = mouseMove;
   if (b == "Netscape") {	
     theLayer = eval("document.layers['menu1']");	
     theLayer.visibility = "show";	
-  }	
-  else {	
+  } else {	
     theLayer = eval("document.all['menu1']");	
     theLayer.style.visibility = "visible";	
   }	
@@ -106,8 +100,7 @@ document.onmousemove = mouseMove;
  function HideMenu2() {	
   if (b == "Netscape") {	
     document.layers["menu2"].visibility = "hide";	
-  } 	
-  else {	
+  } else {	
     document.all["menu2"].style.visibility = "hidden";	
   }	
 }	
@@ -116,8 +109,7 @@ document.onmousemove = mouseMove;
   if (b == "Netscape") {	
     theLayer = eval("document.layers['menu2']");	
     theLayer.visibility = "show";	
-  } 	
-  else {	
+  } else {	
     theLayer = eval("document.all['menu2']");	
     theLayer.style.visibility = "visible";	
   }	
