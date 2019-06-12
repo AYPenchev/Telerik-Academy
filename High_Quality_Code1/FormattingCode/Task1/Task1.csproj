@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{35A3E3AA-6A3F-426E-8A99-9E5131DD65AE}</ProjectGuid>
+    <ProjectGuid>{847B4942-EE1F-4531-8158-29393E65B833}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Task1</RootNamespace>
     <AssemblyName>Task1</AssemblyName>
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PowerCollections">
-      <HintPath>..\..\..\..\Downloads\PowerCollections\sourceCode\sourceCode\Binaries\PowerCollections.dll</HintPath>
+      <HintPath>..\..\..\..\..\Users\Developer\Downloads\PowerCollections\sourceCode\sourceCode\Binaries\PowerCollections.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

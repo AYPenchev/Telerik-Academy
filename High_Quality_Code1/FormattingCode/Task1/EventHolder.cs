@@ -14,7 +14,7 @@
 
             byTitle.Add(title.ToLower(), newEvent);
             this.byDate.Add(newEvent);
-            
+
             Messages.EventAdded();
         }
 

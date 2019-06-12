@@ -1,7 +1,7 @@
 ﻿namespace Task1
 {
     using System;
-  
+
     public class EventOrganizer
     {
         public static EventHolder Events { get; set; } = new EventHolder();

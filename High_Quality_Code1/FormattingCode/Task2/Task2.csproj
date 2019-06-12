@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{64934B87-3FCB-4E34-836B-DD6484668161}</ProjectGuid>
+    <ProjectGuid>{AF452270-3EBB-4F85-8A4D-9F4224292657}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Task2</RootNamespace>
     <AssemblyName>Task2</AssemblyName>
@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bunny.cs" />
     <Compile Include="Bunnies.cs" />
+    <Compile Include="Bunny.cs" />
     <Compile Include="ConsoleWriter.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="IWriter.cs" />
