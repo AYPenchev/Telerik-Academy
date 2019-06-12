@@ -1,13 +1,11 @@
-﻿using System.ComponentModel.Design;
-
-namespace Task4
+﻿namespace Task4
 {
     using System;
     using System.Collections.Generic;
 
     public class Mines
     {
-        static void Main()
+        public static void Main()
         {
             const int MAX_MOVES = 35;
             string comand = string.Empty;
@@ -65,6 +63,7 @@ namespace Task4
                                 YourTurn(field, bombs, row, column);
                                 countMoves++;
                             }
+
                             if (MAX_MOVES == countMoves)
                             {
                                 isWinner = true;
@@ -149,8 +148,7 @@ namespace Task4
             {
                 for (int i = 0; i < points.Count; i++)
                 {
-                    Console.WriteLine("{0}. {1} --> {2} cells",
-                        i + 1, points[i].Name, points[i].PointsIn);
+                    Console.WriteLine("{0}. {1} --> {2} cells", i + 1, points[i].Name, points[i].PointsIn);
                 }
 
                 Console.WriteLine();
@@ -236,8 +234,8 @@ namespace Task4
 
             foreach (int bombPosition in bombs)
             {
-                int bombColumn = (bombPosition / columns);
-                int bombRow = (bombPosition % columns);
+                int bombColumn = bombPosition / columns;
+                int bombRow = bombPosition % columns;
                 if (bombRow == 0 && bombPosition != 0)
                 {
                     bombColumn--;
@@ -247,6 +245,7 @@ namespace Task4
                 {
                     bombRow++;
                 }
+
                 gameField[bombColumn, bombRow - 1] = '*';
             }
 
