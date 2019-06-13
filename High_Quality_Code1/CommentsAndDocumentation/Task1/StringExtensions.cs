@@ -278,7 +278,7 @@
                 return fileExtensionToContentType[fileExtension.Trim()];
             }
 
-            //This is default file extension.
+            //This is default file extension (binary file).
             return "application/octet-stream";
         }
 
