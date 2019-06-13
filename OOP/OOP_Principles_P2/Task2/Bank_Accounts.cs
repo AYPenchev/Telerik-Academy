@@ -7,7 +7,6 @@
     {
         static void Main()
         {
-            Bank raiffeisenBank = new Bank();
             Deposit rbbDepositAccount = new Deposit();
             Loan rbbLoanAccount = new Loan();
             Mortgage rbbMortgageAccount = new Mortgage();
@@ -23,6 +22,8 @@
                 firstIndividualDeposit,
                 firstIndividualMortgage
             };
+
+            Bank raiffeisenBank = new Bank(firstIndividualAccounts, "RaiffeisenBank");
 
             firsIndividualCustomer.CustomerBankAccounts = firstIndividualAccounts;
 
