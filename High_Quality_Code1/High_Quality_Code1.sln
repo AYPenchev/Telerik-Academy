@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VariablesConstantsData", "V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "VariablesConstantsData\Task1\Task1.csproj", "{235FEB71-71D0-49E0-B9DE-25D4B7363A1D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlFlowConditionalsLoops", "ControlFlowConditionalsLoops", "{73E5197C-0B0F-4E5B-8A43-DA8595CB4F5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "ControlFlowConditionalsLoops\Task1\Task1.csproj", "{AE015A53-782E-4255-B7A1-E552EF1C4907}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +63,10 @@ Global
 		{235FEB71-71D0-49E0-B9DE-25D4B7363A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{235FEB71-71D0-49E0-B9DE-25D4B7363A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{235FEB71-71D0-49E0-B9DE-25D4B7363A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE015A53-782E-4255-B7A1-E552EF1C4907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE015A53-782E-4255-B7A1-E552EF1C4907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE015A53-782E-4255-B7A1-E552EF1C4907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE015A53-782E-4255-B7A1-E552EF1C4907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +79,7 @@ Global
 		{3A06410F-13FE-458F-8F7D-7516AD75D3F6} = {7812C12F-45B1-426F-AB2B-E38EBD1A3CBE}
 		{DF473E8D-3B14-4FEF-B891-27C8F9477BD1} = {71BC7396-7DF7-4E3C-83D1-514635C64789}
 		{235FEB71-71D0-49E0-B9DE-25D4B7363A1D} = {1D34FF31-7D28-434D-BFE9-8738EDEAB45A}
+		{AE015A53-782E-4255-B7A1-E552EF1C4907} = {73E5197C-0B0F-4E5B-8A43-DA8595CB4F5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4C9DFB7D-3758-4195-AC02-C2E13AD33A25}
