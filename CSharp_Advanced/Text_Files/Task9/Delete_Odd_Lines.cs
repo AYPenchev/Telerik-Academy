@@ -4,9 +4,9 @@
     using System.IO;
     using System.Text;
 
-    class DeleteOddLines
+    public class DeleteOddLines
     {
-        static void Main()
+        public static void Main()
         {
             using (var firstWriteStream = new StreamWriter("../../DeleteOddLines.txt"))
             {
@@ -29,6 +29,7 @@
                         content.Append(reader.ReadLine() + Environment.NewLine);
                         rowCounter++;
                     }
+
                     reader.ReadLine();
                     rowCounter++;
                 }

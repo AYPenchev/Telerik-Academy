@@ -2,9 +2,9 @@
 {
     using System.IO;
 
-    class LineNumbers
+    public class LineNumbers
     {
-        static void Main()
+        public static void Main()
         {
             using (var writerHelper = new StreamWriter("Helper.txt"))
             {

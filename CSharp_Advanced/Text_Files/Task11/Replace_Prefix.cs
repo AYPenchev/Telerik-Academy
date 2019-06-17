@@ -3,9 +3,9 @@
     using System;
     using System.IO;
 
-    class ReplacePrefix
+    public class ReplacePrefix
     {
-        static void Main()
+        public static void Main()
         {
             using (var writer = new StreamWriter("largeFile.txt"))
             {
@@ -25,10 +25,12 @@
                             writer.Write("last_");
                             break;
                     }
+
                     if (i % 2 == 0)
                     {
                         writer.Write(" ");
                     }
+
                     if (i % 3 == 0)
                     {
                         writer.WriteLine();
@@ -46,11 +48,13 @@
                     {
                         content[i] = content[i].Remove(0, 4);
                     }
+
                     if (i % 2 == 0 && i != 0)
                     {
                         content[i] = Environment.NewLine + content[i];
                     }
                 }
+
                 writer.WriteLine(string.Join(" ", content));
             } 
         }

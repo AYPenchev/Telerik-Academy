@@ -3,9 +3,9 @@
     using System;
     using System.IO;
 
-    class RemoveWords
+    public class RemoveWords
     {
-        static void Main()
+        public static void Main()
         {
             string[] inputWordsToRemove = Console.ReadLine()
                                      .Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -38,6 +38,7 @@
             {
                 Console.WriteLine("The chosen file is not supported!");
             }
+
             string[] wordsToBeRemoved = File.ReadAllText("../../wordsToBeRemoved.txt")
                                             .Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -69,6 +70,7 @@
             {
                 Console.WriteLine("The chosen file is not supported!");
             }
+
             string fileText = File.ReadAllText("../../file.txt");
 
             for (int i = 0; i < wordsToBeRemoved.Length; i++)

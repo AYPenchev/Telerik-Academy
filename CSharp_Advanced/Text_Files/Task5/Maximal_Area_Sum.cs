@@ -1,11 +1,66 @@
 ﻿namespace Task5
 {
     using System;
-    using System.Linq;
     using System.IO;
+    using System.Linq;
 
-    class MaximalAreaSum
+    public class MaximalAreaSum
     {
+        public static void Main()
+        {
+            Console.WriteLine("Enter size n - for square matrix: ");
+            int matrixSize = int.Parse(Console.ReadLine());
+
+            int[,] matrix = new int[matrixSize, matrixSize];
+            Console.WriteLine("Enter elements:");
+
+            FillMatrix(matrix, matrixSize, matrixSize);
+            PrintMatrix(matrix, matrixSize, matrixSize);
+
+            WriteMatrixToFile(matrix);
+            int[,] matrixFromFile = GetMatrixFromFile("MatrixFile.txt");
+
+            if (matrixFromFile.GetLength(0) >= 2)
+            {
+                int row = 0;
+                int column = 0;
+                int maxSum = 0;
+                int currentSum = 0;
+
+                while (row + 1 < matrixFromFile.GetLength(0) && column + 1 < matrixFromFile.GetLength(0))
+                {
+                    for (int i = row; i <= row + 1; i++)
+                    {
+                        for (int j = column; j <= column + 1; j++)
+                        {
+                            currentSum += matrixFromFile[i, j];
+                        }
+                    }
+
+                    row++;
+
+                    if (currentSum > maxSum)
+                    {
+                        maxSum = currentSum;
+                    }
+
+                    currentSum = 0;
+
+                    if (row + 1 >= matrixFromFile.GetLength(0))
+                    {
+                        row = 0;
+                        column++;
+                    }
+                }
+
+                Console.WriteLine(maxSum);
+                using (var writerResult = new StreamWriter("ResultOutput.txt"))
+                {
+                    writerResult.WriteLine(maxSum);
+                }
+            }
+        }
+
         private static void PrintMatrix(int[,] matrix, int rows, int columns)
         {
             for (int i = 0; i < rows; i++)
@@ -21,6 +76,7 @@
                         Console.Write(matrix[i, j] + "  ");
                     }
                 }
+
                 Console.WriteLine();
             }
         }
@@ -47,14 +103,13 @@
             {
                 for (int i = 0; i < matrix.GetLength(0); i++)
                 {
-                    for (int j  = 0; j < matrix.GetLength(1); j++)
+                    for (int j = 0; j < matrix.GetLength(1); j++)
                     {
                         writerMatrixToFile.Write(matrix[i, j] + " ");
                     }
+
                     writerMatrixToFile.WriteLine();
                 }
-
-                
             }
         }
 
@@ -86,60 +141,8 @@
                         matrix[i, j] = fillMatrixRows[j];
                     }
                 }
+
                 return matrix;
-            }
-        }
-
-        static void Main()
-        {
-            Console.WriteLine("Enter size n - for square matrix: ");
-            int matrixSize = int.Parse(Console.ReadLine());
-
-            int[,] matrix = new int[matrixSize, matrixSize];
-            Console.WriteLine("Enter elements:");
-
-            FillMatrix(matrix, matrixSize, matrixSize);
-            PrintMatrix(matrix, matrixSize, matrixSize);
-
-            WriteMatrixToFile(matrix);
-            int[,] matrixFromFile = GetMatrixFromFile("MatrixFile.txt");
-
-            if (matrixFromFile.GetLength(0) >= 2)
-            {
-                int row = 0;
-                int column = 0;
-                int maxSum = 0;
-                int currentSum = 0;
-
-                while (row + 1 < matrixFromFile.GetLength(0) && column + 1 < matrixFromFile.GetLength(0))
-                {
-                    for (int i = row; i <= row + 1; i++)
-                    {
-                        for (int j = column; j <= column + 1; j++)
-                        {
-                            currentSum += matrixFromFile[i, j];
-                        }
-                    }
-                    row++;
-
-                    if (currentSum > maxSum)
-                    {
-                        maxSum = currentSum;
-                    }
-                    currentSum = 0;
-
-                    if (row + 1 >= matrixFromFile.GetLength(0))
-                    {
-                        row = 0;
-                        column++;
-                    }
-                }
-
-                Console.WriteLine(maxSum);
-                using (var writerResult = new StreamWriter("ResultOutput.txt"))
-                {
-                    writerResult.WriteLine(maxSum);
-                }
             }
         }
     }

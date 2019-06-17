@@ -3,9 +3,9 @@
     using System;
     using System.IO;
 
-    class CompareTextFiles
+    public class CompareTextFiles
     {
-        static void Main()
+        public static void Main()
         {
             using (var writerFirstFile = new StreamWriter("firstFile.txt"))
             {
@@ -23,7 +23,7 @@
             int countEqualLines = 0;
             int countDiffLines = 0;
 
-            //no need to check the end of second file because we assume the files have equal number of lines.
+            // No need to check the end of second file because we assume the files have equal number of lines.
             while (!readerFirstFile.EndOfStream)
             {
                 if (readerFirstFile.ReadLine() == readerSecondFile.ReadLine())

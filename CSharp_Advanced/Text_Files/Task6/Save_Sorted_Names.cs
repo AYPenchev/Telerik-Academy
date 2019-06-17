@@ -4,9 +4,9 @@
     using System.IO;
     using System.Linq;
 
-    class SaveSortedNames
+    public class SaveSortedNames
     {
-        static void Main()
+        public static void Main()
         {
             using (var writerToInputFile = new StreamWriter("input.txt"))
             {

@@ -5,9 +5,9 @@
     using System.IO;
     using System.Linq;
 
-    class CountWords
+    public class CountWords
     {
-        static void Main()
+        public static void Main()
         {
             string wordsPath = Console.ReadLine();
 
@@ -69,10 +69,11 @@
 
             for (int i = 0; i < text.Length; i++)
             {
-                if(!words.Select(x => x).Contains(text[i]))
+                if (!words.Select(x => x).Contains(text[i]))
                 {
                     continue;
                 }
+
                 if (wordsDictionary.ContainsKey(text[i]))
                 {
                     wordsDictionary[text[i]]++;

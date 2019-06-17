@@ -4,9 +4,9 @@
     using System.IO;
     using System.Text;
 
-    class ExtractTextFromXML
+    public class ExtractTextFromXML
     {
-        static void Main()
+        public static void Main()
         {
             StringBuilder textContent = new StringBuilder();
             StringBuilder xmlCode = new StringBuilder();
@@ -27,6 +27,7 @@
                     {
                         i++;
                     }
+
                     continue;
                 }
 

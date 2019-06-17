@@ -3,9 +3,9 @@
     using System;
     using System.IO;
 
-    class OddLines
+    public class OddLines
     {
-        static void Main()
+        public static void Main()
         {
             StreamReader reader = new StreamReader("../../../Documentation.txt");
             try
@@ -14,11 +14,12 @@
 
                 while (!reader.EndOfStream)
                 {
-                    if(rowCounter % 2 != 0)
+                    if (rowCounter % 2 != 0)
                     {
                         Console.WriteLine(reader.ReadLine());
                         rowCounter++;
                     }
+
                     reader.ReadLine();
                     rowCounter++;
                 }

@@ -2,9 +2,10 @@
 {
     using System;
     using System.IO;
-    class ReplaceWholeWord
+
+    public class ReplaceWholeWord
     {
-        static void Main()
+        public static void Main()
         {
             using (var writer = new StreamWriter("largeFile.txt"))
             {
@@ -43,6 +44,7 @@
                         writer.WriteLine(content);
                     }
                 }
+
                 writer.Close();
             }
         }
