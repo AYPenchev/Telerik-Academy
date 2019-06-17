@@ -9,7 +9,7 @@
             int[] array = new[] { 3, 5, 6, 30, 31 };
             int valueToBeSet = 0;
             int expectedValue = 30;
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine(array[i]);
                 if (i % 10 == 0)
