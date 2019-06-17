@@ -1,8 +1,7 @@
-﻿using System.Globalization;
-
-namespace Task1
+﻿namespace Task1
 {
     using System;
+    using System.Globalization;
 
     public class Student
     {

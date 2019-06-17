@@ -51,6 +51,7 @@
                     maxNumber = elements[i];
                 }
             }
+
             return maxNumber;
         }
 
@@ -67,7 +68,7 @@
 
         public static double CalcDistance(double x1, double y1, double x2, double y2)
         {
-            return Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+            return Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
         }
 
         public static bool IsHorizontal(double y1, double y2)
@@ -123,8 +124,7 @@
             Student stella = new Student("Stella", "Markova", "03/11/1993");
             stella.OtherInfo = "From Vidin, gamer, high results";
 
-            Console.WriteLine("{0} older than {1} -> {2}",
-                peter.FirstName, stella.FirstName, peter.IsOlderThan(stella));
+            Console.WriteLine("{0} older than {1} -> {2}", peter.FirstName, stella.FirstName, peter.IsOlderThan(stella));
         }
     }
 }
