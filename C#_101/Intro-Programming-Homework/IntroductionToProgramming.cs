@@ -1,10 +1,10 @@
-﻿using System;
-
-namespace Intro_Programming_Homework
+﻿namespace Intro_Programming_Homework
 {
-    class IntroductionToProgramming
+    using System;
+
+    public class IntroductionToProgramming
     {
-        static void Main()
+        public static void Main()
         {
             //Task 1-8
             Console.WriteLine("Hello, C#!");
@@ -46,8 +46,10 @@ namespace Intro_Programming_Homework
                     year++;
                 }
             }
+
             int userAge = DateTime.Now.Year - year;
             Console.WriteLine("You are " + userAge + " years old");
+
             int userAgeInTenYears = userAge + 10;
             Console.WriteLine("In 10 years you will be " + userAgeInTenYears + " years old");
         }

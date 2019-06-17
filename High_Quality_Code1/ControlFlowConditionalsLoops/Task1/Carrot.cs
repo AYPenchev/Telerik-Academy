@@ -2,7 +2,7 @@
 {
     using System;
 
-    class Carrot : Vegetable, IPeelable, ICuttable
+    public class Carrot : Vegetable, IPeelable, ICuttable
     {
         public void Peel()
         {

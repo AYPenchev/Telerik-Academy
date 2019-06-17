@@ -1,20 +1,25 @@
 ﻿namespace Task1
 {
-    using System;
     using System.Collections.Generic;
 
     public class Chef
     {
         public void Cook()
         {
-            Potato potato = GetPotato();
-            Carrot carrot = GetCarrot();
+            Potato potato = this.GetPotato();
+            Carrot carrot = this.GetCarrot();
+
+            List<Vegetable> veggies = new List<Vegetable>()
+            {
+                potato,
+                carrot
+            };
+
             Bowl bowl;
+            bowl = this.GetBowl(veggies);
 
             potato.Peel();
             carrot.Peel();
-
-            bowl = GetBowl();
 
             potato.Cut();
             carrot.Cut();
@@ -23,9 +28,9 @@
             bowl.Add(potato);
         }
 
-        private Bowl GetBowl()
+        private Bowl GetBowl(List<Vegetable> veggies)
         {
-            return new Bowl(new List<Vegetable>());
+            return new Bowl(veggies);
         }
 
         private Carrot GetCarrot()

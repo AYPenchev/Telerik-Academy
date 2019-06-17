@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Task1
+﻿namespace Task1
 {
+    using System.Collections.Generic;
+
     public class Bowl
     {
         public Bowl(List<Vegetable> veggies)
