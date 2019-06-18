@@ -2,12 +2,12 @@
 {
     using System;
 
-    class Rectangle : Figure
+    public class Rectangle : Figure
     {
         private double width;
         private double height;
 
-        //Is this okay?
+        // Is this okay?
         public Rectangle(double width, double height)
         {
             try
@@ -30,6 +30,7 @@
             {
                 return this.width;
             }
+
             set
             {
                 if (value <= 0)
@@ -50,6 +51,7 @@
             {
                 return this.height;
             }
+
             set
             {
                 if (value <= 0)
