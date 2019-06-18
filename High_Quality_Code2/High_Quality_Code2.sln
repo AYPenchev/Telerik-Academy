@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DefensiveProgramming", "DefensiveProgramming", "{DCDC705B-C448-486C-8CE1-580A5F1CE344}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "DefensiveProgramming\Task1\Task1.csproj", "{F5ACFDD7-C5C9-4174-871A-E08037EF35F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Task2\Task2.csproj", "{0630614C-4553-4255-AFEF-C6A8EC7DC85C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5ACFDD7-C5C9-4174-871A-E08037EF35F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5ACFDD7-C5C9-4174-871A-E08037EF35F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5ACFDD7-C5C9-4174-871A-E08037EF35F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5ACFDD7-C5C9-4174-871A-E08037EF35F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0630614C-4553-4255-AFEF-C6A8EC7DC85C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0630614C-4553-4255-AFEF-C6A8EC7DC85C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0630614C-4553-4255-AFEF-C6A8EC7DC85C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0630614C-4553-4255-AFEF-C6A8EC7DC85C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F5ACFDD7-C5C9-4174-871A-E08037EF35F9} = {DCDC705B-C448-486C-8CE1-580A5F1CE344}
+		{0630614C-4553-4255-AFEF-C6A8EC7DC85C} = {DCDC705B-C448-486C-8CE1-580A5F1CE344}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {86FAD093-62F6-483B-B2D4-B72EC95BA8C3}
+	EndGlobalSection
+EndGlobal
