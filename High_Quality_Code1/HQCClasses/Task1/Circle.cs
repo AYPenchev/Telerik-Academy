@@ -8,14 +8,7 @@
 
         public Circle(double radius)
         {
-            try
-            {
-                this.Radius = radius;
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            this.Radius = radius;
         }
 
         /// <summary>

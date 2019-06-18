@@ -7,18 +7,10 @@
         private double width;
         private double height;
 
-        // Is this okay?
         public Rectangle(double width, double height)
         {
-            try
-            {
-                this.Width = width;
-                this.Height = height;
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            this.Width = width;
+            this.Height = height;
         }
 
         /// <summary>
