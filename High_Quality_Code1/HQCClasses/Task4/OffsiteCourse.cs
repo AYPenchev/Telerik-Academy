@@ -5,8 +5,6 @@
 
     public class OffsiteCourse : Course
     {
-        public string Town { get; set; }
-
         public OffsiteCourse(string name) : base(name)
         {
             this.Town = null;
@@ -22,6 +20,8 @@
         {
             this.Town = null;
         }
+
+        public string Town { get; set; }
 
         public override string ToString()
         {

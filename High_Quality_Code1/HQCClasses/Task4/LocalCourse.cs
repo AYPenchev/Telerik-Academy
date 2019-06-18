@@ -5,8 +5,6 @@
 
     public class LocalCourse : Course
     {
-        public string Lab { get; set; }
-
         public LocalCourse(string name) : base(name)
         {
             this.Lab = null;
@@ -22,6 +20,8 @@
         {
             this.Lab = null;
         }
+
+        public string Lab { get; set; }
 
         public override string ToString()
         {
