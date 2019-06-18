@@ -7,10 +7,6 @@
         private double width;
         private double height;
 
-        public Rectangle()
-        {
-        }
-
         //Is this okay?
         public Rectangle(double width, double height)
         {
@@ -25,6 +21,9 @@
             }
         }
 
+        /// <summary>
+        /// Set radius to numbers bigger than 0.
+        /// </summary>
         public double Width
         {
             get
@@ -42,6 +41,9 @@
             }
         }
 
+        /// <summary>
+        /// Set radius to numbers bigger than 0.
+        /// </summary>
         public double Height
         {
             get

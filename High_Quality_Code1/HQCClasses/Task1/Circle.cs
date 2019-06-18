@@ -5,9 +5,6 @@
     public class Circle : Figure
     {
         private double radius;
-        public Circle()
-        {
-        }
 
         public Circle(double radius)
         {
@@ -21,12 +18,14 @@
             }
         }
 
+        /// <summary>
+        /// Set radius to numbers bigger than 0.
+        /// </summary>
         public double Radius
         {
             get
             {
                 return this.radius;
-
             }
             set
             {
