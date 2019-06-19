@@ -10,7 +10,7 @@
         {
             if (score < 0)
             {
-                throw new NullReferenceException();
+                throw new ArgumentOutOfRangeException($"Score cannot be negative");
             }
 
             this.Score = score;
@@ -20,7 +20,7 @@
         {
             if (Score < 0 || Score > 100)
             {
-                throw new InvalidOperationException();
+                throw new ArgumentOutOfRangeException($"Exam score must be between 0 and 100");
             }
             else
             {

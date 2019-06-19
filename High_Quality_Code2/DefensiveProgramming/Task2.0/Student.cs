@@ -12,20 +12,8 @@
 
         public Student(string firstName, string lastName, IList<Exam> exams = null)
         {
-            if (firstName == null)
-            {
-                Console.WriteLine("Invalid first name!");
-                Environment.Exit(0);
-            }
-
-            if (lastName == null)
-            {
-                Console.WriteLine("Invalid first name!");
-                Environment.Exit(0);
-            }
-
-            this.FirstName = firstName;
-            this.LastName = lastName;
+            this.FirstName = firstName ?? throw new ArgumentNullException("Invalid first name");
+            this.LastName = lastName ?? throw new ArgumentNullException("Invalid last name");
             this.Exams = exams;
         }
 
@@ -33,19 +21,25 @@
         {
             if (this.Exams == null)
             {
-                throw new Exception("Wow! Error happened!!!");
+                throw new ArgumentNullException("Exams can't be null");
             }
 
             if (this.Exams.Count == 0)
             {
-                Console.WriteLine("The student has no exams!");
-                return null;
+                throw new ArgumentNullException("Student has no exams");
             }
 
             IList<ExamResult> results = new List<ExamResult>();
             for (int i = 0; i < this.Exams.Count; i++)
             {
-                results.Add(this.Exams[i].Check());
+                try
+                {
+                    results.Add(this.Exams[i].Check());
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
 
             return results;
@@ -56,13 +50,12 @@
             if (this.Exams == null)
             {
                 // Cannot calculate average on missing exams
-                throw new Exception();
+                throw new ArgumentNullException("Missing exams");
             }
 
             if (this.Exams.Count == 0)
             {
-                // No exams --> return -1;
-                return -1;
+                throw new ArgumentNullException("Student has no exams");
             }
 
             double[] examScore = new double[this.Exams.Count];
