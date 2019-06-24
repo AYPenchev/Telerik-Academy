@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{158EA156-9D35-4FA9-A95D-6D948082337C}</ProjectGuid>
+    <ProjectGuid>{E8D8AF00-F4C6-4A03-9595-C71970D1FABE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task2</RootNamespace>
-    <AssemblyName>Task2</AssemblyName>
+    <RootNamespace>Task4</RootNamespace>
+    <AssemblyName>Task4</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ISimpleMathable.cs" />
-    <Compile Include="SimpleMathPerformance.cs" />
+    <Compile Include="InsertionSort.cs" />
+    <Compile Include="PrintUtils.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SimpleMathDecimal.cs" />
-    <Compile Include="SimpleMathDouble.cs" />
-    <Compile Include="SimpleMathFloat.cs" />
-    <Compile Include="SimpleMathInteger.cs" />
-    <Compile Include="SimpleMathLong.cs" />
+    <Compile Include="QuickSort.cs" />
+    <Compile Include="SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
