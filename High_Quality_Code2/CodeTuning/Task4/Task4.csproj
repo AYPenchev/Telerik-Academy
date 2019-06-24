@@ -43,12 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InsertionSort.cs" />
     <Compile Include="PrintUtils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuickSort.cs" />
-    <Compile Include="SelectionSort.cs" />
+    <Compile Include="SortUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
