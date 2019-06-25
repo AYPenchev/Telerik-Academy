@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading;
-
-namespace Task3
+﻿namespace Task3
 {
     using System;
     using System.Diagnostics;
+    using System.Threading;
 
     public class AdvancedMathPerformance
     {
@@ -41,6 +39,7 @@ namespace Task3
             stopWatchDoublePerformance.Stop();
             Console.WriteLine($"Performance double: {stopWatchDoublePerformance.Elapsed}");
         }
+
         public static void PerformanceDecimal()
         {
             var decimalPerformance = new AdvancedMathDecimal();

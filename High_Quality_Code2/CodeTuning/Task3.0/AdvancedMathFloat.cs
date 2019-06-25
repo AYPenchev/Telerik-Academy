@@ -4,8 +4,7 @@
 
     public class AdvancedMathFloat : IAdvancedMathable<float>
     {
-        //private float floatPlaceholder = 10.2f;
-
+        // private float floatPlaceholder = 10.2f;
         public void Ln(float logarithm)
         {
             Math.Log10(logarithm);

@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading;
-
-namespace Task2
+﻿namespace Task2
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Threading;
 
     public class SimpleMathPerformance
     {
@@ -18,7 +17,7 @@ namespace Task2
             int itarationCount = 10000000;
             for (int i = 1; i < itarationCount; i++)
             {
-                var holdI = new object[1] {i};
+                var holdI = new object[1] { i };
                 type.GetMethod("Add").Invoke(currentTypePerformance, holdI);
                 type.GetMethod("Substract").Invoke(currentTypePerformance, holdI);
                 type.GetMethod("Increment").Invoke(currentTypePerformance, null);

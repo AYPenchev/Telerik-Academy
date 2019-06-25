@@ -5,41 +5,6 @@
     public static class SortUtils<T>
         where T : IComparable
     {
-        private static int Partition(T[] arr, int low, int high)
-        {
-            T pivot = arr[high];
-
-            int i = (low - 1);
-            for (int j = low; j < high; j++)
-            {
-                if (arr[j].CompareTo(pivot) <= 0)
-                {
-                    i++;
-
-                    T swapPlaceHolder = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = swapPlaceHolder;
-                }
-            }
-
-            T swapSecondPlaceHoleder = arr[i + 1];
-            arr[i + 1] = arr[high];
-            arr[high] = swapSecondPlaceHoleder;
-
-            return i + 1;
-        }
-
-        public static void QuickSort(T[] arr, int low, int high)
-        {
-            if (low < high)
-            {
-                int pi = Partition(arr, low, high);
-
-                QuickSort(arr, low, pi - 1);
-                QuickSort(arr, pi + 1, high);
-            }
-        }
-
         public static void SelectionSort(T[] arr)
         {
             int arrayLength = arr.Length;
@@ -76,6 +41,41 @@
 
                 arr[j + 1] = key;
             }
+        }
+
+        public static void QuickSort(T[] arr, int low, int high)
+        {
+            if (low < high)
+            {
+                int pi = Partition(arr, low, high);
+
+                QuickSort(arr, low, pi - 1);
+                QuickSort(arr, pi + 1, high);
+            }
+        }
+
+        private static int Partition(T[] arr, int low, int high)
+        {
+            T pivot = arr[high];
+
+            int i = low - 1;
+            for (int j = low; j < high; j++)
+            {
+                if (arr[j].CompareTo(pivot) <= 0)
+                {
+                    i++;
+
+                    T swapPlaceHolder = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = swapPlaceHolder;
+                }
+            }
+
+            T swapSecondPlaceHoleder = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = swapSecondPlaceHoleder;
+
+            return i + 1;
         }
     }
 }
