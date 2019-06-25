@@ -19,7 +19,7 @@
             arrayInsertionSortWatch.Start();
 
             SortUtils<T>.InsertionSort(arrayToBeSorted);
-            Console.Write($"{degree} {typeof(T)} array sorted with insertion sort: ");
+            Console.Write($"{degree} {typeof(T).Name} array sorted with insertion sort: ");
             PrintUtils<T>.PrintArray(arrayToBeSorted);
 
             arrayInsertionSortWatch.Stop();
@@ -33,7 +33,7 @@
             arraySelectionSortWatch.Start();
 
             SortUtils<T>.SelectionSort(arrayToBeSorted);
-            Console.Write($"{degree} {typeof(T)} array sorted with selection sort: ");
+            Console.Write($"{degree} {typeof(T).Name} array sorted with selection sort: ");
             PrintUtils<T>.PrintArray(arrayToBeSorted);
 
             arraySelectionSortWatch.Stop();
@@ -47,7 +47,7 @@
             arrayQuickSortWatch.Start();
 
             SortUtils<T>.QuickSort(arrayToBeSorted, 0, arrayToBeSorted.Length - 1);
-            Console.Write($"{degree} {typeof(T)} array sorted with quick sort: ");
+            Console.Write($"{degree} {typeof(T).Name} array sorted with quick sort: ");
             PrintUtils<T>.PrintArray(arrayToBeSorted);
 
             arrayQuickSortWatch.Stop();
