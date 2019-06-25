@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PrintUtils.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="SortingPerformance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortUtils.cs" />
   </ItemGroup>
