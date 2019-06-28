@@ -59,7 +59,7 @@
             while (IsThereNextStep(matrix, rowIdx, columnIdx))
             {
                 matrix[rowIdx, columnIdx] = filler;
-                if (IsThereNextStep(matrix, rowIdx, columnIdx))
+                if (IsThereNextStep(matrix, rowIdx, columnIdx)) 
                 {
                     while (IsNextStepOutOfRange())
                     {

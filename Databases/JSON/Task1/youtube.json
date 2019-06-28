@@ -1,0 +1,661 @@
+{
+  "?xml": {
+    "@version": "1.0",
+    "@encoding": "UTF-8"
+  },
+  "feed": {
+    "@xmlns:yt": "http://www.youtube.com/xml/schemas/2015",
+    "@xmlns:media": "http://search.yahoo.com/mrss/",
+    "@xmlns": "http://www.w3.org/2005/Atom",
+    "link": [
+      {
+        "@rel": "self",
+        "@href": "http://www.youtube.com/feeds/videos.xml?channel_id=UCLC-vbm7OWvpbqzXaoAMGGw"
+      },
+      {
+        "@rel": "alternate",
+        "@href": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+      }
+    ],
+    "id": "yt:channel:UCLC-vbm7OWvpbqzXaoAMGGw",
+    "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+    "title": "Telerik Academy",
+    "author": {
+      "name": "Telerik Academy",
+      "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+    },
+    "published": "2011-06-24T15:53:13+00:00",
+    "entry": [
+      {
+        "id": "yt:video:rbWq51EnXA0",
+        "yt:videoId": "rbWq51EnXA0",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Webinar: Mock Exams | Telerik Academy Alpha JavaScript",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=rbWq51EnXA0"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-07-17T18:38:25+00:00",
+        "updated": "2019-05-03T06:19:58+00:00",
+        "media:group": {
+          "media:title": "Webinar: Mock Exams | Telerik Academy Alpha JavaScript",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/rbWq51EnXA0?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i3.ytimg.com/vi/rbWq51EnXA0/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Prepare for the entrance exam for Telerik Academy Alpha JavaScript. Save 17 July at 19:00 and join our webinar where our trainers will explain mock exam solutions and answer your questions. Before the webinar: • Review the exam solutions for: 1. JavaScript: https://bit.ly/2H7veyD  1. C#: https://bit.ly/2J4ksLF 2. Java: http://bit.ly/2mFN3gZ. Send all your questions in https://www.sli.do/. To join the session, enter the following event code: Q489. You can list your questions before the event and upvote the best questions. You can also ask questions during the event. We recommend that during the event you use sli.do on a separate device (phone or second laptop/monitor). You can list your questions before the event and upvote the best questions. You can also ask questions during the event. We recommend that during the event you use sli.do on a separate device (phone or second laptop/monitor).",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "2204"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:Y20DkTjZbk0",
+        "yt:videoId": "Y20DkTjZbk0",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "SpringMVC Overview",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=Y20DkTjZbk0"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:59+00:00",
+        "updated": "2019-02-23T18:38:50+00:00",
+        "media:group": {
+          "media:title": "SpringMVC Overview",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/Y20DkTjZbk0?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/Y20DkTjZbk0/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: SpringMVC Overview\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 2 май 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "5",
+              "@average": "4.20",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "908"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:5zMQStlMCrU",
+        "yt:videoId": "5zMQStlMCrU",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Testing",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=5zMQStlMCrU"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:59+00:00",
+        "updated": "2019-02-10T10:01:28+00:00",
+        "media:group": {
+          "media:title": "Testing",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/5zMQStlMCrU?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/5zMQStlMCrU/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Testing\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 3 май 2018 г\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "5",
+              "@average": "3.40",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "598"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:y2_It0QEyDM",
+        "yt:videoId": "y2_It0QEyDM",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "SpringMVC & Thymeleaf - 3",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=y2_It0QEyDM"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:59+00:00",
+        "updated": "2019-01-30T02:23:56+00:00",
+        "media:group": {
+          "media:title": "SpringMVC & Thymeleaf - 3",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/y2_It0QEyDM?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/y2_It0QEyDM/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: SpringMVC & Thymeleaf - 3\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 3 май 2018\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "323"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:mgpZyik7FxY",
+        "yt:videoId": "mgpZyik7FxY",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Dependency Injection in Spring",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=mgpZyik7FxY"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:59+00:00",
+        "updated": "2018-08-21T12:19:17+00:00",
+        "media:group": {
+          "media:title": "Dependency Injection in Spring",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/mgpZyik7FxY?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/mgpZyik7FxY/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Dependency Injection in Spring\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 2 май 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "5",
+              "@average": "3.40",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "591"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:UTkd3oBNZxE",
+        "yt:videoId": "UTkd3oBNZxE",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Building Service Layer",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=UTkd3oBNZxE"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:58+00:00",
+        "updated": "2018-09-03T08:21:20+00:00",
+        "media:group": {
+          "media:title": "Building Service Layer",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/UTkd3oBNZxE?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/UTkd3oBNZxE/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Building Service Layer\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 2 май 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "1",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "428"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:M6gPlrjtLiA",
+        "yt:videoId": "M6gPlrjtLiA",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Testing - 2",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=M6gPlrjtLiA"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:58+00:00",
+        "updated": "2018-06-12T04:17:52+00:00",
+        "media:group": {
+          "media:title": "Testing - 2",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/M6gPlrjtLiA?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/M6gPlrjtLiA/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Testing - 2\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 3 май 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "209"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:owui0WH3itQ",
+        "yt:videoId": "owui0WH3itQ",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Authentication",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=owui0WH3itQ"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:58+00:00",
+        "updated": "2018-06-12T04:18:25+00:00",
+        "media:group": {
+          "media:title": "Authentication",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/owui0WH3itQ?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/owui0WH3itQ/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Authentication\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 4 май 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "361"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:mtchOpFeAJ8",
+        "yt:videoId": "mtchOpFeAJ8",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "SpringMVC & Thymeleaf - 2",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=mtchOpFeAJ8"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:58+00:00",
+        "updated": "2018-09-29T18:10:16+00:00",
+        "media:group": {
+          "media:title": "SpringMVC & Thymeleaf - 2",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/mtchOpFeAJ8?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/mtchOpFeAJ8/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: SpringMVC & Thymeleaf - 2\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 3 май 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "228"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:cnGAHNLTo50",
+        "yt:videoId": "cnGAHNLTo50",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "SpringMVC & Thymeleaf",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=cnGAHNLTo50"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-12T04:03:58+00:00",
+        "updated": "2018-09-03T08:26:39+00:00",
+        "media:group": {
+          "media:title": "SpringMVC & Thymeleaf",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/cnGAHNLTo50?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/cnGAHNLTo50/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: SpringMVC & Thymeleaf\nКурс: SpringMVC\nЛектор: Дончо Минков\nДата: 3 май 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "2",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "636"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:k0EJ0TfRUnU",
+        "yt:videoId": "k0EJ0TfRUnU",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Webinar: Mock Exams | Telerik Academy Alpha .NET",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=k0EJ0TfRUnU"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-06-04T17:09:19+00:00",
+        "updated": "2019-01-02T23:25:16+00:00",
+        "media:group": {
+          "media:title": "Webinar: Mock Exams | Telerik Academy Alpha .NET",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/k0EJ0TfRUnU?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/k0EJ0TfRUnU/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Prepare for the entrance exam for Telerik Academy Alpha .NET. Save 4 June at 19:00 and join our webinar where our trainers will explain mock exam solutions and answer your questions. Before the webinar: • Review the exam solutions for: \n1. C#: https://bit.ly/2J4ksLF\n2. JavaScript: https://bit.ly/2H7veyD \n3. Java: http://bit.ly/2mFN3gZ. \nSend all your questions in https://www.sli.do/. To join the session, enter the following event code: N392. You can list your questions before the event and upvote the best questions. You can also ask questions during the event. We recommend that during the event you use sli.do on a separate device (phone or second laptop/monitor). You can list your questions before the event and upvote the best questions. You can also ask questions during the event. We recommend that during the event you use sli.do on a separate device (phone or second laptop/monitor).",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "749"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:XW8GcK7EDQo",
+        "yt:videoId": "XW8GcK7EDQo",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Webinar: Mock Exams | Telerik Academy Alpha JAVA+Android",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=XW8GcK7EDQo"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-04-25T17:37:51+00:00",
+        "updated": "2018-10-15T11:57:55+00:00",
+        "media:group": {
+          "media:title": "Webinar: Mock Exams | Telerik Academy Alpha JAVA+Android",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/XW8GcK7EDQo?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i1.ytimg.com/vi/XW8GcK7EDQo/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Prepare for the entrance exam for Telerik Academy Alpha JAVA+Android. Save 25 April at 19:30 and join our webinar where our trainers will explain mock exam solutions and answer your questions. Before the webinar: \n• Review the exam solutions: http://bit.ly/2mFN3gZ \n• Send all your questions in sli.do . To join the session, enter the following event code: 5915. \nYou can list your questions before the event and upvote the best questions. You can also ask questions during the event. We recommend that during the event you use sli.do on a separate device (phone or second laptop/monitor).",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "1248"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:W5G_9AKoBzA",
+        "yt:videoId": "W5G_9AKoBzA",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "MySQL with Hibernate",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=W5G_9AKoBzA"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-03-30T06:16:46+00:00",
+        "updated": "2018-09-23T11:26:56+00:00",
+        "media:group": {
+          "media:title": "MySQL with Hibernate",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/W5G_9AKoBzA?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/W5G_9AKoBzA/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: MySQL with Hibernate\nКурс: Бази от данни с Java\nЛектор: Дончо Минков\nДата: 29 март 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "3",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "604"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:API9amw1hcc",
+        "yt:videoId": "API9amw1hcc",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Изпълняване на SQL през Java с JDBC - част 1",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=API9amw1hcc"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-03-30T06:03:35+00:00",
+        "updated": "2018-03-30T09:13:01+00:00",
+        "media:group": {
+          "media:title": "Изпълняване на SQL през Java с JDBC - част 1",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/API9amw1hcc?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i2.ytimg.com/vi/API9amw1hcc/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Изпълняване на SQL през Java с JDBC - част 1\nКурс: Бази от данни с Java\nЛектор: Дончо Минков\nДата: 28 март 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "0",
+              "@average": "0.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "540"
+            }
+          }
+        }
+      },
+      {
+        "id": "yt:video:cxw3pxXBYYo",
+        "yt:videoId": "cxw3pxXBYYo",
+        "yt:channelId": "UCLC-vbm7OWvpbqzXaoAMGGw",
+        "title": "Изпълняване на SQL през Java с JDBC - част 2",
+        "link": {
+          "@rel": "alternate",
+          "@href": "https://www.youtube.com/watch?v=cxw3pxXBYYo"
+        },
+        "author": {
+          "name": "Telerik Academy",
+          "uri": "https://www.youtube.com/channel/UCLC-vbm7OWvpbqzXaoAMGGw"
+        },
+        "published": "2018-03-30T05:55:37+00:00",
+        "updated": "2018-12-24T21:34:52+00:00",
+        "media:group": {
+          "media:title": "Изпълняване на SQL през Java с JDBC - част 2",
+          "media:content": {
+            "@url": "https://www.youtube.com/v/cxw3pxXBYYo?version=3",
+            "@type": "application/x-shockwave-flash",
+            "@width": "640",
+            "@height": "390"
+          },
+          "media:thumbnail": {
+            "@url": "https://i4.ytimg.com/vi/cxw3pxXBYYo/hqdefault.jpg",
+            "@width": "480",
+            "@height": "360"
+          },
+          "media:description": "Лекция: Изпълняване на SQL през Java с JDBC - част 2\nКурс: Бази от данни с Java\nЛектор: Дончо Минков\nДата: 28 март 2018 г.\n\nУебсайт: http://telerikacademy.com\nСледете всичко ново за Телерик Академия и във Facebook: http://www.facebook.com/TelerikAcademy.",
+          "media:community": {
+            "media:starRating": {
+              "@count": "1",
+              "@average": "5.00",
+              "@min": "1",
+              "@max": "5"
+            },
+            "media:statistics": {
+              "@views": "369"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
