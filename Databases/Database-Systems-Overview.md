@@ -56,6 +56,33 @@
       versatility of it. Therefore, this support different types of users and differ by the interaction of users in database and also
       the data models in DBMS brought a revolutionary change in industries by the handling of relevant data. The data models in DBMS are
       the systems that help to use and create databases, as we have seen there are different types of data models and depending on the
-      kind of structure needed we can select the data model in DBMS.   
-  
+      kind of structure needed we can select the data model in DBMS.
+      
+      
+2. Which are the main functions performed by a Relational Database Management System (RDBMS)?
+  - SQL Commands
+    - DDL
+      - CREATE
+      - ALTER
+      - DROP
+      - RENAME
+      - TRUNCATE
+      - COMMENT
+    - DML
+      - SELECT
+      - INSERT
+      - UPDATE
+      - DELETE
+      - MERGE
+      - CALL
+      - EXPLAIN PLAN
+      - LOCK TABLE
+    - DCL
+      - GRANT
+      - REVOKE
+    - TCL
+      - COMMIT
+      - ROLLBACK
+      - SAVEPOINT
+      - SET TRANSACTION
 
