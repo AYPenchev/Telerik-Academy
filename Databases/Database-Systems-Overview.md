@@ -158,7 +158,7 @@
 
 14. Give few examples of NoSQL databases and their pros and cons.
     - Pros:
-            1. Flexible Scalability - 
+            1. Flexible Scalability 
             2. Stores Massive Amounts Of Data
             3. Database Maintenance
             4. Economical
