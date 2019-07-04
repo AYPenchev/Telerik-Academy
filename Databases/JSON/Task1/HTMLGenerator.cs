@@ -21,7 +21,7 @@ namespace Task1.Model
             var html = new StringBuilder();
             html.AppendLine("<ul>");
 
-            // titles start at index one because in the json file there one more title
+            // titles start at index one because the json file have  one more title
             for(int i = 0, j = 1; i < videoUrls.Count || j < titles.Count ; i++, j++)
             {
                 html.AppendFormat(styleFormat, videoUrls[i], titles[j]);
