@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSON", "JSON", "{1D3B078C-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "JSON\Task1\Task1.csproj", "{D5A48DB3-DC09-44BA-8A13-5519DAF6B289}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFramework", "{9B8071EF-8361-419E-BE22-41541282EEBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework\EntityFramework.csproj", "{47AEF96B-E141-4B11-885A-72D966F897AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{D5A48DB3-DC09-44BA-8A13-5519DAF6B289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5A48DB3-DC09-44BA-8A13-5519DAF6B289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5A48DB3-DC09-44BA-8A13-5519DAF6B289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47AEF96B-E141-4B11-885A-72D966F897AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47AEF96B-E141-4B11-885A-72D966F897AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47AEF96B-E141-4B11-885A-72D966F897AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47AEF96B-E141-4B11-885A-72D966F897AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D5A48DB3-DC09-44BA-8A13-5519DAF6B289} = {1D3B078C-D75B-4266-A8B3-E9E48925E66D}
+		{47AEF96B-E141-4B11-885A-72D966F897AF} = {9B8071EF-8361-419E-BE22-41541282EEBE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22C510FF-A2B4-498A-B9D9-B1D195E34813}
