@@ -66,6 +66,7 @@
       <DependentUpon>NorthwindDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ICustomerRepository.cs" />
+    <Compile Include="InheritEmployee.cs" />
     <Compile Include="NorthwindDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

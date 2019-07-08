@@ -5,9 +5,7 @@ using System.Linq;
 namespace EntityFramework
 {
     public class AdoNetCustomerRepository : ICustomerRepository
-    {
-        
-
+    { 
         public int Insert(Customer customer)
         {
             var dbContext = new NorthwindDbContext();
@@ -68,9 +66,9 @@ namespace EntityFramework
         public int Delete(int customerId)
         {
             var dbContext = new NorthwindDbContext();
-
+            
             Customer customerToBeDeleted = dbContext.Customers
-                                              .Where(customer => int.Parse(customer.CustomerID) == customerId)
+                                              .Where(customer => customer.CustomerID == customerId.ToString())
                                               .SingleOrDefault();
             try
             {
