@@ -8,7 +8,7 @@
 
     public class Program
     {
-        //Task 3
+        // Task 3
         public static IEnumerable<Customer> SelectOrdersMadeIn1997AndShippedToCanada()
         {
             var entities = new List<Customer>();
@@ -26,7 +26,7 @@
             return entities;
         }
 
-        //Task 4
+        // Task 4
         public static void RunStoredProc()
         {
             SqlConnection connectNW = new SqlConnection("server=localhost;integrated security=true;" + "database=NW");
@@ -45,7 +45,7 @@
             }
         }
 
-        //Task 5
+        // Task 5
         public static IEnumerable<Order> SalesBySpecifiedRegionAndDatePeriod(string region, DateTime? startDate, DateTime? endDate)
         {
             var entities = new List<Order>();
@@ -60,7 +60,6 @@
 
             return entities;
         }
-
 
         public static void Main()
         {

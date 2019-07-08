@@ -1,9 +1,9 @@
-﻿using System;
-using System.Data.Entity.Validation;
-using System.Linq;
-
-namespace EntityFramework
+﻿namespace EntityFramework
 {
+    using System;
+    using System.Data.Entity.Validation;
+    using System.Linq;
+
     public class AdoNetCustomerRepository : ICustomerRepository
     { 
         public int Insert(Customer customer)
@@ -19,17 +19,15 @@ namespace EntityFramework
             {
                 foreach (var eve in e.EntityValidationErrors)
                 {
-                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:", eve.Entry.Entity.GetType().Name, eve.Entry.State);
                     foreach (var ve in eve.ValidationErrors)
                     {
-                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                            ve.PropertyName, ve.ErrorMessage);
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"", ve.PropertyName, ve.ErrorMessage);
                     }
                 }
+
                 throw;
             }
-
 
             var addedCustomer = dbContext.Customers
                 .Where(c => c.CustomerID == customer.CustomerID)
