@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
-namespace Task1.Model
+﻿namespace Task1.Model
 {
-    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
 
     public class HTMLGenerator
     {
-        private const string styleFormat = @"<li><a href=""{0}""> {1} </a></li>";
+        private const string STYLE_FORMAT = @"<li><a href=""{0}""> {1} </a></li>";
 
         public void CreateHtmlPage(string path, IList<string> videoUrls, IList<string> titles)
         {
@@ -22,9 +20,9 @@ namespace Task1.Model
             html.AppendLine("<ul>");
 
             // titles start at index one because the json file have  one more title
-            for(int i = 0, j = 1; i < videoUrls.Count || j < titles.Count ; i++, j++)
+            for (int i = 0, j = 1; i < videoUrls.Count || j < titles.Count ;i++, j++)
             {
-                html.AppendFormat(styleFormat, videoUrls[i], titles[j]);
+                html.AppendFormat(STYLE_FORMAT, videoUrls[i], titles[j]);
             }
 
             html.AppendLine("<ul>");

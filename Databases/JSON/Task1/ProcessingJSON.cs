@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Xml.Linq;
-using System.Runtime.Serialization.Json;
-using System.Threading;
-using System.Xml;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
-using Task1.Model;
-
-namespace Task1
+﻿namespace Task1
 {
-    using Newtonsoft.Json;
     using System.Net;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using System.Xml.Linq;
+    using Model;
+    using Newtonsoft.Json;
 
     public class ProcessingJSON
     {
@@ -26,7 +16,7 @@ namespace Task1
             Console.OutputEncoding = Encoding.UTF8;
 
             string urlToRss = "https://www.youtube.com/feeds/videos.xml?channel_id=UCLC-vbm7OWvpbqzXaoAMGGw";
-            var client = new WebClient {Encoding = Encoding.UTF8};
+            var client = new WebClient { Encoding = Encoding.UTF8 };
             string xml = client.DownloadString(urlToRss);
 
             var youtubeAsXml = XDocument.Parse(xml);
